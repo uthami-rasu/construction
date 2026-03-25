@@ -7,6 +7,7 @@ import Stats from "./components/Stats";
 import AboutSection from "./components/AboutSection";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
+import ProjectGallery from "./components/ProjectGallery";
 
 function App() {
   useEffect(() => {
@@ -43,10 +44,11 @@ function App() {
         <AboutSection />
         <WhyChooseUs />
         <Services />
+        <ProjectGallery />
 
         {/* Placeholder for future sections */}
         <section className="h-64 bg-gray-50 flex items-center justify-center text-gray-400 font-medium italic">
-          Portfolio and Contact sections coming soon...
+          More sections coming soon...
         </section>
       </main>
     </div>
