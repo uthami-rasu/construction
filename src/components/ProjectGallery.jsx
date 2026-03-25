@@ -29,7 +29,7 @@ const ProjectGallery = () => {
   return (
     <section
       id="project-gallery"
-      className="py-32 px-6 w-full relative overflow-hidden bg-linear-to-b from-white via-[#f0f9ff] to-white"
+      className="py-32 px-6 w-full relative overflow-hidden bg-[#e8f8fd]"
     >
       {/* Light-weight White Grid Background */}
       <div
@@ -62,10 +62,7 @@ const ProjectGallery = () => {
               </div>
 
               <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-montserrat font-black mb-8 leading-none tracking-tight text-gray-900 capitalize">
-                Built For{" "}
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
-                  Durability
-                </span>
+                Built For <span className="text-[#00C2FF]">Durability</span>
                 , <br />
                 Powered By Master Skill.
               </h1>
@@ -76,7 +73,7 @@ const ProjectGallery = () => {
                 strength, innovation, and timeless design.
               </p>
 
-              <div className="p-8 mb-12 backdrop-blur-sm bg-white/40 border-l-4 border-[#00C2FF] rounded-r-2xl shadow-sm border border-[#00C2FF]/10">
+              <div className="p-8 mb-12 backdrop-blur-sm bg-white/60 border-l-4 border-[#00C2FF] rounded-r-2xl shadow-sm">
                 <p className="text-xl font-light italic text-gray-600 leading-relaxed font-playfair">
                   "A building is not just a structure. It's an investment in
                   progress and a testament to architectural vision."
@@ -89,7 +86,7 @@ const ProjectGallery = () => {
                   boxShadow: "0 20px 40px -10px rgba(0,194,255,0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-10 py-5 bg-linear-to-r from-[#00C2FF] to-[#015e7a] text-white rounded-2xl font-black uppercase tracking-widest overflow-hidden shadow-2xl transition-all"
+                className="group relative px-10 py-5 bg-linear-to-r from-[#00C2FF] to-[#73C7E7] text-white rounded-2xl font-black uppercase tracking-widest overflow-hidden shadow-2xl transition-all"
               >
                 <span className="relative z-10 flex items-center gap-3">
                   View Full Gallery{" "}
