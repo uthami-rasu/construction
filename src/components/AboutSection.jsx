@@ -239,7 +239,7 @@ const AboutSection = () => {
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-md p-6 rounded-[2rem] shadow-xl border border-white/20 z-20 hidden md:block"
+              className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-md p-6 rounded-4xl shadow-xl border border-white/20 z-20 hidden md:block"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#ffcb0f] to-[#ffaa00] flex items-center justify-center shadow-lg">

@@ -10,7 +10,7 @@ const StatCounter = ({ value }) => {
     const suffix = value.replace(/[\d.]/g, "");
 
     const controls = animate(0, num, {
-      duration: 2,
+      duration: 3.5,
       ease: "easeOut",
       onUpdate: (latest) => {
         // Handle decimals if needed (like 7.8K)
@@ -88,7 +88,7 @@ const Stats = () => {
               </div>
 
               {/* Minimal Divider */}
-              <div className="w-[1px] h-10 bg-[#00C2FF]/30 relative">
+              <div className="w-px h-10 bg-[#00C2FF]/30 relative">
                 <motion.div
                   initial={{ scaleY: 0 }}
                   whileInView={{ scaleY: 1 }}

@@ -124,12 +124,12 @@ const WhyChooseUs = () => {
               {/* Icon Container with Concentric Glass Layers */}
               <div className="relative mb-10 flex items-center justify-center">
                 {/* Outer concentric shell */}
-                <div className="w-32 h-32 rounded-[2.5rem] bg-[#00C2FF]/5 flex items-center justify-center transition-all duration-500 group-hover:rotate-[15deg]">
+                <div className="w-32 h-32 rounded-[2.5rem] bg-[#00C2FF]/5 flex items-center justify-center transition-all duration-500 group-hover:rotate-15">
                   {/* Middle concentric shell */}
                   <div className="w-24 h-24 rounded-3xl bg-[#00C2FF]/10 backdrop-blur-sm border border-[#00C2FF]/10 flex items-center justify-center rotate-[-5deg] group-hover:rotate-0 transition-all duration-500">
                     {/* Inner Icon Container */}
                     <div
-                      className={`w-16 h-16 rounded-2xl bg-linear-to-br ${reason.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 rotate-[10deg] group-hover:rotate-0`}
+                      className={`w-16 h-16 rounded-2xl bg-linear-to-br ${reason.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 rotate-10 group-hover:rotate-0`}
                     >
                       <reason.icon className="w-7 h-7 text-white" />
                     </div>

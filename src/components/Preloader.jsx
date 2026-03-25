@@ -20,7 +20,7 @@ const Preloader = () => {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[#73C7E7] transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
+      className={`fixed inset-0 z-9999 flex items-center justify-center bg-[#73C7E7] transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
     >
       <div className="flex gap-1.5 h-12">
         {[...Array(10)].map((_, i) => (
