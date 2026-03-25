@@ -15,21 +15,21 @@ const reasons = [
     description:
       "Your deadlines and budget matter. We ensure timely project completion without compromising on quality, making your vision a seamless reality.",
     icon: Clock,
-    color: "from-[#0088ff] to-[#0044bb]",
+    color: "from-[#00C2FF] to-[#73C7E7]",
   },
   {
     title: "WE ARE PASSIONATE",
     description:
       "Construction is more than just a profession—it's our passion. We take pride in transforming ideas into strong, lasting, and inspiring structures.",
     icon: Heart,
-    color: "from-[#3498db] to-[#1a5276]",
+    color: "from-[#00C2FF] to-[#82d1f0]",
   },
   {
     title: "PROFESSIONAL SERVICES",
     description:
       "With years of industry experience, our skilled professionals bring innovation and precision to every project, ensuring top-notch results.",
     icon: BarChart3,
-    color: "from-[#4ebdfa] to-[#0077be]",
+    color: "from-[#4ebdfa] to-[#01b4e4]",
   },
 ];
 
@@ -77,9 +77,7 @@ const WhyChooseUs = () => {
             className="text-[clamp(2.5rem,5vw,4rem)] font-[montserrat] font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-10"
           >
             Why Choose <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#015e7a]">
-              Krish Construction
-            </span>
+            <span className="text-[#00C2FF]">Krish Construction</span>
           </motion.h2>
 
           <div className="max-w-4xl mx-auto">

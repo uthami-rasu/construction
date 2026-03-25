@@ -172,7 +172,7 @@ const AboutSection = () => {
                   boxShadow: "0 20px 40px -10px rgba(0,194,255,0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-linear-to-r from-[#00C2FF] to-[#005a77] text-white px-8 py-4 rounded-full font-black text-[10px] uppercase tracking-[0.2em] shadow-xl transition-all duration-300 flex items-center gap-3"
+                className="bg-linear-to-r from-[#00C2FF] to-[#73C7E7] text-white px-8 py-4 rounded-full font-black text-[10px] uppercase tracking-[0.2em] shadow-xl transition-all duration-300 flex items-center gap-3"
               >
                 KNOW MORE
                 <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
@@ -268,7 +268,7 @@ const AboutSection = () => {
               className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-xl p-7 rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(0,194,255,0.25)] border border-white z-20 hidden md:block min-w-[200px]"
             >
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#00C2FF] to-[#005a77] flex items-center justify-center mb-4 shadow-lg rotate-3 group-hover:rotate-0 transition-transform">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#00C2FF] to-[#73C7E7] flex items-center justify-center mb-4 shadow-lg rotate-3 group-hover:rotate-0 transition-transform">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-center">

@@ -112,7 +112,7 @@ const Services = () => {
             className="text-3xl md:text-6xl font-[Montserrat] font-black text-gray-900 leading-tight tracking-[-0.04em]"
           >
             Crafted For The <br className="md:hidden" />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#73C7E7]">
               Modern Vision
             </span>
           </motion.h2>
@@ -156,7 +156,7 @@ const Services = () => {
 
               {/* Expertise Badge - Moved Up */}
               <div className="absolute top-[40%] left-5 -translate-y-1/2">
-                <div className="bg-[#002b3a]/80 backdrop-blur-md border-l-4 border-[#00C2FF] px-5 py-2.5 rounded-r-lg shadow-xl">
+                <div className="bg-[#004d66]/80 backdrop-blur-md border-l-4 border-[#00C2FF] px-5 py-2.5 rounded-r-lg shadow-xl">
                   <span className="text-white text-xs font-black tracking-widest uppercase">
                     Expertise Guaranteed
                   </span>
@@ -205,7 +205,7 @@ const Services = () => {
 
               {/* Hover Button - Floating & Transparent Background */}
               <div className="absolute inset-x-0 bottom-8 flex justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                <button className="flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-[0.3em] bg-linear-to-r from-[#00C2FF] to-[#0088ff] px-8 py-3 rounded-xl shadow-2xl">
+                <button className="flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-[0.3em] bg-linear-to-r from-[#00C2FF] to-[#73C7E7] px-8 py-3 rounded-xl shadow-2xl">
                   ENQUIRY NOW
                   <ArrowRight className="w-4 h-4" />
                 </button>
