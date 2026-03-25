@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="py-14 bg-white relative overflow-hidden font-[poppins]"
+      className="py-4 bg-white relative overflow-hidden font-[poppins]"
     >
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">

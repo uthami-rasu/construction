@@ -76,7 +76,7 @@ const ProjectGallery = () => {
                 strength, innovation, and timeless design.
               </p>
 
-              <div className="p-8 mb-12 backdrop-blur-sm bg-white/40 border-l-4 border-[#00C2FF]/40 rounded-r-2xl shadow-sm border border-[#00C2FF]/10">
+              <div className="p-8 mb-12 backdrop-blur-sm bg-white/40 border-l-4 border-[#00C2FF] rounded-r-2xl shadow-sm border border-[#00C2FF]/10">
                 <p className="text-xl font-light italic text-gray-600 leading-relaxed font-playfair">
                   "A building is not just a structure. It's an investment in
                   progress and a testament to architectural vision."
