@@ -8,53 +8,75 @@ import {
   Leaf,
   PaintBucket,
   ArrowRight,
+  Heart,
+  Users,
+  Star,
+  CheckCircle2,
 } from "lucide-react";
 
 const services = [
   {
     title: "Residential Construction",
-    description:
-      "Custom homes tailored to your lifestyle, built with precision and modern design principles.",
+    subtitle: "Custom Homes & Villas",
+    label: "FEATURED",
+    rating: "4.9",
+    team: "Expert Team",
+    timeline: "On Time",
     icon: Home,
     image:
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   },
   {
     title: "Commercial Construction",
-    description:
-      "State-of-the-art office spaces and retail landmarks that drive business growth and community value.",
+    subtitle: "Office & Retail Spaces",
+    label: "NEW",
+    rating: "4.8",
+    team: "Scale Expert",
+    timeline: "Reliable",
     icon: Building2,
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   },
   {
     title: "Project Management",
-    description:
-      "End-to-end guidance from planning to execution, ensuring timelines and budgets are strictly met.",
+    subtitle: "End-to-End Solutions",
+    label: "CERTIFIED",
+    rating: "5.0",
+    team: "Managers",
+    timeline: "Efficient",
     icon: ClipboardList,
     image:
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   },
   {
-    title: "Custom Construction",
-    description:
-      "Unique structural solutions for complex architectural visions, pushing the boundaries of engineering.",
+    title: "Custom Solutions",
+    subtitle: "Unique Architectural Work",
+    label: "PREMIUM",
+    rating: "4.9",
+    team: "Designers",
+    timeline: "Quality",
     icon: HardHat,
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   },
   {
     title: "Sustainable Building",
-    description:
-      "Eco-friendly materials and energy-efficient designs for a greener, more sustainable future.",
+    subtitle: "Eco-Friendly Design",
+    label: "ECO",
+    rating: "4.7",
+    team: "Green Team",
+    timeline: "Eco-Safe",
     icon: Leaf,
     image:
       "https://images.unsplash.com/photo-1518005020950-ec8fa0fa5102?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   },
   {
-    title: "Renovations & Remodeling",
-    description:
-      "Transforming existing spaces into modern masterpieces with minimal disruption to your routine.",
+    title: "Renovations",
+    subtitle: "Modern Remodeline",
+    label: "QUALITY",
+    rating: "4.8",
+    team: "Specialists",
+    timeline: "Fast Track",
     icon: PaintBucket,
     image:
       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
@@ -65,97 +87,134 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-32 bg-white relative overflow-hidden font-poppins"
+      className="py-20 bg-white relative overflow-hidden font-poppins"
     >
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-[#00C2FF] text-xs font-black uppercase tracking-[0.4em] mb-4 block"
+            className="flex items-center gap-3 mb-4"
           >
-            Our Services
-          </motion.span>
+            <div className="w-10 h-[2px] bg-[#00C2FF]"></div>
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#00C2FF]">
+              Our Services
+            </span>
+          </motion.div>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight max-w-3xl mx-auto"
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter"
           >
-            Our Comprehensive Construction <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#005a77]">
-              Services
-            </span>
+            Comprehensive{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
+              Construction
+            </span>{" "}
+            Solutions
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-gray-500 max-w-2xl mx-auto font-medium"
-          >
-            Delivering quality, efficiency, and excellence in every brick we lay
-            and every beam we place.
-          </motion.p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative bg-[#f8fbff] rounded-[2.5rem] overflow-hidden border border-blue-50 hover:shadow-[0_40px_80px_-20px_rgba(0,194,255,0.15)] transition-all duration-500"
+              className="group relative h-[420px] rounded-3xl overflow-hidden shadow-2xl bg-gray-900"
             >
-              {/* Image Header */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent"></div>
+              {/* Image Background */}
+              <img
+                src={service.image}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-100"
+              />
 
-                {/* Icon Overlay */}
-                <div className="absolute top-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 group-hover:bg-[#00C2FF] transition-colors duration-300">
-                  <service.icon className="w-6 h-6 text-white" />
+              {/* Overlay Gradient - Sophisticated Fade */}
+              <div className="absolute inset-0 bg-linear-to-t from-gray-950/80 via-gray-950/20 to-transparent group-hover:from-gray-950/50 transition-all duration-500"></div>
+
+              {/* Top Badges */}
+              <div className="absolute top-5 left-5 flex gap-2">
+                <span className="bg-[#00C2FF] text-white text-[9px] font-black px-3 py-1 rounded-md shadow-lg italic">
+                  {service.label}
+                </span>
+                <span className="bg-white/90 backdrop-blur-md text-gray-900 text-[9px] font-black px-3 py-1 rounded-md shadow-lg">
+                  Q2 2025
+                </span>
+              </div>
+
+              {/* Wishlist Heart */}
+              <button className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-[#00C2FF] transition-colors">
+                <Heart className="w-4 h-4" />
+              </button>
+
+              {/* Expertise Badge - Moved Up */}
+              <div className="absolute top-[40%] left-5 -translate-y-1/2">
+                <div className="bg-[#002b3a]/80 backdrop-blur-md border-l-4 border-[#00C2FF] px-5 py-2.5 rounded-r-lg shadow-xl">
+                  <span className="text-white text-xs font-black tracking-widest uppercase">
+                    Expertise Guaranteed
+                  </span>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-10 pb-12">
-                <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight group-hover:text-[#00C2FF] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-500 font-medium leading-relaxed mb-8 opacity-80">
-                  {service.description}
-                </p>
-                <a
-                  href={`#${service.title.toLowerCase().replace(/ /g, "-")}`}
-                  className="flex items-center gap-3 text-sm font-black text-[#00C2FF] uppercase tracking-widest hover:gap-5 transition-all"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+              {/* Content Overlay - Shifted Higher */}
+              <div className="absolute inset-x-0 bottom-6 px-6 transition-transform duration-500 group-hover:-translate-y-16">
+                <div>
+                  <h3 className="text-white text-xl font-black tracking-tight mb-1.5">
+                    {service.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-white text-[10px] font-black uppercase tracking-widest opacity-90">
+                    <CheckCircle2 className="w-3 h-3 text-[#00C2FF]" />
+                    {service.subtitle}
+                  </div>
+                </div>
+
+                {/* Stats Row - Bolder & More Visible on Hover */}
+                <div className="flex justify-between items-center pt-5 mt-5 border-t border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="flex flex-col items-center">
+                    <Users className="w-4 h-4 text-[#00C2FF] mb-1" />
+                    <span className="text-[9px] text-white font-black tracking-widest uppercase">
+                      {service.team}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center border-x border-white/20 px-4">
+                    <Building2 className="w-4 h-4 text-[#00C2FF] mb-1" />
+                    <span className="text-[9px] text-white font-black tracking-widest uppercase">
+                      {service.timeline}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-center gap-1 text-white mb-1">
+                      <Star className="w-3.5 h-3.5 text-yellow-400 fill-current" />
+                      <span className="text-xs font-black">
+                        {service.rating}
+                      </span>
+                    </div>
+                    <span className="text-[9px] text-white font-black tracking-widest uppercase">
+                      Rating
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              {/* Bottom Accent */}
-              <div className="absolute bottom-0 left-0 w-0 h-1.5 bg-gradient-to-r from-[#00C2FF] to-[#005a77] group-hover:w-full transition-all duration-700"></div>
+              {/* Hover Button - Floating & Transparent Background */}
+              <div className="absolute inset-x-0 bottom-8 flex justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                <button className="flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-[0.3em] bg-linear-to-r from-[#00C2FF] to-[#0088ff] px-8 py-3 rounded-xl shadow-2xl">
+                  ENQUIRY NOW
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      {/* Background Decorative Element */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-50 rounded-full blur-[120px] -z-10 opacity-60"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-100/30 rounded-full blur-[150px] -z-10"></div>
     </section>
   );
 };
