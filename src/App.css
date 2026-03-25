@@ -1,0 +1,4 @@
+/* Cleaned up App.css to avoid conflicts with the new design */
+.selection-blue::selection {
+  background-color: rgba(0, 194, 255, 0.3);
+}
