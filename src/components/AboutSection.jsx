@@ -127,15 +127,15 @@ const AboutSection = () => {
           </motion.div>
 
           <motion.h2
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            className="text-5xl lg:text-7xl font-black text-gray-900 leading-[1.1] mb-8 tracking-tighter"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[clamp(2.5rem,5vw,4rem)] font-montserrat font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-8"
           >
-            Where quality <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77] font-playfair italic font-medium">
-              meets innovation!!
+            Building the Future <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
+              with Excellence
             </span>
           </motion.h2>
 

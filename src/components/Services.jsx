@@ -90,32 +90,31 @@ const Services = () => {
       className="py-20 bg-white relative overflow-hidden font-poppins"
     >
       <div className="container mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="mb-16">
+        {/* Header - Centered Style with Montserrat */}
+        <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3 mb-4"
+            className="inline-flex items-center gap-2 bg-[#00C2FF]/10 px-6 py-2 rounded-full border border-[#00C2FF]/20 mb-6 group cursor-default"
           >
-            <div className="w-10 h-[2px] bg-[#00C2FF]"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] animate-pulse"></div>
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#00C2FF]">
               Our Services
             </span>
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter"
+            transition={{ delay: 0.1, duration: 0.8 }}
+            className="text-3xl md:text-6xl font-[Montserrat] font-black text-gray-900 leading-tight tracking-[-0.04em]"
           >
-            Comprehensive{" "}
+            Crafted For The <br className="md:hidden" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
-              Construction
-            </span>{" "}
-            Solutions
+              Modern Vision
+            </span>
           </motion.h2>
         </div>
 

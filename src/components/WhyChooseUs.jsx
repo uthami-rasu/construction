@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="py-14 bg-white relative overflow-hidden font-poppins"
+      className="py-14 bg-white relative overflow-hidden font-[poppins]"
     >
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -73,14 +73,13 @@ const WhyChooseUs = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-gray-900 mb-8 tracking-tighter"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[clamp(2.5rem,5vw,4rem)] font-[montserrat] font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-10"
           >
-            Why{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
-              Choose
-            </span>{" "}
-            Us?
+            Why Choose <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#015e7a]">
+              Krish Construction
+            </span>
           </motion.h2>
 
           <div className="max-w-4xl mx-auto">
