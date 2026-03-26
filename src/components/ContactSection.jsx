@@ -58,7 +58,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden font-poppins">
+    <section id="contact-us" className="relative overflow-hidden font-poppins">
       {/* Main bg gradient */}
       <div className="relative bg-linear-to-br from-[#0096c7] via-[#00b4d8] to-[#48cae4] py-28 px-6 min-h-[80vh] flex flex-col items-center justify-center">
         {/* White grid overlay — matches reference */}

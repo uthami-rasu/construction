@@ -20,6 +20,16 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   const navItems = [
     { label: "Home", icon: Home, href: "#home" },
     { label: "About Us", icon: Info, href: "#about-us" },
@@ -49,6 +59,7 @@ const Header = () => {
             <a
               key={item.label}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="group flex items-center gap-3 text-sm font-bold text-white hover:text-[#00C2FF] transition-all uppercase tracking-[0.15em]"
             >
               <item.icon className="w-5 h-5 text-[#00C2FF] transition-transform group-hover:scale-110 shadow-sm" />
@@ -82,8 +93,8 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="flex items-center gap-5 text-lg font-black text-white hover:text-[#00C2FF] transition-colors uppercase tracking-widest"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <item.icon className="w-6 h-6 text-[#00C2FF]" />
                 {item.label}

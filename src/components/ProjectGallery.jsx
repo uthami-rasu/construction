@@ -28,7 +28,7 @@ const ProjectGallery = () => {
 
   return (
     <section
-      id="project-gallery"
+      id="portfolio"
       className="py-32 px-6 w-full relative overflow-hidden bg-[#e8f8fd]"
     >
       {/* Light-weight White Grid Background */}

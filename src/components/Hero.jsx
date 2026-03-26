@@ -35,7 +35,10 @@ const slides = [
 
 const Hero = () => {
   return (
-    <section className="relative h-[100svh] w-full overflow-hidden bg-black font-poppins">
+    <section
+      id="home"
+      className="relative h-[100svh] w-full overflow-hidden bg-black font-poppins"
+    >
       <Swiper
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         effect="fade"
