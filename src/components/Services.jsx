@@ -68,7 +68,7 @@ const services = [
     timeline: "Eco-Safe",
     icon: Leaf,
     image:
-      "https://images.unsplash.com/photo-1518005020950-ec8fa0fa5102?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "https://i.pinimg.com/1200x/e0/b5/85/e0b5856cae8a2c7dc584f2860667aa8a.jpg",
   },
   {
     title: "Renovations",

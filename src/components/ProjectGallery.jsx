@@ -15,7 +15,7 @@ const ProjectGallery = () => {
       category: "Residential",
     },
     {
-      url: "https://images.unsplash.com/photo-1503387762-592dea58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      url: "https://i.pinimg.com/1200x/8f/b3/aa/8fb3aaa6493b9b57c20e6e918809169c.jpg",
       title: "Modern Infrastructure",
       category: "Industrial",
     },

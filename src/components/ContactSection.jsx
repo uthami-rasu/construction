@@ -152,11 +152,11 @@ const ContactSection = () => {
       </div>
 
       {/* Footer bar */}
-      <div className="bg-gray-950 py-5 text-center">
+      {/* <div className="bg-gray-950 py-5 text-center">
         <p className="text-gray-500 text-xs font-medium tracking-widest uppercase">
           © {new Date().getFullYear()} Krrish Construction. All Rights Reserved.
         </p>
-      </div>
+      </div> */}
     </section>
   );
 };
