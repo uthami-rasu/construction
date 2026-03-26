@@ -46,7 +46,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="bg-white py-12 relative overflow-hidden border-y border-gray-50">
+    <section className="bg-white py-8 sm:py-12 relative overflow-hidden border-y border-gray-50">
       {/* Background Construction Elements (Lightweight) */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg
@@ -71,8 +71,8 @@ const Stats = () => {
         <div className="absolute left-0 top-10 w-full h-[1px] bg-gray-900/10"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 md:gap-4 max-w-6xl mx-auto">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -80,15 +80,15 @@ const Stats = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="flex items-center gap-5 group"
+              className="flex items-center gap-3 sm:gap-5 group"
             >
               {/* Number with Counter */}
-              <div className="text-5xl md:text-6xl font-montserrat font-black text-gray-950 tracking-[-0.04em] transition-transform duration-500 group-hover:scale-105 min-w-[140px]">
+              <div className="text-3xl sm:text-5xl md:text-6xl font-montserrat font-black text-gray-950 tracking-[-0.04em] transition-transform duration-500 group-hover:scale-105 min-w-[90px] sm:min-w-[140px]">
                 <StatCounter value={stat.number} />
               </div>
 
               {/* Minimal Divider */}
-              <div className="w-px h-10 bg-[#00C2FF]/30 relative">
+              <div className="w-px h-8 sm:h-10 bg-[#00C2FF]/30 relative">
                 <motion.div
                   initial={{ scaleY: 0 }}
                   whileInView={{ scaleY: 1 }}
@@ -100,10 +100,10 @@ const Stats = () => {
 
               {/* Labels */}
               <div className="flex flex-col">
-                <span className="text-[10px] font-montserrat font-black text-gray-400 tracking-[0.2em] uppercase leading-none mb-1">
+                <span className="text-[8px] sm:text-[10px] font-montserrat font-black text-gray-400 tracking-[0.1em] sm:tracking-[0.2em] uppercase leading-none mb-0.5 sm:mb-1">
                   {stat.label}
                 </span>
-                <span className="text-[10px] font-montserrat font-black text-gray-400 tracking-[0.2em] uppercase leading-none">
+                <span className="text-[8px] sm:text-[10px] font-montserrat font-black text-gray-400 tracking-[0.1em] sm:tracking-[0.2em] uppercase leading-none">
                   {stat.sublabel}
                 </span>
               </div>

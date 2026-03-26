@@ -61,21 +61,21 @@ const Hero = () => {
       </Swiper>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center pointer-events-none pb-20 mt-10">
-        <div className="max-w-6xl pointer-events-auto">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 sm:px-6 text-center pointer-events-none pb-16 sm:pb-20 mt-0 sm:mt-10">
+        <div className="w-full max-w-6xl pointer-events-auto">
           {/* Subheading */}
-          <p className="text-[#ffcb0f] text-sm md:text-lg font-black uppercase tracking-[0.4em] mb-6 animate-[fadeInDown_1s_ease-out]">
+          <p className="text-[#ffcb0f] text-xs sm:text-sm md:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-4 sm:mb-6 animate-[fadeInDown_1s_ease-out]">
             Turning Ideas into Landmarks
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-3xl md:text-7xl font-black text-white mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out]">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-7xl font-black text-white mb-7 sm:mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out]">
             CONSTRUCTION <br />
             <span className="text-[#00C2FF]">SERVICES</span>
           </h1>
 
           {/* Bold Description */}
-          <p className="text-sm md:text-xl text-white mb-14 max-w-4xl mx-auto leading-relaxed font-bold opacity-95 animate-[fadeIn_1.5s_ease-out] drop-shadow-xl px-4">
+          <p className="text-xs sm:text-sm md:text-xl text-white mb-10 sm:mb-14 max-w-4xl mx-auto leading-relaxed font-bold opacity-95 animate-[fadeIn_1.5s_ease-out] drop-shadow-xl px-2 sm:px-4">
             We don't just build structures—we create spaces that inspire,
             endure, and bring your vision to life. Whether you need a new home,
             a commercial space, or a large-scale project, we ensure top-tier
@@ -83,14 +83,14 @@ const Hero = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap justify-center items-center gap-6 animate-[fadeInUp_1.8s_ease-out]">
-            <button className="group bg-[#ffcb0f] text-black px-10 py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-xs flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 animate-[fadeInUp_1.8s_ease-out]">
+            <button className="group bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
               KNOW MORE
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
+              <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
             </button>
-            <button className="group bg-transparent border-2 border-white/60 text-white px-10 py-4 rounded-full font-black hover:bg-white/10 hover:scale-105 transition-all uppercase tracking-widest text-xs flex items-center gap-3">
+            <button className="group bg-transparent border-2 border-white/60 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-white/10 hover:scale-105 transition-all uppercase tracking-widest text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
               VIEW PROJECT
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
+              <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
             </button>
           </div>
         </div>

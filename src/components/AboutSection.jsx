@@ -27,7 +27,7 @@ const AboutSection = () => {
   return (
     <section
       id="about-us"
-      className="w-full  bg-linear-to-br from-[#ffffff] via-[#f8fbff] to-[#eef6ff] py-32 relative overflow-hidden font-poppins"
+      className="w-full  bg-linear-to-br from-[#ffffff] via-[#f8fbff] to-[#eef6ff] py-16 sm:py-24 lg:py-32 relative overflow-hidden font-poppins"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -97,7 +97,7 @@ const AboutSection = () => {
       </div>
 
       <div
-        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 px-6 relative z-10"
+        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 lg:gap-24 px-4 sm:px-6 py-8 sm:py-0 relative z-10"
         ref={ref}
       >
         {/* Content Side */}
@@ -119,9 +119,9 @@ const AboutSection = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="inline-block mb-6"
+            className="inline-block mb-4 sm:mb-6"
           >
-            <span className="text-xs font-black uppercase tracking-[0.5em] text-[#00C2FF] bg-[#00C2FF]/5 px-6 py-2.5 rounded-full border border-[#00C2FF]/20 shadow-sm">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.5em] text-[#00C2FF] bg-[#00C2FF]/5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full border border-[#00C2FF]/20 shadow-sm">
               Welcome to Our Company
             </span>
           </motion.div>
@@ -131,7 +131,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[clamp(2.5rem,5vw,4rem)] font-montserrat font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-8"
+            className="text-[clamp(2.2rem,5vw,4rem)] font-montserrat font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-6 sm:mb-8"
           >
             Building the Future <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
@@ -144,11 +144,11 @@ const AboutSection = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="space-y-8"
+            className="space-y-4 sm:space-y-8"
           >
             <div className="relative">
               <div className="absolute -left-6 top-0 bottom-0 w-1.5 bg-linear-to-b from-[#00C2FF] to-[#ffcb0f] rounded-full"></div>
-              <p className="text-gray-600 text-lg lg:text-xl leading-relaxed font-medium pl-2">
+              <p className="text-gray-600 text-sm sm:text-lg lg:text-xl leading-relaxed font-medium pl-2">
                 Founded on a commitment to quality and innovation,{" "}
                 <span className="text-[#00C2FF] font-black italic">
                   Krrish Construction
@@ -159,32 +159,32 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <p className="text-gray-500 text-base lg:text-lg leading-relaxed font-medium opacity-90">
+            <p className="text-gray-500 text-xs sm:text-base lg:text-lg leading-relaxed font-medium opacity-90">
               Our mission is to build structures that blend functionality,
               durability, and aesthetic excellence. We envision a future where
               innovation and sustainability drive every project we undertake.
             </p>
 
-            <div className="pt-6 flex flex-wrap gap-6 items-center">
+            <div className="pt-6 flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 items-center">
               <motion.button
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 40px -10px rgba(0,194,255,0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-linear-to-r from-[#00C2FF] to-[#73C7E7] text-white px-8 py-4 rounded-full font-black text-[10px] uppercase tracking-[0.2em] shadow-xl transition-all duration-300 flex items-center gap-3"
+                className="w-full sm:w-auto bg-linear-to-r from-[#00C2FF] to-[#73C7E7] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-black text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] shadow-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
               >
                 KNOW MORE
-                <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4" />
+                <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-white/20 flex items-center justify-center">
+                  <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4" />
                 </div>
               </motion.button>
 
-              <div className="flex -space-x-4 items-center pl-4">
+              <div className="w-full sm:w-auto flex -space-x-3 sm:-space-x-4 items-center pl-0 sm:pl-4">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-4 border-white bg-gray-200 overflow-hidden shadow-md"
+                    className="w-8 sm:w-10 h-8 sm:h-10 rounded-full border-3 sm:border-4 border-white bg-gray-200 overflow-hidden shadow-md"
                   >
                     <img
                       src={`https://i.pravatar.cc/100?img=${i + 10}`}
@@ -192,12 +192,12 @@ const AboutSection = () => {
                     />
                   </div>
                 ))}
-                <div className="pl-6">
-                  <div className="text-sm font-black text-gray-900 flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5 text-[#00C2FF]" />
+                <div className="pl-3 sm:pl-6">
+                  <div className="text-xs sm:text-sm font-black text-gray-900 flex items-center gap-1">
+                    <Users className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#00C2FF]" />
                     500+
                   </div>
-                  <div className="text-[9px] font-bold text-gray-400 uppercase tracking-widest leading-none">
+                  <div className="text-[7px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-widest leading-none">
                     Global Clients
                   </div>
                 </div>
@@ -225,12 +225,12 @@ const AboutSection = () => {
             {/* Main Image Frame - Slightly smaller to balance */}
             <motion.div
               whileHover={{ y: -5, rotateZ: 0.5 }}
-              className="relative rounded-[3rem] overflow-hidden border-8 border-white shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)]"
+              className="relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden border-4 sm:border-8 border-white shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)]"
             >
               <img
                 src={aboutImg}
                 alt="Krrish Construction Projects"
-                className="w-full h-[580px] object-cover"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[580px] object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-tr from-[#1a1a1a]/30 via-transparent to-transparent"></div>
             </motion.div>
