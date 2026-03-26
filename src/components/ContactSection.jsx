@@ -4,13 +4,12 @@ import emailjs from "@emailjs/browser";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 // =============================================
-// EMAILJS CONFIGURATION
-// Replace these with your actual EmailJS IDs
+// EMAILJS CONFIGURATION - From Environment Variables
 // =============================================
-const EMAILJS_SERVICE_ID = "service_gf1d0qc";
-const EMAILJS_TEMPLATE_ID = "template_65za207";
-const EMAILJS_PUBLIC_KEY = "J-p_0VaO_aCdom3V3";
-const ADMIN_EMAIL = "krrishconstruction95@gmail.com";
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL;
 // =============================================
 
 const ContactSection = () => {
