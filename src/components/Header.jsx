@@ -54,19 +54,19 @@ const Header = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-10">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="group flex items-center gap-3 text-sm font-bold text-white hover:text-[#00C2FF] transition-all uppercase tracking-[0.15em]"
+              className="group flex items-center gap-1 xl:gap-3 text-xs xl:text-sm font-bold text-white hover:text-[#00C2FF] transition-all uppercase tracking-[0.15em] whitespace-nowrap"
             >
-              <item.icon className="w-5 h-5 text-[#00C2FF] transition-transform group-hover:scale-110 shadow-sm" />
+              <item.icon className="w-4 xl:w-5 h-4 xl:h-5 text-[#00C2FF] transition-transform group-hover:scale-110 shadow-sm flex-shrink-0" />
               {item.label}
             </a>
           ))}
-          <div className="h-6 w-px bg-white/20 mx-4"></div>
+          <div className="h-6 w-px bg-white/20 mx-2 xl:mx-4"></div>
           <button className="text-white hover:text-[#00C2FF] transition-all p-2 hover:bg-white/10 rounded-full">
             <Search className="w-6 h-6" />
           </button>

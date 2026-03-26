@@ -2,3 +2,73 @@
 .selection-blue::selection {
   background-color: rgba(0, 194, 255, 0.3);
 }
+
+/* Nest Hub Max (1280x800) - Optimize navbar spacing */
+@media (width: 1280px) and (height: 800px) {
+  header nav {
+    gap: 1.5rem !important;
+  }
+
+  header nav a {
+    font-size: 0.65rem !important;
+    gap: 0.35rem !important;
+    white-space: nowrap !important;
+  }
+
+  header nav a .lucide-icon {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  header .h-6 {
+    height: 18px !important;
+  }
+
+  header .text-xl {
+    font-size: 0.95rem !important;
+  }
+
+  header .text-xs {
+    font-size: 0.6rem !important;
+  }
+}
+
+/* Nest Hub (1024x600) - Stack navbar efficiently */
+@media (width: 1024px) and (height: 600px) {
+  header nav {
+    gap: 2rem !important;
+  }
+
+  header nav a {
+    font-size: 0.7rem !important;
+    gap: 0.4rem !important;
+  }
+
+  header nav a .lucide-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  header .text-xl {
+    font-size: 1rem !important;
+  }
+
+  header .text-xs {
+    font-size: 0.65rem !important;
+  }
+
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  header .h-6 {
+    height: 20px !important;
+  }
+}
