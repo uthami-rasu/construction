@@ -74,21 +74,21 @@ const Hero = () => {
       </Swiper>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 sm:px-6 text-center pointer-events-none pb-16 sm:pb-20 mt-8 sm:mt-10">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 sm:px-6 text-center pointer-events-none pb-16 sm:pb-20 mt-8 sm:mt-10 hero-content-container">
         <div className="w-full max-w-6xl pointer-events-auto">
           {/* Subheading */}
-          <p className="text-[#ffcb0f] text-lg sm:text-base md:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-4 sm:mb-6 mt-40 sm:mt-0 animate-[fadeInDown_1s_ease-out]">
+          <p className="text-[#ffcb0f] text-lg sm:text-base md:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-4 sm:mb-6 mt-40 sm:mt-0 animate-[fadeInDown_1s_ease-out] hero-subheading">
             Turning Ideas into Landmarks
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-black text-white mb-10 sm:mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out]">
+          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-black text-white mb-10 sm:mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out] hero-heading">
             CONSTRUCTION <br />
             <span className="text-[#00C2FF]">SERVICES</span>
           </h1>
 
           {/* Bold Description */}
-          <p className="text-lg sm:text-lg md:text-xl text-white mb-6 sm:mb-14 max-w-4xl mx-auto leading-relaxed font-bold opacity-95 animate-[fadeIn_1.5s_ease-out] drop-shadow-xl px-2 sm:px-4">
+          <p className="text-lg sm:text-lg md:text-xl text-white mb-6 sm:mb-14 max-w-4xl mx-auto leading-relaxed font-bold opacity-95 animate-[fadeIn_1.5s_ease-out] drop-shadow-xl px-2 sm:px-4 hero-description">
             We don't just build structures—we create spaces that inspire,
             endure, and bring your vision to life. Whether you need a new home,
             a commercial space, or a large-scale project, we ensure top-tier
@@ -96,7 +96,7 @@ const Hero = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mt-36 sm:mt-0 animate-[fadeInUp_1.8s_ease-out]">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mt-36 sm:mt-0 animate-[fadeInUp_1.8s_ease-out] hero-buttons-container">
             <button className="group bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
               KNOW MORE
               <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
@@ -129,6 +129,38 @@ const Hero = () => {
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+
+        /* Specific fix for Nest Hub (1024x600) */
+        @media (width: 1024px) and (height: 600px) {
+          .hero-content-container {
+            padding-bottom: 2rem !important;
+            margin-top: 3rem !important;
+          }
+          .hero-subheading {
+            font-size: 0.8rem !important;
+            margin-bottom: 0.5rem !important;
+            letter-spacing: 0.2em !important;
+          }
+          .hero-heading {
+            font-size: 3rem !important;
+            margin-bottom: 1.5rem !important;
+            line-height: 1.1 !important;
+          }
+          .hero-description {
+            font-size: 0.9rem !important;
+            margin-bottom: 2rem !important;
+            max-width: 80% !important;
+            line-height: 1.4 !important;
+          }
+          .hero-buttons-container {
+            margin-top: 1rem !important;
+            gap: 1rem !important;
+          }
+          .hero-buttons-container button {
+            padding: 0.8rem 1.5rem !important;
+            font-size: 0.7rem !important;
+          }
         }
       `}</style>
     </section>
