@@ -28,12 +28,12 @@ const reviews = [
 
 const Testimonials = () => {
   return (
-    <section className="py-28 bg-linear-to-br from-gray-900 via-[#1a1a2e] to-gray-950 relative overflow-hidden font-poppins">
+    <section className="py-28 bg-linear-to-b from-white via-[#f0fafe] to-white relative overflow-hidden font-poppins">
       {/* Subtle blueprint background */}
       <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px)`,
           backgroundSize: "50px 50px",
         }}
       />
@@ -50,8 +50,8 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-6"
           >
-            <div className="w-8 h-px bg-[#ffcb0f]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">
+            <div className="w-8 h-px bg-[#00C2FF]" />
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">
               Testimonials
             </span>
             <div className="w-8 h-px bg-[#ffcb0f]" />
@@ -61,17 +61,19 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[clamp(2rem,5vw,3.5rem)] font-montserrat font-black text-white uppercase tracking-tight leading-none"
+            className="text-[clamp(2rem,5vw,3.5rem)] font-[montserrat] font-black text-gray-900 uppercase tracking-tight leading-none"
           >
             Customer{" "}
             <span className="relative inline-block">
-              Reviews
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#73C7E7]">
+                Reviews
+              </span>
               <motion.span
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="absolute -bottom-1 left-0 right-0 h-1.5 bg-[#ffcb0f] origin-left rounded-full"
+                className="absolute -bottom-1 left-0 right-0 h-1.5 bg-linear-to-r from-[#00C2FF] to-[#73C7E7] origin-left rounded-full"
               />
             </span>
           </motion.h2>
@@ -80,7 +82,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/40 font-medium uppercase tracking-[0.3em] mt-5 text-xs"
+            className="text-gray-400 font-medium uppercase tracking-[0.3em] mt-5 text-xs"
           >
             What Our Clients Say
           </motion.p>
@@ -102,20 +104,20 @@ const Testimonials = () => {
                 className={`relative w-full p-8 mb-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl
                   ${
                     review.isFeatured
-                      ? "bg-[#ffcb0f] shadow-lg shadow-[#ffcb0f]/20"
-                      : "bg-white/5 shadow-md border border-white/10 backdrop-blur-sm"
+                      ? "bg-linear-to-br from-[#00C2FF] to-[#73C7E7] shadow-xl shadow-[#00C2FF]/20"
+                      : "bg-white shadow-md border border-gray-100"
                   }`}
               >
                 {/* Big quote mark */}
                 <span
                   className={`block font-serif text-7xl leading-none mb-3 select-none
-                    ${review.isFeatured ? "text-white/40" : "text-white/20"}`}
+                    ${review.isFeatured ? "text-white/30" : "text-gray-200"}`}
                 >
                   "
                 </span>
                 <p
                   className={`text-base leading-relaxed font-medium italic -mt-6
-                    ${review.isFeatured ? "text-white" : "text-white/60"}`}
+                    ${review.isFeatured ? "text-white" : "text-gray-500"}`}
                 >
                   {review.text}
                 </p>
@@ -123,7 +125,7 @@ const Testimonials = () => {
                 {/* Bubble tail */}
                 <div
                   className={`absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rotate-45
-                    ${review.isFeatured ? "bg-[#ffcb0f]" : "bg-white/10 border-r border-b border-white/10"}`}
+                    ${review.isFeatured ? "bg-[#73C7E7]" : "bg-white border-r border-b border-gray-100"}`}
                 />
               </div>
 
@@ -136,10 +138,10 @@ const Testimonials = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h4 className="text-xs font-black text-white tracking-widest uppercase">
+                <h4 className="text-xs font-black text-gray-900 tracking-widest uppercase">
                   {review.name}
                 </h4>
-                <p className="text-[10px] font-semibold text-white/40 uppercase tracking-widest mt-1">
+                <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mt-1">
                   {review.role}
                 </p>
               </div>

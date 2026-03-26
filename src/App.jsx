@@ -9,6 +9,8 @@ import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ProjectGallery from "./components/ProjectGallery";
 import Testimonials from "./components/Testimonials";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -47,12 +49,9 @@ function App() {
         <Services />
         <ProjectGallery />
         <Testimonials />
-
-        {/* Placeholder for future sections */}
-        <section className="h-64 bg-gray-50 flex items-center justify-center text-gray-400 font-medium italic">
-          More sections coming soon...
-        </section>
+        <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }
