@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
@@ -7,35 +7,55 @@ import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 // EMAILJS CONFIGURATION
 // Replace these with your actual EmailJS IDs
 // =============================================
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "service_gf1d0qc";
+const EMAILJS_TEMPLATE_ID = "template_65za207";
+const EMAILJS_PUBLIC_KEY = "J-p_0VaO_aCdom3V3";
+const ADMIN_EMAIL = "krrishconstruction95@gmail.com";
 // =============================================
 
 const ContactSection = () => {
   const form = useRef();
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("sending");
 
+    const formData = new FormData(form.current);
+    const userEmail = formData.get("user_email");
+    const userName = formData.get("user_name");
+    const userMessage = formData.get("message");
+
+    // Email template params - MUST match your EmailJS template variables
+    const templateParams = {
+      user_name: userName,
+      user_email: userEmail,
+      message: userMessage,
+    };
+
+    // Send email to user
     emailjs
-      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form.current, {
-        publicKey: EMAILJS_PUBLIC_KEY,
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setStatus("success");
+        form.current.reset();
+        setTimeout(() => setStatus("idle"), 5000);
       })
-      .then(
-        () => {
-          setStatus("success");
-          form.current.reset();
-          setTimeout(() => setStatus("idle"), 5000);
-        },
-        (error) => {
-          console.error("EmailJS error:", error);
-          setStatus("error");
-          setTimeout(() => setStatus("idle"), 5000);
-        },
-      );
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      });
   };
 
   return (
