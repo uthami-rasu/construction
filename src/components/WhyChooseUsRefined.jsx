@@ -69,7 +69,7 @@ const WhyChooseUsRefined = () => {
         <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_450px_1fr] gap-0 items-center relative">
           
           {/* THE ARCH - Narrower width and raised even further */}
-          <div className="absolute -top-[220px] left-1/2 -translate-x-1/2 w-[100%] h-[220px] pointer-events-none z-0 hidden lg:block overflow-visible">
+          <div className="absolute -top-[220px] left-1/2 -translate-x-1/2 w-[100%] h-[200px] pointer-events-none z-0 hidden lg:block overflow-visible">
             <svg 
               viewBox="0 0 1000 300" 
               fill="none" 
@@ -109,34 +109,35 @@ const WhyChooseUsRefined = () => {
           </div>
 
           {/* Center Column - Taller & Wider Featured Image Card */}
-          <div className="order-1 lg:order-2 relative py-4 z-20">
+          <div className="order-1 lg:order-2 relative py-2 z-20">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative aspect-[3/4.2] w-full max-w-[450px] mx-auto overflow-hidden shadow-[0_60px_120px_rgba(0,0,0,0.12)] border-[8px] border-white"
+              className="relative aspect-[3/4] w-full max-w-[450px] mx-auto overflow-hidden shadow-[0_60px_120px_rgba(0,0,0,0.12)] border-[8px] border-white"
               style={{ 
                 // CONCAVE TOP AND ROUNDED BOTTOM
                 clipPath: "path('M 0 60 Q 225 0 450 60 L 450 540 Q 450 600 390 600 L 60 600 Q 0 600 0 540 Z')",
+                background: "linear-gradient(to bottom, #ffcb0f15, #ffcb0f30)"
               }}
             >
-              <div className="absolute inset-0 bg-linear-to-b from-[#ffcb0f]/10 via-transparent to-[#ffcb0f]/30 z-10 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-linear-to-b from-[#ffcb0f]/30 via-transparent to-[#ffcb0f]/40 z-10 pointer-events-none"></div>
               <img 
                 src={houseImg} 
                 alt="Construction Excellence" 
-                className="w-full h-full object-cover object-center transition-transform duration-1000 hover:scale-110"
+                className="w-full h-full object-contain object-bottom transition-transform duration-1000 hover:scale-110"
               />
             </motion.div>
 
             {/* Bottom Accent Circle Shape - Adjusted to reach the edge of the image */}
-            <motion.div 
+            {/* <motion.div 
               initial={{ height: 0 }}
               whileInView={{ height: "120px" }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 1.2 }}
               className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[98%] border-2 border-t-0 border-[#ffcb0f]/50 rounded-b-[4rem] pointer-events-none z-0"
-            ></motion.div>
+            ></motion.div> */}
           </div>
 
           {/* Right Column - Features */}
