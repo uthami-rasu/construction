@@ -1,10 +1,20 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { TrendingUp, Users } from "lucide-react";
 import gallery1 from "../assets/images/abt-gallery1.jpeg";
 import gallery2 from "../assets/images/abt-gallery-2.jpeg";
 
 const AboutGallery = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Parallax offsets for the two columns
+  const yLeft = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const yRight = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,7 +35,7 @@ const AboutGallery = () => {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden font-poppins">
+    <section ref={containerRef} className="py-24 bg-white overflow-hidden font-poppins">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -37,8 +47,11 @@ const AboutGallery = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {/* Column 1 - Starts Lower */}
-            <div className="flex-1 flex flex-col gap-6 lg:gap-10 md:mt-32">
+            {/* Column 1 - Starts Lower with Upward Parallax */}
+            <motion.div 
+              style={{ y: yLeft }}
+              className="flex-1 flex flex-col gap-6 lg:gap-10 md:mt-32"
+            >
               {/* 1. Gallery Image (Workers with Blueprint) */}
               <motion.div 
                 variants={itemVariants}
@@ -72,10 +85,13 @@ const AboutGallery = () => {
                   ))}
                 </div>
               </motion.div>
-            </div>
+            </motion.div>
 
-            {/* Column 2 - Starts Higher */}
-            <div className="flex-1 flex flex-col gap-6 lg:gap-10">
+            {/* Column 2 - Starts Higher with Downward Parallax */}
+            <motion.div 
+              style={{ y: yRight }}
+              className="flex-1 flex flex-col gap-6 lg:gap-10"
+            >
               {/* 1. Stats Card (Top Right) */}
               <motion.div 
                 variants={itemVariants}
@@ -141,7 +157,7 @@ const AboutGallery = () => {
                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" 
                 />
               </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Side: Text Content */}
