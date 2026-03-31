@@ -170,7 +170,7 @@ const AboutGallery = () => {
           >
             <div className="mb-8">
               <h4 className="text-sm font-bold tracking-[0.3em] uppercase mb-4">
-                CONSTRUCT YOUR <span className="text-[#ffcb0f]">DREAM HOME</span>
+                CONSTRUCT YOUR <span className="text-[#00C2FF] font-black">DREAM HOME</span>
               </h4>
               <h2 className="text-5xl md:text-6xl font-black text-[#1a1a1a] mb-8 tracking-tighter uppercase">
                 ABOUT US
@@ -185,7 +185,7 @@ const AboutGallery = () => {
               </div>
             </div>
 
-            <button className="group relative bg-[#00C2FF] text-white px-12 py-5 font-black uppercase tracking-widest text-sm rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-sm rounded-br-sm transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,194,255,0.3)] overflow-hidden">
+            <button className="group relative bg-[#ffcb0f] text-black px-12 py-5 font-black uppercase tracking-widest text-sm rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-sm rounded-br-sm transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,203,15,0.3)] overflow-hidden">
               <span className="relative z-10">CONTACT US</span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
             </button>

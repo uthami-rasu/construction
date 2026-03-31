@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useInView, useScroll } from "framer-motion";
-import { Zap, History, Heart, Users } from "lucide-react";
+import { Zap, History, Heart, Users, Construction, Drill, Ruler, Building2, HardHat, Hammer } from "lucide-react";
 
 const StatNumber = ({ value, suffix = "+" }) => {
   const ref = useRef(null);
@@ -32,31 +32,51 @@ const stats = [
     value: 150, 
     label: "Projects Completed", 
     icon: Zap, 
-    iconColor: "#ffcb0f", // Gold
-    glowColor: "rgba(255,203,15,0.6)"
+    iconColor: "#ffcb0f", 
+    glowColor: "rgba(255,203,15,0.8)"
   },
   { 
     value: 10, 
     label: "Years Experience", 
     icon: History, 
-    iconColor: "#10b981", // Emerald
-    glowColor: "rgba(16,185,129,0.5)"
+    iconColor: "#ffffff",
+    glowColor: "rgba(255,255,255,0.6)"
   },
   { 
     value: 100, 
     label: "Happy Clients", 
     icon: Heart, 
-    iconColor: "#f43f5e", // Rose/Coral
-    glowColor: "rgba(244,63,94,0.5)"
+    iconColor: "#ffcb0f",
+    glowColor: "rgba(255,203,15,0.8)"
   },
   { 
     value: 50, 
     label: "Team Members", 
     icon: Users, 
-    iconColor: "#38bdf8", // Sky Blue
-    glowColor: "rgba(56,189,248,0.5)"
+    iconColor: "#ffffff",
+    glowColor: "rgba(255,255,255,0.6)"
   },
 ];
+
+const FloatingIcon = ({ Icon, initialX, initialY, delay }) => (
+  <motion.div
+    initial={{ x: initialX, y: initialY, opacity: 0 }}
+    animate={{ 
+      y: [initialY, initialY - 40, initialY],
+      opacity: [0.05, 0.15, 0.05],
+      rotate: [0, 15, -15, 0]
+    }}
+    transition={{ 
+      duration: 10, 
+      delay, 
+      repeat: Infinity, 
+      ease: "easeInOut" 
+    }}
+    className="absolute pointer-events-none text-white/20"
+  >
+    <Icon size={140} strokeWidth={0.5} />
+  </motion.div>
+);
 
 const AboutStats = () => {
   const containerRef = useRef(null);
@@ -69,6 +89,25 @@ const AboutStats = () => {
 
   return (
     <section ref={containerRef} className="py-32 bg-linear-to-br from-[#00C2FF] via-[#00B4FF] to-[#008AE6] font-poppins relative overflow-hidden">
+      {/* Grid Pattern Background */}
+      <div 
+        className="absolute inset-0 opacity-10 pointer-events-none z-0"
+        style={{ 
+          backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
+          backgroundSize: '40px 40px' 
+        }}
+      />
+
+      {/* Background Floating Elements */}
+      <div className="absolute inset-0 z-0">
+        <FloatingIcon Icon={Construction} initialX="5%" initialY="10%" delay={0} />
+        <FloatingIcon Icon={Drill} initialX="85%" initialY="60%" delay={1.5} />
+        <FloatingIcon Icon={Ruler} initialX="15%" initialY="70%" delay={3} />
+        <FloatingIcon Icon={Building2} initialX="75%" initialY="5%" delay={4.5} />
+        <FloatingIcon Icon={HardHat} initialX="40%" initialY="85%" delay={2} />
+        <FloatingIcon Icon={Hammer} initialX="10%" initialY="40%" delay={6} />
+      </div>
+
       {/* Radiant Background Effects */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div 
@@ -81,11 +120,10 @@ const AboutStats = () => {
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-[-10%] right-[-10%] w-[700px] h-[700px] bg-sky-300/20 rounded-full blur-[150px]"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.1)_100%)]"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-stretch">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -94,12 +132,8 @@ const AboutStats = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -10, scale: 1.02 }}
-              style={{ 
-                // Subtle Architectural Stagger (reduced from 60px to 48px)
-                marginTop: index % 2 === 0 ? "0" : "48px",
-                y: yOffset 
-              }}
-              className="relative group bg-white/10 backdrop-blur-3xl border border-white/20 p-10 pb-14 rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.1)] transition-all duration-700 overflow-hidden text-left"
+              style={{ y: yOffset }}
+              className="relative group bg-white/10 backdrop-blur-3xl border border-white/20 p-10 pb-14 rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.1)] transition-all duration-700 overflow-hidden text-left h-full"
             >
               {/* Elegant Glow-Orb behind icon */}
               <div 
@@ -107,14 +141,17 @@ const AboutStats = () => {
                 style={{ background: stat.iconColor }}
               />
 
-              {/* Glowing Icon Accent */}
+              {/* Glowing Icon Accent - Stroke & Fill Style */}
               <div 
-                className="absolute top-8 right-8 z-0"
-                style={{ filter: `drop-shadow(0 0 10px ${stat.glowColor})` }}
+                className="absolute top-8 right-8 z-0 transition-transform duration-500 group-hover:scale-110"
+                style={{ filter: `drop-shadow(0 0 15px ${stat.glowColor})` }}
               >
                 <stat.icon 
                   className="w-10 h-10" 
-                  style={{ color: stat.iconColor }} 
+                  style={{ 
+                    color: stat.iconColor,
+                    strokeWidth: 2.5
+                  }} 
                 />
               </div>
 

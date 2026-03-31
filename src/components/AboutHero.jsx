@@ -80,7 +80,7 @@ const AboutHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-          <button className="group relative bg-[#00C2FF] text-white px-8 sm:px-10 py-4 sm:py-5 font-black uppercase tracking-widest text-xs sm:text-sm transition-all hover:bg-[#00A3D9] hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl rounded-full">
+          <button className="group relative bg-[#ffcb0f] text-black px-8 sm:px-10 py-4 sm:py-5 font-black uppercase tracking-widest text-xs sm:text-sm transition-all hover:bg-[#ffdb4d] hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl rounded-full">
             <span className="relative z-10">OUR SERVICES</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>

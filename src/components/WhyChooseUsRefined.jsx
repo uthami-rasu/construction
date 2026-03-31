@@ -32,7 +32,7 @@ const WhyChooseUsRefined = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header Section from Photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-24 lg:mb-32 px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-32 lg:mb-48 px-[10%]">
           <div>
             <motion.h4 
               initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ const WhyChooseUsRefined = () => {
               viewport={{ once: true }}
               className="text-[14px] font-black tracking-[0.2em] text-gray-400 mb-4 uppercase"
             >
-              WE ARE PROFESSIONAL & <span className="text-[#ffcb0f]">CERTIFIED BUILDERS</span>
+              WE ARE PROFESSIONAL & <span className="text-[#00C2FF]">CERTIFIED BUILDERS</span>
             </motion.h4>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
