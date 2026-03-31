@@ -11,9 +11,13 @@ const AboutGallery = () => {
     offset: ["start end", "end start"],
   });
 
-  // Parallax offsets for the two columns
+  // Parallax offsets for the two columns - reduced/disabled on mobile
   const yLeft = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const yRight = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  
+  // Create mobile-safe versions (effectively 0 on mobile)
+  const yLeftSafe = useTransform(scrollYProgress, [0, 1], [0, 0]);
+  const yRightSafe = useTransform(scrollYProgress, [0, 1], [0, 0]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,8 +53,8 @@ const AboutGallery = () => {
           >
             {/* Column 1 - Starts Lower with Upward Parallax */}
             <motion.div 
-              style={{ y: yLeft }}
-              className="flex-1 flex flex-col gap-6 lg:gap-10 md:mt-32"
+              className="flex-1 flex flex-col gap-6 lg:gap-10 lg:mt-32"
+              style={{ y: typeof window !== 'undefined' && window.innerWidth > 1024 ? yLeft : 0 }}
             >
               {/* 1. Gallery Image (Workers with Blueprint) */}
               <motion.div 
@@ -89,8 +93,9 @@ const AboutGallery = () => {
 
             {/* Column 2 - Starts Higher with Downward Parallax */}
             <motion.div 
-              style={{ y: yRight }}
-              className="flex-1 flex flex-col gap-6 lg:gap-10"
+              className="flex-1 flex flex-col gap-6 lg:gap-10 sm:parallax-y-right"
+              // Only apply transform on larger screens (logic moved to class or inline style)
+              style={{ y: typeof window !== 'undefined' && window.innerWidth > 1024 ? yRight : 0 }}
             >
               {/* 1. Stats Card (Top Right) */}
               <motion.div 
@@ -185,8 +190,8 @@ const AboutGallery = () => {
               </div>
             </div>
 
-            <button className="group relative bg-[#ffcb0f] text-black px-12 py-5 font-black uppercase tracking-widest text-sm rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-sm rounded-br-sm transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,203,15,0.3)] overflow-hidden">
-              <span className="relative z-10">CONTACT US</span>
+            <button className="group relative bg-[#ffcb0f] text-black px-12 py-5 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,203,15,0.3)] skew-x-[-15deg] rounded-sm overflow-hidden">
+              <span className="relative z-10 skew-x-[15deg] block">CONTACT US</span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
             </button>
           </motion.div>

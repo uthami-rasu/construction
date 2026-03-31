@@ -25,7 +25,7 @@ const FeatureItem = ({ title, description }) => (
 
 const WhyChooseUsRefined = () => {
   return (
-    <section className="py-24 bg-white font-poppins relative overflow-visible">
+    <section className="py-24 bg-white font-poppins relative overflow-hidden">
       {/* Background Soft Glow to match photo */}
       <div className="absolute top-[30%] left-[85%] w-[500px] h-[500px] bg-[#ffcb0f]/5 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-[20%] right-[85%] w-[500px] h-[500px] bg-[#ffcb0f]/5 rounded-full blur-[100px] pointer-events-none"></div>

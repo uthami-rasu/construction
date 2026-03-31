@@ -19,17 +19,25 @@ const AboutHero = () => {
       ref={containerRef}
       className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-black font-poppins"
     >
-      {/* Background Image with Parallax */}
+      {/* Background Image with Parallax and Zoom */}
       <motion.div 
         style={{ y: bgY }}
         className="absolute inset-0 z-0"
       >
-        <img
+        <motion.img
           src={abtBg}
           alt="About Krrish Construction"
-          className="h-full w-full object-cover opacity-60 scale-110"
+          animate={typeof window !== 'undefined' && window.innerWidth > 1024 ? {
+            scale: [1, 1.15, 1],
+          } : {}}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="h-full w-full object-cover opacity-75"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60"></div>
       </motion.div>
 
       {/* Content with Parallax */}
@@ -42,12 +50,12 @@ const AboutHero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="inline-flex items-center bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/10 rounded-full p-1 mb-8"
+          className="inline-flex items-center bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/10 rounded-full p-1 mb-6 sm:mb-8 max-w-[90vw]"
         >
-          <span className="bg-[#ffcb0f] text-black text-[10px] sm:text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+          <span className="bg-[#ffcb0f] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
             2026
           </span>
-          <span className="text-white text-[10px] sm:text-xs font-bold px-4 py-1.5 uppercase tracking-[0.2em]">
+          <span className="text-white text-[9px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 uppercase tracking-[0.1em] sm:tracking-[0.2em] truncate">
             KRRISH CONSTRUCTION
           </span>
         </motion.div>
@@ -57,10 +65,10 @@ const AboutHero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="max-w-5xl mx-auto text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-8 uppercase tracking-tighter"
+          className="max-w-5xl mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 sm:mb-8 uppercase tracking-tighter"
         >
-          Learn More About Krrish Construction<br />
-          <span className="text-[#00C2FF]">Let's Bring Your Vision to Life</span>
+          Complete Construction Solutions <br />
+          for Every Need
         </motion.h1>
 
         {/* Subtext */}
@@ -68,10 +76,10 @@ const AboutHero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
-          className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white/80 mb-12 leading-relaxed"
+          className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white/90 mb-12 leading-relaxed font-medium"
         >
-          Krrish Construction combines smart design with reliable building. 
-          We handle everything from planning to completion, ensuring quality at every step.
+          We provide complete construction services, from planning to final delivery, 
+          with a focus on quality, efficiency, and timely execution.
         </motion.p>
 
         {/* Button */}
@@ -80,9 +88,8 @@ const AboutHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-          <button className="group relative bg-[#ffcb0f] text-black px-8 sm:px-10 py-4 sm:py-5 font-black uppercase tracking-widest text-xs sm:text-sm transition-all hover:bg-[#ffdb4d] hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl rounded-full">
-            <span className="relative z-10">OUR SERVICES</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <button className="group relative bg-[#ffcb0f] hover:bg-[#ffdb4d] text-black px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-sm md:text-base transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl skew-x-[-15deg] rounded-sm overflow-hidden">
+            <span className="relative z-10 skew-x-[15deg]">CONTACT US</span>
           </button>
         </motion.div>
       </motion.div>

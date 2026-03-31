@@ -120,9 +120,11 @@ const AboutFeatures = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <button className="group relative bg-[#00C2FF] text-white px-10 py-4.5 font-black uppercase tracking-widest text-xs rounded-full transition-all hover:bg-[#00A3D9] hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(0,194,255,0.3)] flex items-center gap-3 mx-auto">
-            <span>GET A QUOTE</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <button className="group relative bg-[#00C2FF] text-white px-10 py-4.5 font-black uppercase tracking-widest text-xs transition-all hover:bg-[#00A3D9] hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(0,194,255,0.3)] flex items-center gap-3 mx-auto skew-x-[-15deg] rounded-sm overflow-hidden">
+            <div className="flex items-center gap-3 skew-x-[15deg]">
+              <span>GET A QUOTE</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </div>
           </button>
         </motion.div>
       </div>
