@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import abtBg from "../assets/images/abt-rename.jpeg";
+import abtBg from "../assets/images/service.jpeg";
 
-const AboutHero = () => {
+
+const ServicesHero = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -26,7 +26,7 @@ const AboutHero = () => {
       >
         <motion.img
           src={abtBg}
-          alt="About Krrish Construction"
+          alt="Krrish Construction Services"
           animate={typeof window !== 'undefined' && window.innerWidth > 1024 ? {
             scale: [1, 1.15, 1],
           } : {}}
@@ -35,9 +35,9 @@ const AboutHero = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="h-full w-full object-cover opacity-75"
+          className="h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
       </motion.div>
 
       {/* Content with Parallax */}
@@ -52,7 +52,7 @@ const AboutHero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="inline-flex items-center bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/10 rounded-full p-1 mb-6 sm:mb-8 max-w-[90vw]"
         >
-          <span className="bg-[#ffcb0f] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
+          <span className="bg-[#00C2FF] text-white text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
             2026
           </span>
           <span className="text-white text-[9px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 uppercase tracking-[0.1em] sm:tracking-[0.2em] truncate">
@@ -67,8 +67,8 @@ const AboutHero = () => {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           className="max-w-5xl mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 sm:mb-8 uppercase tracking-tighter"
         >
-          Complete Construction Solutions <br />
-          for Every Need
+          Learn More About Krrish Construction<br />
+          Let's Bring Your Vision to Life
         </motion.h1>
 
         {/* Subtext */}
@@ -78,8 +78,8 @@ const AboutHero = () => {
           transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
           className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white/90 mb-12 leading-relaxed font-medium"
         >
-          We provide complete construction services, from planning to final delivery, 
-          with a focus on quality, efficiency, and timely execution.
+          Krrish Construction combines smart design with reliable building. 
+          We handle everything from planning to completion, ensuring quality at every step.
         </motion.p>
 
         {/* Button */}
@@ -88,8 +88,8 @@ const AboutHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-          <button className="group relative bg-[#ffcb0f] hover:bg-[#ffdb4d] text-black px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-sm md:text-base transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl skew-x-[-15deg] rounded-sm overflow-hidden">
-            <span className="relative z-10 skew-x-[15deg]">CONTACT US</span>
+          <button className="group relative bg-[#00C2FF] hover:bg-[#00A3D9] text-white px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-sm md:text-base transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl skew-x-[-15deg] rounded-sm overflow-hidden">
+            <span className="relative z-10 skew-x-[15deg]">OUR SERVICES</span>
           </button>
         </motion.div>
       </motion.div>
@@ -97,4 +97,4 @@ const AboutHero = () => {
   );
 };
 
-export default AboutHero;
+export default ServicesHero;

@@ -49,7 +49,7 @@ const Header = () => {
   const navItems = [
     { label: "Home", icon: Home, href: "#home", path: "/" },
     { label: "About Us", icon: Info, href: "#about-us", path: "/about" },
-    { label: "Services", icon: Hammer, href: "#services" },
+    { label: "Services", icon: Hammer, href: "#services", path: "/services" },
     { label: "Portfolio", icon: Briefcase, href: "#portfolio" },
     { label: "Contact Us", icon: Mail, href: "#contact-us" },
   ];

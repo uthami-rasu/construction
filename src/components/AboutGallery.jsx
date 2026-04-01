@@ -1,10 +1,24 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { TrendingUp, Users } from "lucide-react";
 import gallery1 from "../assets/images/abt-gallery1.jpeg";
 import gallery2 from "../assets/images/abt-gallery-2.jpeg";
 
 const AboutGallery = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Parallax offsets for the two columns - reduced/disabled on mobile
+  const yLeft = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const yRight = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  
+  // Create mobile-safe versions (effectively 0 on mobile)
+  const yLeftSafe = useTransform(scrollYProgress, [0, 1], [0, 0]);
+  const yRightSafe = useTransform(scrollYProgress, [0, 1], [0, 0]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,7 +39,7 @@ const AboutGallery = () => {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden font-poppins">
+    <section ref={containerRef} className="py-24 bg-white overflow-hidden font-poppins">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -37,8 +51,11 @@ const AboutGallery = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {/* Column 1 - Starts Lower */}
-            <div className="flex-1 flex flex-col gap-6 lg:gap-10 md:mt-32">
+            {/* Column 1 - Starts Lower with Upward Parallax */}
+            <motion.div 
+              className="flex-1 flex flex-col gap-6 lg:gap-10 lg:mt-32"
+              style={{ y: typeof window !== 'undefined' && window.innerWidth > 1024 ? yLeft : 0 }}
+            >
               {/* 1. Gallery Image (Workers with Blueprint) */}
               <motion.div 
                 variants={itemVariants}
@@ -72,10 +89,14 @@ const AboutGallery = () => {
                   ))}
                 </div>
               </motion.div>
-            </div>
+            </motion.div>
 
-            {/* Column 2 - Starts Higher */}
-            <div className="flex-1 flex flex-col gap-6 lg:gap-10">
+            {/* Column 2 - Starts Higher with Downward Parallax */}
+            <motion.div 
+              className="flex-1 flex flex-col gap-6 lg:gap-10 sm:parallax-y-right"
+              // Only apply transform on larger screens (logic moved to class or inline style)
+              style={{ y: typeof window !== 'undefined' && window.innerWidth > 1024 ? yRight : 0 }}
+            >
               {/* 1. Stats Card (Top Right) */}
               <motion.div 
                 variants={itemVariants}
@@ -141,7 +162,7 @@ const AboutGallery = () => {
                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" 
                 />
               </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Side: Text Content */}
@@ -154,7 +175,7 @@ const AboutGallery = () => {
           >
             <div className="mb-8">
               <h4 className="text-sm font-bold tracking-[0.3em] uppercase mb-4">
-                CONSTRUCT YOUR <span className="text-[#ffcb0f]">DREAM HOME</span>
+                CONSTRUCT YOUR <span className="text-[#00C2FF] font-black">DREAM HOME</span>
               </h4>
               <h2 className="text-5xl md:text-6xl font-black text-[#1a1a1a] mb-8 tracking-tighter uppercase">
                 ABOUT US
@@ -169,8 +190,8 @@ const AboutGallery = () => {
               </div>
             </div>
 
-            <button className="group relative bg-[#00C2FF] text-white px-12 py-5 font-black uppercase tracking-widest text-sm rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-sm rounded-br-sm transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,194,255,0.3)] overflow-hidden">
-              <span className="relative z-10">CONTACT US</span>
+            <button className="group relative bg-[#ffcb0f] text-black px-12 py-5 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,203,15,0.3)] skew-x-[-15deg] rounded-sm overflow-hidden">
+              <span className="relative z-10 skew-x-[15deg] block">CONTACT US</span>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
             </button>
           </motion.div>

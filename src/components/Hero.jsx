@@ -101,7 +101,7 @@ const Hero = () => {
               KNOW MORE
               <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
             </button>
-            <button className="group bg-transparent border-2 border-white/60 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-white/10 hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
+            <button className="group bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
               VIEW PROJECT
               <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
             </button>
