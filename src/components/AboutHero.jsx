@@ -15,21 +15,22 @@ const AboutHero = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-black font-poppins"
     >
       {/* Background Image with Parallax and Zoom */}
-      <motion.div 
-        style={{ y: bgY }}
-        className="absolute inset-0 z-0"
-      >
+      <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
         <motion.img
           src={abtBg}
           alt="About Krrish Construction"
-          animate={typeof window !== 'undefined' && window.innerWidth > 1024 ? {
-            scale: [1, 1.15, 1],
-          } : {}}
+          animate={
+            typeof window !== "undefined" && window.innerWidth > 1024
+              ? {
+                  scale: [1, 1.15, 1],
+                }
+              : {}
+          }
           transition={{
             duration: 20,
             repeat: Infinity,
@@ -41,18 +42,18 @@ const AboutHero = () => {
       </motion.div>
 
       {/* Content with Parallax */}
-      <motion.div 
+      <motion.div
         style={{ y: textY, opacity: textOpacity }}
         className="container relative z-10 mx-auto px-6 text-center mt-20"
       >
         {/* Top Badge */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="inline-flex items-center bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/10 rounded-full p-1 mb-6 sm:mb-8 max-w-[90vw]"
         >
-          <span className="bg-[#ffcb0f] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
+          <span className="bg-[#00C2FF] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
             2026
           </span>
           <span className="text-white text-[9px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 uppercase tracking-[0.1em] sm:tracking-[0.2em] truncate">
@@ -61,7 +62,7 @@ const AboutHero = () => {
         </motion.div>
 
         {/* Heading */}
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
@@ -72,24 +73,26 @@ const AboutHero = () => {
         </motion.h1>
 
         {/* Subtext */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
           className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white/90 mb-12 leading-relaxed font-medium"
         >
-          We provide complete construction services, from planning to final delivery, 
-          with a focus on quality, efficiency, and timely execution.
+          We provide complete construction services, from planning to final
+          delivery, with a focus on quality, efficiency, and timely execution.
         </motion.p>
 
         {/* Button */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-          <button className="group relative bg-[#ffcb0f] hover:bg-[#ffdb4d] text-black px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-sm md:text-base transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl skew-x-[-15deg] rounded-sm overflow-hidden">
-            <span className="relative z-10 skew-x-[15deg]">CONTACT US</span>
+          <button className="group relative bg-[#00C2FF] hover:bg-[#00B4FF] text-white px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+            <span className="relative z-10 [transform:skewX(15deg)]">
+              CONTACT US
+            </span>
           </button>
         </motion.div>
       </motion.div>

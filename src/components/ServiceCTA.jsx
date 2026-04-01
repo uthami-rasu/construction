@@ -10,7 +10,7 @@ const ServiceCTA = () => {
       <div className="absolute top-0 right-0 w-[600px] h-full bg-[#00C2FF]/5 blur-[120px] rounded-full translate-x-1/2"></div>
 
       <div className="relative z-10 px-6 text-center max-w-5xl mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -20,29 +20,31 @@ const ServiceCTA = () => {
           Let's Build Something <br className="hidden md:block" />
           Amazing Together
         </motion.h2>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-white/70 text-sm md:text-base mb-12 font-medium leading-relaxed max-w-2xl mx-auto uppercase tracking-wider"
         >
-          Contact us today to discuss your project and discover how <br className="hidden md:block" />
+          Contact us today to discuss your project and discover how{" "}
+          <br className="hidden md:block" />
           we can turn your construction dreams into reality.
         </motion.p>
 
-        <motion.button 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="group relative bg-[#ffcb0f] hover:bg-[#ffdb4d] text-black px-12 py-5 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 active:scale-95 shadow-2xl skew-x-[-15deg] rounded-sm flex items-center gap-3 mx-auto"
         >
-          <span className="relative z-10 skew-x-[15deg] flex items-center gap-2">
-            View Our Portfolio <ArrowRight className="w-4 h-4" />
-          </span>
-        </motion.button>
+          <button className="group relative bg-white hover:bg-gray-50 text-[#006699] px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm flex items-center gap-3 mx-auto">
+            <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
+              View Our Portfolio <ArrowRight className="w-4 h-4" />
+            </span>
+          </button>
+        </motion.div>
       </div>
     </section>
   );
