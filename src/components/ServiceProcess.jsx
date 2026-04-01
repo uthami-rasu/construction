@@ -1,6 +1,13 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Search, Shapes, Hammer, CheckCircle, ArrowRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Search,
+  Shapes,
+  Hammer,
+  CheckCircle,
+  ArrowRight,
+  Zap,
+} from "lucide-react";
 
 const steps = [
   {
@@ -38,6 +45,15 @@ const steps = [
 ];
 
 const ServiceProcess = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-24 md:py-32 bg-white font-poppins relative overflow-hidden">
       {/* Background Decorative Gradient */}
@@ -81,7 +97,18 @@ const ServiceProcess = () => {
         {/* Process Steps */}
         <div className="relative max-w-7xl mx-auto">
           {/* Dotted Line Connector (Desktop) */}
-          <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] border-t-2 border-dotted border-gray-200 z-0"></div>
+          <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] border-t-2 border-dotted border-gray-200 z-0">
+            {/* Moving Indicator */}
+            <motion.div
+              className="absolute -top-[9px] w-4 h-4 bg-[#00C2FF] rounded-full shadow-[0_0_15px_#00C2FF] z-10 flex items-center justify-center"
+              animate={{
+                left: `${(activeStep / (steps.length - 1)) * 100}%`,
+              }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              <Zap className="w-2 h-2 text-white fill-white" />
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
             {steps.map((step, index) => (
@@ -95,18 +122,43 @@ const ServiceProcess = () => {
               >
                 {/* Icon Container */}
                 <div
-                  className={`relative mb-8 w-24 h-24 rounded-2xl ${step.color} ${step.shadow} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-xl`}
+                  className={`relative mb-8 w-24 h-24 rounded-2xl ${step.color} flex items-center justify-center transition-all duration-500 ${
+                    index === activeStep
+                      ? `${step.shadow} scale-110 rotate-3 ring-4 ring-[#00C2FF]/20`
+                      : "opacity-80 scale-100 rotate-0"
+                  } group-hover:scale-110 group-hover:rotate-3 shadow-xl`}
                 >
-                  <step.icon className="w-10 h-10 text-white" />
+                  {/* Pulsing Glow for Active Step */}
+                  {index === activeStep && (
+                    <motion.div
+                      layoutId="pulsing-glow"
+                      className="absolute inset-0 rounded-2xl bg-white/20"
+                      animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.5, 0.2] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                  )}
+                  <step.icon
+                    className={`w-10 h-10 text-white transition-all duration-500 ${index === activeStep ? "scale-110" : "scale-100"}`}
+                  />
 
                   {/* Step Number Badge */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border-2 border-gray-50 flex items-center justify-center font-bold text-xs text-gray-400 shadow-sm">
+                  <div
+                    className={`absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border-2 flex items-center justify-center font-bold text-xs transition-all duration-500 shadow-sm ${
+                      index === activeStep
+                        ? "border-[#00C2FF] text-[#00C2FF] scale-110"
+                        : "border-gray-50 text-gray-400"
+                    }`}
+                  >
                     0{index + 1}
                   </div>
                 </div>
 
                 {/* Text Content */}
-                <h3 className="text-xl font-black text-[#1a1a1a] mb-4 uppercase tracking-tight">
+                <h3
+                  className={`text-xl font-black mb-4 uppercase tracking-tight transition-colors duration-500 ${
+                    index === activeStep ? "text-[#00C2FF]" : "text-[#1a1a1a]"
+                  }`}
+                >
                   {step.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed max-w-[280px]">
