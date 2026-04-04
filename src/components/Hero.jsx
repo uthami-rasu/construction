@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 import { ArrowRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css";
@@ -35,6 +36,11 @@ const slides = [
 
 const Hero = () => {
   const [showNavigation, setShowNavigation] = useState(window.innerWidth > 640);
+  const containerRef = useRef(null);
+
+  const { scrollY } = useScroll();
+  // Parallax: Move background 150px as user scrolls first 1000px
+  const bgY = useTransform(scrollY, [0, 1000], [0, 150]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,6 +53,7 @@ const Hero = () => {
   return (
     <section
       id="home"
+      ref={containerRef}
       className="relative h-[100svh] w-full overflow-hidden bg-black font-poppins"
     >
       <Swiper
@@ -62,10 +69,11 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative h-full w-full">
             <div className="absolute inset-0 overflow-hidden">
-              <img
+              <motion.img
+                style={{ y: bgY }}
                 src={slide.image}
                 alt={slide.title}
-                className="h-full w-full object-cover animate-[kenburns_10s_linear_infinite]"
+                className="absolute top-[-5%] left-0 h-[110%] w-full object-cover animate-[kenburns_10s_linear_infinite]"
               />
               <div className="absolute inset-0 bg-black/60 z-10"></div>
             </div>

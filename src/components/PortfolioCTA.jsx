@@ -36,6 +36,13 @@ const PortfolioCTA = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05)_0%,transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.03)_0%,transparent_50%)]" />
 
+      {/* Architectural Background Ornament */}
+      <div className="absolute -right-[-20px] bottom-0 pointer-events-none select-none overflow-hidden opacity-[0.04] z-0">
+        <span className="text-[6rem] font-black font-poppins leading-none tracking-tighter text-white whitespace-nowrap">
+          FUTURE
+        </span>
+      </div>
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import contactBg from "../assets/images/contact-hero.png";
+import v1 from "../assets/videos/v4.mp4";
 
 const ContactHero = () => {
   const containerRef = useRef(null);
@@ -18,26 +18,19 @@ const ContactHero = () => {
       ref={containerRef}
       className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-black font-poppins"
     >
-      {/* Background Image with Parallax and Zoom */}
+      {/* Background Video with Parallax and Vignette Shadow */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
-        <motion.img
-          src={contactBg}
-          alt="Contact Krrish Construction"
-          animate={
-            typeof window !== "undefined" && window.innerWidth > 1024
-              ? {
-                  scale: [1, 1.1, 1],
-                }
-              : {}
-          }
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="h-full w-full object-cover opacity-75"
+        <video
+          src={v1}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="h-full w-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60"></div>
+        {/* Cinematic Vignette Overlay (Shadow on all 4 sides) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 shadow-[inset_0_0_150px_rgba(0,0,0,0.9)]"></div>
       </motion.div>
 
       {/* Content with Parallax */}

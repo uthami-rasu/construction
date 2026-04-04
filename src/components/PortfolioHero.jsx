@@ -26,6 +26,7 @@ const PortfolioHero = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="h-full w-full object-cover opacity-60"
         />
         {/* Cinematic Vignette Overlay (Shadow on all 4 sides) */}
