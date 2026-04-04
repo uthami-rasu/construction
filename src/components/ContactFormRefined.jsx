@@ -65,16 +65,16 @@ const ContactFormRefined = () => {
   };
 
   return (
-    <section id="contact-form" className="bg-white py-24 md:py-32 font-poppins relative overflow-hidden">
+    <section id="contact-form" className="bg-white py-16 md:py-20 font-poppins relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-10">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-12 gap-10">
           {/* Left Side: Badge and Heading */}
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 mb-6"
+              className="flex items-center gap-2 mb-4"
             >
               <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-black">
                 GET <span className="text-[#00C2FF]">STARTED</span>
@@ -152,10 +152,10 @@ const ContactFormRefined = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="space-y-12"
+          className="space-y-8"
         >
           {/* Row 1: Name, Email, Phone */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
             <div className="relative">
               <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-2 block">Your Name</label>
               <input
@@ -204,12 +204,12 @@ const ContactFormRefined = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-8"
+            className="pt-6"
           >
             <button
               type="submit"
               disabled={status === "sending"}
-              className="group relative bg-[#00C2FF] hover:bg-[#00A3D9] text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,194,255,0.3)] overflow-hidden"
+              className="group relative bg-[#00C2FF] hover:bg-[#00A3D9] text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,194,255,0.3)] overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 {status === "sending" ? "Processing..." : "Leave us a Message"}
@@ -221,7 +221,7 @@ const ContactFormRefined = () => {
             </button>
 
             {/* Response Messages */}
-            <div className="mt-8 h-6">
+            <div className="mt-4 h-6">
               {status === "success" && (
                 <div className="flex items-center gap-2 text-green-600 font-bold text-sm">
                   <CheckCircle2 size={18} /> Message sent successfully!
