@@ -97,13 +97,17 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mt-36 sm:mt-0 animate-[fadeInUp_1.8s_ease-out] hero-buttons-container">
-            <button className="group bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
-              KNOW MORE
-              <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
+            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center overflow-hidden">
+              <span className="relative z-10">KNOW MORE</span>
+              <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px] relative z-10" />
+              {/* Glossy sheen effect on hover */}
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
             </button>
-            <button className="group bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
-              VIEW PROJECT
-              <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px]" />
+            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center overflow-hidden">
+              <span className="relative z-10">VIEW PROJECT</span>
+              <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px] relative z-10" />
+              {/* Glossy sheen effect on hover */}
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
             </button>
           </div>
         </div>

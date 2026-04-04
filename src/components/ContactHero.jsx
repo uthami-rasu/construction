@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import abtBg from "../assets/images/abt-rename.jpeg";
+import contactBg from "../assets/images/contact-hero.png";
 
-const AboutHero = () => {
+const ContactHero = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -22,12 +21,12 @@ const AboutHero = () => {
       {/* Background Image with Parallax and Zoom */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
         <motion.img
-          src={abtBg}
-          alt="About Krrish Construction"
+          src={contactBg}
+          alt="Contact Krrish Construction"
           animate={
             typeof window !== "undefined" && window.innerWidth > 1024
               ? {
-                  scale: [1, 1.15, 1],
+                  scale: [1, 1.1, 1],
                 }
               : {}
           }
@@ -46,17 +45,17 @@ const AboutHero = () => {
         style={{ y: textY, opacity: textOpacity }}
         className="container relative z-10 mx-auto px-6 text-center mt-20"
       >
-        {/* Top Badge */}
+        {/* Top Badge - Multi-color split */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="inline-flex items-center bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/10 rounded-full p-1 mb-6 sm:mb-8 max-w-[90vw]"
+          className="inline-flex items-center bg-[#1a1a1a]/90 backdrop-blur-md border border-white/10 rounded-full p-1 mb-8 overflow-hidden"
         >
-          <span className="bg-[#00C2FF] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
+          <span className="bg-[#00C2FF] text-white text-[10px] sm:text-xs font-black px-4 sm:px-6 py-2 rounded-full uppercase tracking-widest shrink-0">
             2026
           </span>
-          <span className="text-white text-[9px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 uppercase tracking-[0.1em] sm:tracking-[0.2em] truncate">
+          <span className="text-white text-[10px] sm:text-xs font-bold px-4 sm:px-6 py-2 uppercase tracking-[0.2em] truncate">
             KRRISH CONSTRUCTION
           </span>
         </motion.div>
@@ -66,10 +65,11 @@ const AboutHero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="max-w-5xl mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 sm:mb-8 uppercase tracking-tighter"
+          className="max-w-5xl mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.05] mb-8 uppercase tracking-tighter"
         >
-          Complete Construction Solutions <br />
-          for Every Need
+          Turning Your Vision into Reality
+          <br />
+          <span className="">with Expert Construction</span>
         </motion.h1>
 
         {/* Subtext */}
@@ -77,29 +77,35 @@ const AboutHero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
-          className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white/90 mb-12 leading-relaxed font-medium"
+          className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-white/80 mb-14 leading-relaxed font-medium"
         >
-          We provide complete construction services, from planning to final
-          delivery, with a focus on quality, efficiency, and timely execution.
+          We provide end-to-end construction services focused on durability,
+          efficiency, and transparent execution for every project.
         </motion.p>
 
-        {/* Button */}
+        {/* Button - Skewed Style */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-          <button className="group relative bg-[#00C2FF] hover:bg-[#00B4FF] text-white px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+          <button 
+            onClick={() => document.getElementById('contact-us')?.scrollIntoView({ behavior: 'smooth' })}
+            className="group relative bg-[#00C2FF] hover:bg-[#00A3D9] text-white px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-[0_20px_50px_rgba(0,194,255,0.3)] [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+          >
             <span className="relative z-10 [transform:skewX(15deg)]">
               CONTACT US
             </span>
-            {/* Glossy sheen effect on hover */}
+            {/* Glossy overlay effect on hover */}
             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
           </button>
         </motion.div>
       </motion.div>
+
+      {/* Decorative Structural Bottom Line */}
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-[#00C2FF]/40 to-transparent"></div>
     </section>
   );
 };
 
-export default AboutHero;
+export default ContactHero;

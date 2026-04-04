@@ -125,6 +125,8 @@ const AboutFeatures = () => {
               <span>GET A QUOTE</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </div>
+            {/* Glossy sheen effect on hover */}
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
           </button>
         </motion.div>
       </div>

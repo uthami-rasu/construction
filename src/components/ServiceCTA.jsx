@@ -39,10 +39,12 @@ const ServiceCTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="group relative bg-white hover:bg-gray-50 text-[#006699] px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm flex items-center gap-3 mx-auto">
+          <button className="group relative bg-white hover:bg-gray-50 text-[#006699] px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm flex items-center gap-3 mx-auto overflow-hidden">
             <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
               View Our Portfolio <ArrowRight className="w-4 h-4" />
             </span>
+            {/* Glossy sheen effect on hover */}
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
           </button>
         </motion.div>
       </div>

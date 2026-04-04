@@ -51,7 +51,7 @@ const Header = () => {
     { label: "About Us", icon: Info, href: "#about-us", path: "/about" },
     { label: "Services", icon: Hammer, href: "#services", path: "/services" },
     { label: "Portfolio", icon: Briefcase, href: "#portfolio" },
-    { label: "Contact Us", icon: Mail, href: "#contact-us" },
+    { label: "Contact Us", icon: Mail, href: "#contact-us", path: "/contact" },
   ];
 
   return (

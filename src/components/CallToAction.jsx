@@ -24,6 +24,8 @@ const CallToAction = () => {
               <span className="relative z-10">Get Started</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
+            {/* Glossy sheen effect on hover */}
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
           </button>
         </div>
       </div>

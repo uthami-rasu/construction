@@ -189,6 +189,8 @@ const ServiceProcess = () => {
               <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
                 Schedule a Consultation <ArrowRight className="w-4 h-4" />
               </span>
+              {/* Glossy sheen effect on hover */}
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
             </button>
           </motion.div>
         </div>
