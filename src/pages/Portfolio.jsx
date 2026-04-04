@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PortfolioHero from "../components/PortfolioHero";
-import ProjectGallery from "../components/ProjectGallery";
+import PortfolioGallery from "../components/PortfolioGallery";
 import { motion } from "framer-motion";
 
 const Portfolio = () => {
@@ -18,7 +18,8 @@ const Portfolio = () => {
       {/* Portfolio Hero Section */}
       <PortfolioHero />
 
-    
+      {/* Modern Portfolio Gallery Section */}
+      <PortfolioGallery />
 
       {/* SEO Optimized Hidden Content */}
       <section className="sr-only">
