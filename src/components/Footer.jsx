@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Clock, ArrowUp } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Footer = () => {
   const quickLinks = [
-    { label: "Our Services", href: "#services" },
-    { label: "Meet Our Team", href: "#contact-us" },
-    { label: "Home", href: "#home" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Testimonials", href: "#testimonials" },
+    { label: "Our Services", href: "/services" },
+    { label: "About Us", href: "/about" },
+    { label: "Home", href: "/" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   const scrollToTop = () => {
@@ -132,15 +133,16 @@ const Footer = () => {
             <ul className="space-y-3 pt-1">
               {quickLinks.map((link) => (
                 <li key={link.label} className="overflow-hidden">
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                     className="group/link flex items-center gap-2 text-gray-600 text-[13px] md:text-sm hover:text-blue-600 font-semibold transition-all duration-300 py-1"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-0 group-hover/link:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover/link:translate-x-0" />
                     <span className="group-hover/link:translate-x-1 transition-all duration-300">
                       {link.label}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
