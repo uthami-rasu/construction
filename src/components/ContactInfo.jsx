@@ -60,7 +60,7 @@ const ContactInfo = () => {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-white font-bold text-base uppercase tracking-wider">Email Address</span>
-                <Mail className="w-4 h-4 text-[#ffcb0f]" />
+                <Mail className="w-4 h-4 text-[#00C2FF]" />
               </div>
               <div className="w-16 h-[1px] bg-white/20 mb-6"></div>
               <h4 className="text-white/80 font-bold text-[11px] uppercase tracking-widest mb-2 font-poppins">Send us an email</h4>
@@ -76,7 +76,7 @@ const ContactInfo = () => {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-white font-bold text-base uppercase tracking-wider">Number</span>
-                <Phone className="w-4 h-4 text-[#ffcb0f]" />
+                <Phone className="w-4 h-4 text-[#00C2FF]" />
               </div>
               <div className="w-16 h-[1px] bg-white/20 mb-6"></div>
               <h4 className="text-white/80 font-bold text-[11px] uppercase tracking-widest mb-2 font-poppins">Give us a call</h4>
@@ -92,7 +92,7 @@ const ContactInfo = () => {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-white font-bold text-base uppercase tracking-wider">Address</span>
-                <MapPin className="w-4 h-4 text-[#ffcb0f]" />
+                <MapPin className="w-4 h-4 text-[#00C2FF]" />
               </div>
               <div className="w-16 h-[1px] bg-white/20 mb-6"></div>
               <h4 className="text-white/80 font-bold text-[11px] uppercase tracking-widest mb-2 font-poppins">Visit our office</h4>
@@ -129,29 +129,29 @@ const ContactInfo = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="bg-black/20 backdrop-blur-sm border border-white/5 rounded-xl p-6 md:p-8 relative overflow-hidden"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 md:p-8 relative overflow-hidden"
             >
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div className="flex items-center gap-3 min-w-[180px]">
-                  <Clock className="w-5 h-5 text-[#ffcb0f]" />
+                  <Clock className="w-5 h-5 text-[#00C2FF]" />
                   <h3 className="text-white font-bold text-lg">Business Hours</h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full">
                   <div className="relative">
-                    <span className="text-[#ffcb0f] text-[10px] uppercase font-bold tracking-widest block mb-1">Monday - Friday</span>
+                    <span className="text-[#00C2FF] text-[10px] uppercase font-bold tracking-widest block mb-1">Monday - Friday</span>
                     <span className="text-white font-medium text-xs">9:00 AM - 6:00 PM</span>
-                    <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/5"></div>
+                    <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/10"></div>
                   </div>
                   <div className="relative">
-                    <span className="text-[#ffcb0f] text-[10px] uppercase font-bold tracking-widest block mb-1">Saturday</span>
+                    <span className="text-[#00C2FF] text-[10px] uppercase font-bold tracking-widest block mb-1">Saturday</span>
                     <span className="text-white font-medium text-xs">10:00 AM - 4:00 PM</span>
-                    <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/5"></div>
+                    <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/10"></div>
                   </div>
                   <div className="relative">
-                    <span className="text-[#ffcb0f] text-[10px] uppercase font-bold tracking-widest block mb-1">Sunday</span>
+                    <span className="text-[#00C2FF] text-[10px] uppercase font-bold tracking-widest block mb-1">Sunday</span>
                     <span className="text-white font-medium text-xs opacity-60">Closed</span>
-                    <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/5"></div>
+                    <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/10"></div>
                   </div>
                 </div>
               </div>
