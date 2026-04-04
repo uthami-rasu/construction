@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import PortfolioHero from "../components/PortfolioHero";
 import PortfolioGallery from "../components/PortfolioGallery";
+import PortfolioCTA from "../components/PortfolioCTA";
 import { motion } from "framer-motion";
 
 const Portfolio = () => {
@@ -20,6 +21,9 @@ const Portfolio = () => {
 
       {/* Modern Portfolio Gallery Section */}
       <PortfolioGallery />
+
+      {/* Ready to Build CTA & Stats Section */}
+      <PortfolioCTA />
 
       {/* SEO Optimized Hidden Content */}
       <section className="sr-only">
