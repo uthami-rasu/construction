@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <section className="py-16 font-poppins">
+    <section className="font-poppins">
       <div className="bg-[#006699] p-10 md:p-14 lg:p-16 flex flex-col items-center text-center relative overflow-hidden shadow-xl">
         {/* Decorative Background Glows */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2"></div>

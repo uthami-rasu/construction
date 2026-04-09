@@ -27,7 +27,7 @@ const PortfolioHero = () => {
           muted
           playsInline
           preload="auto"
-          className="h-full w-full object-cover opacity-60"
+          className="h-full w-full object-cover object-center opacity-60"
         />
         {/* Cinematic Vignette Overlay (Shadow on all 4 sides) */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 shadow-[inset_0_0_150px_rgba(0,0,0,0.9)]"></div>
@@ -58,7 +58,7 @@ const PortfolioHero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="max-w-5xl mx-auto text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.05] mb-8 uppercase tracking-tighter"
+          className="max-w-5xl mx-auto text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black text-white leading-[1.05] mb-8 uppercase tracking-tighter"
         >
           Build Strong. Build Smart.
           <br />

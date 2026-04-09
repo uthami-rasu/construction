@@ -19,7 +19,7 @@ const ContactHero = () => {
       className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-black font-poppins"
     >
       {/* Background Video with Parallax and Vignette Shadow */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
+      <motion.div style={{ y: bgY }} className="absolute -top-[30%] left-0 h-[130%] w-full z-0">
         <video
           src={v1}
           autoPlay
@@ -27,7 +27,7 @@ const ContactHero = () => {
           muted
           playsInline
           preload="auto"
-          className="h-full w-full object-cover opacity-60"
+          className="h-full w-full object-cover object-center opacity-60"
         />
         {/* Cinematic Vignette Overlay (Shadow on all 4 sides) */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 shadow-[inset_0_0_150px_rgba(0,0,0,0.9)]"></div>
