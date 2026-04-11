@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Lenis from "lenis";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
 import Preloader from "./Preloader";
@@ -40,7 +41,9 @@ const Layout = () => {
   return (
     <div className="min-h-screen bg-white font-poppins text-gray-900 selection:bg-[#FFCB0F]/30">
       {/* Key prop ensures Preloader mounts/unmounts on every route change */}
-      <Preloader key={location.pathname} />
+      <AnimatePresence mode="wait">
+        <Preloader key={location.pathname} />
+      </AnimatePresence>
       <Header />
       <main>
         <Outlet />
