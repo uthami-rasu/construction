@@ -163,7 +163,7 @@ const ProjectGallery = () => {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-gray-950/90 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <span className="text-[#00C2FF] text-[10px] font-black uppercase tracking-[0.3em] mb-2">
+                  <span className="text-[#FFCB0F] text-[10px] font-black uppercase tracking-[0.3em] mb-2">
                     {images[3].category}
                   </span>
                   <p className="text-white font-montserrat font-black uppercase tracking-widest text-lg">

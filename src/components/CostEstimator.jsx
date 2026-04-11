@@ -45,11 +45,14 @@ const CostEstimator = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-[#006699] font-poppins relative overflow-hidden">
+    <section 
+      className="py-24 px-6 font-poppins relative overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #080229 0%, #120b4a 100%)' }}
+    >
       {/* Decorative background patterns */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 border-[40px] border-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 border-[30px] border-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 border-[40px] border-[#FFCB0F] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 border-[30px] border-[#FFCB0F] rounded-full translate-y-1/2 -translate-x-1/2"></div>
       </div>
 
       <div className="container mx-auto max-w-4xl relative z-10 text-center">
@@ -60,11 +63,11 @@ const CostEstimator = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Calculator className="text-white w-8 h-8" />
+          <div className="w-16 h-16 bg-[#FFCB0F]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <Calculator className="text-[#FFCB0F] w-8 h-8" />
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-4">
-            Instant Cost Estimator
+          <h2 className="text-3xl md:text-5xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+            Instant Cost  Estimator
           </h2>
           <p className="text-white/70 text-sm md:text-lg max-w-xl mx-auto font-medium">
             Get a high-level construction estimate for your project in seconds. 
@@ -91,7 +94,7 @@ const CostEstimator = () => {
                 placeholder="e.g., 2000"
                 value={landSize}
                 onChange={(e) => setLandSize(e.target.value)}
-                className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold focus:outline-none focus:ring-2 focus:ring-[#006699]/20 transition-all outline-none"
+                className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold focus:outline-none focus:ring-2 focus:ring-[#FFCB0F]/40 transition-all outline-none"
               />
             </div>
 
@@ -104,7 +107,7 @@ const CostEstimator = () => {
                 <select
                   value={projectType}
                   onChange={(e) => setProjectType(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#006699]/20 transition-all cursor-pointer"
+                  className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#FFCB0F]/40 transition-all cursor-pointer"
                 >
                   <option value="Residential">Residential</option>
                   <option value="Commercial">Commercial</option>
@@ -123,7 +126,7 @@ const CostEstimator = () => {
                 <select
                   value={floors}
                   onChange={(e) => setFloors(Number(e.target.value))}
-                  className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#006699]/20 transition-all cursor-pointer"
+                  className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#FFCB0F]/40 transition-all cursor-pointer"
                 >
                   {[1, 2, 3, 4, 5].map((num) => (
                     <option key={num} value={num}>{num} Floor{num > 1 ? "s" : ""}</option>
@@ -142,7 +145,7 @@ const CostEstimator = () => {
                 <select
                   value={tier}
                   onChange={(e) => setTier(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#006699]/20 transition-all cursor-pointer"
+                  className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 text-gray-900 font-bold appearance-none focus:outline-none focus:ring-2 focus:ring-[#FFCB0F]/40 transition-all cursor-pointer"
                 >
                   <option value="Basic">Basic (₹1,500-2,000/sq.ft)</option>
                   <option value="Standard">Standard (₹2,000-3,000/sq.ft)</option>
@@ -156,13 +159,13 @@ const CostEstimator = () => {
           {/* Calculate Button */}
           <button
             onClick={calculateEstimate}
-            className="group relative bg-[#006699] hover:bg-[#005a87] text-white py-5 px-12 font-black uppercase tracking-[0.2em] text-sm md:text-base transition-all duration-300 [transform:skewX(-15deg)] rounded-sm overflow-hidden w-full md:w-auto shadow-xl hover:shadow-[0_20px_40px_rgba(0,102,153,0.3)] hover:scale-105 active:scale-95"
+            className="group relative bg-[#FFCB0F] text-black py-5 px-12 font-black uppercase tracking-[0.2em] text-sm md:text-base transition-all duration-300 [transform:skewX(-15deg)] rounded-sm overflow-hidden w-full md:w-auto shadow-2xl hover:scale-110 active:scale-95"
           >
             <div className="[transform:skewX(15deg)] flex items-center justify-center gap-3">
               Calculate Estimate
             </div>
             {/* Glossy sheen effect on hover */}
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
           </button>
 
           {/* Result Display */}
@@ -174,17 +177,17 @@ const CostEstimator = () => {
                 exit={{ opacity: 0, height: 0, marginTop: 0 }}
                 className="overflow-hidden"
               >
-                <div className="bg-[#006699]/5 border-2 border-[#006699]/10 rounded-2xl p-8 md:p-10 relative group">
+                <div className="bg-[#FFCB0F]/5 border-2 border-[#FFCB0F]/20 rounded-2xl p-8 md:p-10 relative group">
                    <div className="text-gray-500 text-[10px] md:text-xs font-black uppercase tracking-[.3em] mb-4">
                      Estimated Construction Cost
                    </div>
                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                      <div className="text-4xl md:text-6xl font-black text-[#006699] tracking-tighter">
+                      <div className="text-4xl md:text-5xl font-black text-black tracking-tighter">
                         ₹{estimate.toLocaleString('en-IN')}
                       </div>
                       <button 
                         onClick={resetEstimator}
-                        className="p-3 bg-white text-[#006699] rounded-full shadow-md hover:rotate-180 transition-transform duration-500 border border-gray-100"
+                        className="p-3 bg-white text-black rounded-full shadow-md hover:rotate-180 transition-transform duration-500 border border-gray-100"
                         title="Reset Estimator"
                       >
                         <RefreshCcw size={20} />

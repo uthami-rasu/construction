@@ -35,16 +35,16 @@ const PricingFAQ = () => {
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(to right, #00C2FF 1px, transparent 1px),
-            linear-gradient(to bottom, #00C2FF 1px, transparent 1px)
+            linear-gradient(to right, #FFCB0F 1px, transparent 1px),
+            linear-gradient(to bottom, #FFCB0F 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px'
         }}
       ></div>
       
-      {/* SkyBlue Glows (Top and Bottom) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-[#00C2FF]/10 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-[#00C2FF]/10 blur-[120px] rounded-full translate-y-1/2 pointer-events-none"></div>
+      {/* Yellow Glows (Top and Bottom) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-[#FFCB0F]/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-[#FFCB0F]/5 blur-[120px] rounded-full translate-y-1/2 pointer-events-none"></div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header Section */}
@@ -56,21 +56,21 @@ const PricingFAQ = () => {
               viewport={{ once: true }}
               className="flex items-center gap-4 mb-4"
             >
-              <div className="w-12 h-px bg-[#00C2FF]"></div>
-              <span className="text-[#00C2FF] text-xs md:text-sm font-black uppercase tracking-[0.4em]">
+              <div className="w-12 h-px bg-[#FFCB0F]"></div>
+              <span className="text-[#FFB800] text-xs md:text-sm font-black uppercase tracking-[0.4em]">
                 Clear Answers
               </span>
-              <div className="w-12 h-px bg-[#00C2FF]"></div>
+              <div className="w-12 h-px bg-[#FFCB0F]"></div>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 uppercase leading-[0.9] tracking-tighter"
+              className="text-4xl md:text-5xl lg:text-5xl font-black text-gray-900 uppercase leading-[0.9] tracking-tighter"
             >
               Frequently <br />
-              <span className="text-[#00C2FF]">Asked Questions</span>
+              <span className="text-[#FFCB0F]">Asked Questions</span>
             </motion.h2>
           </div>
           <motion.p
@@ -97,7 +97,7 @@ const PricingFAQ = () => {
               transition={{ delay: index * 0.1 }}
               className={`rounded-2xl border transition-all duration-500 overflow-hidden ${
                 openIndex === index 
-                ? "border-[#00C2FF]/20 bg-[#f8fdff] shadow-xl shadow-[#00C2FF]/5" 
+                ? "border-[#FFCB0F]/20 bg-[#fffdf8] shadow-xl shadow-[#FFCB0F]/5" 
                 : "border-gray-50 bg-white hover:border-gray-100"
               }`}
             >
@@ -107,21 +107,21 @@ const PricingFAQ = () => {
               >
                 <div className="flex items-center gap-6">
                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${
-                     openIndex === index ? "border-[#00C2FF] text-[#00C2FF] scale-110" : "border-gray-200 text-gray-400 group-hover:border-[#00C2FF]/30"
+                     openIndex === index ? "border-[#FFCB0F] text-[#FFB800] scale-110" : "border-gray-200 text-gray-400 group-hover:border-[#FFCB0F]/30"
                    }`}>
                      <HelpCircle size={16} />
                    </div>
                    <span className={`text-base md:text-lg font-black uppercase tracking-tight transition-all duration-500 ${
-                     openIndex === index ? "text-[#00C2FF]" : "text-[#1a1a1a]"
+                     openIndex === index ? "text-[#FFB800]" : "text-[#1a1a1a]"
                    }`}>
                      {faq.question}
                    </span>
                 </div>
                 <div className={`shrink-0 transition-all duration-500 ${openIndex === index ? "rotate-90" : "rotate-0"}`}>
                    {openIndex === index ? (
-                     <Minus size={20} className="text-[#00C2FF]" />
+                     <Minus size={20} className="text-[#FFB800]" />
                    ) : (
-                     <Plus size={20} className="text-gray-300 group-hover:text-[#00C2FF]/50" />
+                     <Plus size={20} className="text-gray-300 group-hover:text-[#FFCB0F]/50" />
                    )}
                 </div>
               </button>

@@ -6,7 +6,7 @@ const ContactMap = () => {
   return (
     <section className="bg-white py-16 md:py-20 font-poppins relative overflow-hidden">
       {/* Background Decorative Accent */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-[#00C2FF]/40 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-[#FFCB0F]/40 to-transparent"></div>
       
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-8">
@@ -17,10 +17,10 @@ const ContactMap = () => {
             className="max-w-xl"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#00C2FF]/10 flex items-center justify-center text-[#00C2FF]">
+              <div className="w-10 h-10 rounded-xl bg-[#FFCB0F]/10 flex items-center justify-center text-[#FFCB0F]">
                 <MapPin className="w-5 h-5" />
               </div>
-              <h4 className="text-[#00C2FF] font-black text-xs uppercase tracking-[0.4em] mb-1">
+              <h4 className="text-[#FFB800] font-black text-xs uppercase tracking-[0.4em] mb-1">
                 Our Location
               </h4>
             </div>
@@ -50,7 +50,7 @@ const ContactMap = () => {
           className="relative rounded-[2rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.08)] border-4 border-white group"
         >
           {/* Subtle Glow - matches the map's aesthetic */}
-          <div className="absolute inset-0 bg-[#00C2FF]/10 opacity-0 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[#FFCB0F]/5 opacity-0 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none"></div>
 
           {/* Google Maps Embed */}
           <div className="w-full h-[300px] md:h-[400px] bg-gray-100 grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
@@ -68,8 +68,8 @@ const ContactMap = () => {
 
           {/* Interactive Legend Badge Overlay */}
           <div className="absolute bottom-6 right-6 hidden md:flex items-center gap-3 bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl border border-white/20 pointer-events-none translate-y-20 group-hover:translate-y-0 transition-transform duration-700">
-            <div className="w-10 h-10 rounded-full bg-[#00C2FF] flex items-center justify-center text-white">
-              <MapPin className="w-5 h-5 fill-white" />
+            <div className="w-10 h-10 rounded-full bg-[#FFCB0F] flex items-center justify-center text-black">
+              <MapPin className="w-5 h-5 fill-black" />
             </div>
             <div>
               <p className="text-gray-900 font-black text-xs uppercase tracking-widest">Rajapalayam Office</p>

@@ -77,7 +77,7 @@ const ContactFormRefined = () => {
               className="flex items-center gap-2 mb-4"
             >
               <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-black">
-                GET <span className="text-[#00C2FF]">STARTED</span>
+                GET <span className="text-[#FFCB0F]">STARTED</span>
               </span>
             </motion.div>
             <motion.h2
@@ -85,7 +85,7 @@ const ContactFormRefined = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-2xl md:text-5xl lg:text-6xl font-black text-[#1a1a1a] uppercase leading-[0.95] tracking-tighter"
+              className="text-2xl md:text-5xl lg:text-5xl font-black text-[#1a1a1a] uppercase leading-[0.95] tracking-tighter"
             >
               GET IN TOUCH <br />
               WITH US.
@@ -111,7 +111,7 @@ const ContactFormRefined = () => {
               {/* Facebook */}
               <motion.a
                 href="#"
-                whileHover={{ scale: 1.1, backgroundColor: "#f8f9fa", color: "#00C2FF" }}
+                whileHover={{ scale: 1.1, backgroundColor: "#f8f9fa", color: "#FFCB0F" }}
                 className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-900 transition-colors shadow-sm"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -122,7 +122,7 @@ const ContactFormRefined = () => {
               {/* Instagram */}
               <motion.a
                 href="#"
-                whileHover={{ scale: 1.1, backgroundColor: "#f8f9fa", color: "#00C2FF" }}
+                whileHover={{ scale: 1.1, backgroundColor: "#f8f9fa", color: "#FFCB0F" }}
                 className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-900 transition-colors shadow-sm"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -133,7 +133,7 @@ const ContactFormRefined = () => {
               {/* Twitter */}
               <motion.a
                 href="#"
-                whileHover={{ scale: 1.1, backgroundColor: "#f8f9fa", color: "#00C2FF" }}
+                whileHover={{ scale: 1.1, backgroundColor: "#f8f9fa", color: "#FFCB0F" }}
                 className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-900 transition-colors shadow-sm"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ const ContactFormRefined = () => {
                 type="text"
                 name="user_name"
                 required
-                className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#00C2FF] transition-colors"
+                className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#FFCB0F] transition-colors"
                 placeholder="Ex. John Doe"
               />
             </div>
@@ -172,7 +172,7 @@ const ContactFormRefined = () => {
                 type="email"
                 name="user_email"
                 required
-                className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#00C2FF] transition-colors"
+                className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#FFCB0F] transition-colors"
                 placeholder="Ex. john@example.com"
               />
             </div>
@@ -181,7 +181,7 @@ const ContactFormRefined = () => {
               <input
                 type="tel"
                 name="user_phone"
-                className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#00C2FF] transition-colors"
+                className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#FFCB0F] transition-colors"
                 placeholder="Ex. +1 234 567 890"
               />
             </div>
@@ -194,12 +194,12 @@ const ContactFormRefined = () => {
               name="message"
               required
               rows={2}
-              className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#00C2FF] transition-colors resize-none overflow-hidden"
+              className="w-full bg-transparent border-b border-gray-200 py-3 text-lg text-gray-900 font-semibold outline-none focus:border-[#FFCB0F] transition-colors resize-none overflow-hidden"
               placeholder="Tell us about your project or inquiry..."
             />
           </div>
 
-          {/* Submit Button - SkyBlue Pill */}
+          {/* Submit Button - Yellow Skewed */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -209,15 +209,15 @@ const ContactFormRefined = () => {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="group relative bg-[#00C2FF] hover:bg-[#00A3D9] text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,194,255,0.3)] overflow-hidden"
+              className="group relative bg-[#FFCB0F] text-black px-10 py-5 font-black uppercase tracking-widest text-xs flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
                 {status === "sending" ? "Processing..." : "Leave us a Message"}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               
               {/* Glossy sheen effect on hover */}
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
 
             {/* Response Messages */}

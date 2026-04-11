@@ -87,10 +87,10 @@ const PortfolioGallery = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h4 className="text-sm font-black tracking-[0.3em] uppercase text-[#00C2FF] mb-3">
+            <h4 className="text-sm font-black tracking-[0.3em] uppercase text-[#FFB800] mb-3">
               OUR <span className="text-gray-900">PORTFOLIO</span>
             </h4>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-950 uppercase leading-none tracking-tighter">
+            <h2 className="text-3xl md:text-5xl font-black text-gray-950 uppercase leading-none tracking-tighter">
               PROVEN <br />
               EXCELLENCE
             </h2>
@@ -122,7 +122,7 @@ const PortfolioGallery = () => {
                 {activeFilter === cat && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-[#00C2FF] shadow-[0_10px_20px_rgba(0,194,255,0.3)] z-[-1]"
+                    className="absolute inset-0 bg-[#FFCB0F] shadow-[0_10px_20px_rgba(255,203,15,0.3)] z-[-1]"
                     transition={{ 
                       type: "spring", 
                       stiffness: 300, 
@@ -141,7 +141,7 @@ const PortfolioGallery = () => {
             <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Sort by</span>
             <button 
               onClick={() => setIsSortOpen(!isSortOpen)}
-              className="px-6 py-3 bg-white border border-gray-100 rounded-sm text-[11px] font-black text-gray-800 uppercase flex items-center gap-8 group hover:border-[#00C2FF]/30 transition-all shadow-sm"
+              className="px-6 py-3 bg-white border border-gray-100 rounded-sm text-[11px] font-black text-gray-800 uppercase flex items-center gap-8 group hover:border-[#FFCB0F]/30 transition-all shadow-sm"
             >
               {sortBy}
               <ChevronDown className={`w-4 h-4 text-gray-300 transition-transform duration-500 ${isSortOpen ? "rotate-180" : ""}`} />
@@ -160,7 +160,7 @@ const PortfolioGallery = () => {
                     <button
                       key={opt}
                       onClick={() => { setSortBy(opt); setIsSortOpen(false); }}
-                      className="w-full px-6 py-4 text-left text-[11px] font-black text-gray-500 hover:bg-[#00C2FF]/5 hover:text-[#00C2FF] transition-colors border-b border-gray-50 last:border-none"
+                      className="w-full px-6 py-4 text-left text-[11px] font-black text-gray-500 hover:bg-[#FFCB0F]/5 hover:text-[#FFCB0F] transition-colors border-b border-gray-50 last:border-none"
                     >
                       {opt}
                     </button>
@@ -200,13 +200,13 @@ const PortfolioGallery = () => {
                     alt={project.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  {/* Category Badge - Forced SkyBlue */}
-                  <div className="absolute top-4 right-4 bg-[#00C2FF] text-white text-[9px] font-black px-3 py-1.5 uppercase tracking-widest rounded-sm shadow-xl">
+                  {/* Category Badge - Forced Yellow */}
+                  <div className="absolute top-4 right-4 bg-[#FFCB0F] text-black text-[9px] font-black px-3 py-1.5 uppercase tracking-widest rounded-sm shadow-xl">
                     {project.category}
                   </div>
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <button className="w-12 h-12 rounded-full bg-white text-[#00C2FF] flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-500">
+                    <button className="w-12 h-12 rounded-full bg-white text-[#FFB800] flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-500">
                       <ArrowUpRight className="w-6 h-6" />
                     </button>
                   </div>
@@ -214,12 +214,12 @@ const PortfolioGallery = () => {
 
                 {/* Content */}
                 <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-black text-gray-900 mb-1.5 leading-tight group-hover:text-[#00C2FF] transition-colors uppercase">
+                  <h3 className="text-lg font-black text-gray-900 mb-1.5 leading-tight group-hover:text-[#FFB800] transition-colors uppercase">
                     {project.title}
                   </h3>
                   
                   <div className="flex items-center gap-2 text-gray-400 text-[11px] font-bold uppercase tracking-wider mb-4 font-poppins">
-                    <MapPin className="w-3.5 h-3.5 text-[#00C2FF]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#FFB800]" />
                     {project.location}
                   </div>
 
@@ -240,7 +240,7 @@ const PortfolioGallery = () => {
                     <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
                       Completed {project.year}
                     </span>
-                    <button className="text-[#00C2FF] transform group-hover:translate-x-2 transition-transform duration-300">
+                    <button className="text-[#FFB800] transform group-hover:translate-x-2 transition-transform duration-300">
                       <ArrowUpRight className="w-5 h-5" />
                     </button>
                   </div>

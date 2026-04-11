@@ -38,7 +38,7 @@ const Layout = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-white font-poppins text-gray-900 selection:bg-[#00C2FF]/30">
+    <div className="min-h-screen bg-white font-poppins text-gray-900 selection:bg-[#FFCB0F]/30">
       {/* Key prop ensures Preloader mounts/unmounts on every route change */}
       <Preloader key={location.pathname} />
       <Header />

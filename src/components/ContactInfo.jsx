@@ -9,7 +9,10 @@ import {
 
 const ContactInfo = () => {
   return (
-    <section className="bg-[#006699] py-12 md:py-16 font-poppins relative overflow-hidden min-h-[400px] flex items-center">
+    <section 
+      className="bg-[#080229] py-12 md:py-16 font-poppins relative overflow-hidden min-h-[400px] flex items-center"
+      style={{ background: 'linear-gradient(135deg, #080229 0%, #120b4a 100%)' }}
+    >
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start relative">
           {/* Architectural Background Ornament */}
@@ -22,7 +25,7 @@ const ContactInfo = () => {
           {/* Left Column: Heading */}
           <div className="lg:col-span-4 relative z-10 pl-6">
             {/* Vertical Accent Line */}
-            <div className="absolute left-0 top-0 w-[1px] h-full bg-linear-to-b from-[#00C2FF] via-white/20 to-transparent"></div>
+            <div className="absolute left-0 top-0 w-[1px] h-full bg-linear-to-b from-[#FFCB0F] via-white/20 to-transparent"></div>
 
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -31,7 +34,7 @@ const ContactInfo = () => {
               className="mb-4"
             >
               <span className="flex items-center gap-2">
-                <span className="w-4 h-[1px] bg-[#00C2FF]"></span>
+                <span className="w-4 h-[1px] bg-[#FFCB0F]"></span>
                 <span className="text-white/80 text-xs font-bold uppercase tracking-[0.3em]">
                   Contact Info
                 </span>
@@ -43,10 +46,10 @@ const ContactInfo = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-playfair italic text-white leading-[1.05] tracking-tight mb-0"
+              className="text-4xl md:text-5xl lg:text-5xl font-playfair italic text-white leading-[1.05] tracking-tight mb-0"
             >
               We are always <br />
-              <span className="text-[#00C2FF]">happy</span> to assist you
+              <span className="text-[#FFCB0F]">happy</span> to assist you
             </motion.h2>
           </div>
 
@@ -60,7 +63,7 @@ const ContactInfo = () => {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-white font-bold text-base uppercase tracking-wider">Email Address</span>
-                <Mail className="w-4 h-4 text-[#00C2FF]" />
+                <Mail className="w-4 h-4 text-[#FFCB0F]" />
               </div>
               <div className="w-16 h-[1px] bg-white/20 mb-6"></div>
               <h4 className="text-white/80 font-bold text-[11px] uppercase tracking-widest mb-2 font-poppins">Send us an email</h4>
@@ -76,7 +79,7 @@ const ContactInfo = () => {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-white font-bold text-base uppercase tracking-wider">Number</span>
-                <Phone className="w-4 h-4 text-[#00C2FF]" />
+                <Phone className="w-4 h-4 text-[#FFCB0F]" />
               </div>
               <div className="w-16 h-[1px] bg-white/20 mb-6"></div>
               <h4 className="text-white/80 font-bold text-[11px] uppercase tracking-widest mb-2 font-poppins">Give us a call</h4>
@@ -92,7 +95,7 @@ const ContactInfo = () => {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-white font-bold text-base uppercase tracking-wider">Address</span>
-                <MapPin className="w-4 h-4 text-[#00C2FF]" />
+                <MapPin className="w-4 h-4 text-[#FFCB0F]" />
               </div>
               <div className="w-16 h-[1px] bg-white/20 mb-6"></div>
               <h4 className="text-white/80 font-bold text-[11px] uppercase tracking-widest mb-2 font-poppins">Visit our office</h4>
@@ -133,23 +136,23 @@ const ContactInfo = () => {
             >
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div className="flex items-center gap-3 min-w-[180px]">
-                  <Clock className="w-5 h-5 text-[#00C2FF]" />
+                  <Clock className="w-5 h-5 text-[#FFCB0F]" />
                   <h3 className="text-white font-bold text-lg">Business Hours</h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full">
                   <div className="relative">
-                    <span className="text-[#00C2FF] text-[10px] uppercase font-bold tracking-widest block mb-1">Monday - Friday</span>
+                    <span className="text-[#FFCB0F] text-[10px] uppercase font-bold tracking-widest block mb-1">Monday - Friday</span>
                     <span className="text-white font-medium text-xs">9:00 AM - 6:00 PM</span>
                     <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/10"></div>
                   </div>
                   <div className="relative">
-                    <span className="text-[#00C2FF] text-[10px] uppercase font-bold tracking-widest block mb-1">Saturday</span>
+                    <span className="text-[#FFCB0F] text-[10px] uppercase font-bold tracking-widest block mb-1">Saturday</span>
                     <span className="text-white font-medium text-xs">10:00 AM - 4:00 PM</span>
                     <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/10"></div>
                   </div>
                   <div className="relative">
-                    <span className="text-[#00C2FF] text-[10px] uppercase font-bold tracking-widest block mb-1">Sunday</span>
+                    <span className="text-[#FFCB0F] text-[10px] uppercase font-bold tracking-widest block mb-1">Sunday</span>
                     <span className="text-white font-medium text-xs opacity-60">Closed</span>
                     <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-white/10"></div>
                   </div>

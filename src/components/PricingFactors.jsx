@@ -46,7 +46,7 @@ const PricingFactors = () => {
   return (
     <section className="py-24 px-6 bg-gray-50 font-poppins relative overflow-hidden">
       {/* Subtle background decoration */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00C2FF]/5 blur-[100px] rounded-full -translate-y-1/2"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#FFCB0F]/5 blur-[100px] rounded-full -translate-y-1/2"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header Section */}
@@ -56,7 +56,7 @@ const PricingFactors = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-[#00C2FF] text-xs md:text-sm font-black uppercase tracking-[0.3em] mb-4"
+              className="text-[#FFB800] text-xs md:text-sm font-black uppercase tracking-[0.3em] mb-4"
             >
               4-Step Process & Factors
             </motion.p>
@@ -65,10 +65,10 @@ const PricingFactors = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 uppercase leading-none tracking-tighter"
+              className="text-4xl md:text-5xl lg:text-5xl font-black text-gray-900 uppercase leading-none tracking-tighter"
             >
               What Affects <br />
-              <span className="text-[#00C2FF]">Your Pricing?</span>
+              <span className="text-[#FFCB0F]">Your Pricing?</span>
             </motion.h2>
           </div>
           <motion.p
@@ -92,11 +92,11 @@ const PricingFactors = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="bg-white p-8 md:p-10 rounded-[2rem] border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,194,255,0.1)] transition-all duration-500 group"
+              className="bg-white p-8 md:p-10 rounded-[2rem] border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(255,203,15,0.1)] transition-all duration-500 group"
             >
               {/* Icon Container */}
-              <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#00C2FF]/10 transition-colors duration-500">
-                <factor.icon className="text-gray-400 w-8 h-8 group-hover:text-[#00C2FF] transition-all duration-500 group-hover:scale-110" />
+              <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#FFCB0F]/10 transition-colors duration-500">
+                <factor.icon className="text-gray-400 w-8 h-8 group-hover:text-[#FFB800] transition-all duration-500 group-hover:scale-110" />
               </div>
 
               {/* Content */}
@@ -108,7 +108,7 @@ const PricingFactors = () => {
               </p>
               
               {/* Subtle underline effect on hover */}
-              <div className="mt-8 w-12 h-1 bg-gray-100 rounded-full group-hover:w-20 group-hover:bg-[#00C2FF] transition-all duration-500"></div>
+              <div className="mt-8 w-12 h-1 bg-gray-100 rounded-full group-hover:w-20 group-hover:bg-[#FFCB0F] transition-all duration-500"></div>
             </motion.div>
           ))}
         </div>

@@ -67,7 +67,7 @@ const PricingProcess = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-[#00C2FF] font-bold text-sm uppercase tracking-[0.4em] mb-4"
+              className="text-[#FFB800] font-bold text-sm uppercase tracking-[0.4em] mb-4"
             >
               4-Step Process
             </motion.h4>
@@ -76,10 +76,10 @@ const PricingProcess = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1a1a1a] tracking-tighter uppercase"
+              className="text-4xl md:text-5xl lg:text-5xl font-black text-[#1a1a1a] tracking-tighter uppercase"
             >
               Finalize Your <br />
-              <span className="text-[#00C2FF]">Pricing</span>
+              <span className="text-[#FFCB0F]">Pricing</span>
             </motion.h2>
           </div>
           <motion.p
@@ -101,13 +101,13 @@ const PricingProcess = () => {
           <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] border-t-2 border-dotted border-gray-200 z-0">
             {/* Moving Indicator */}
             <motion.div
-              className="absolute -top-[9px] w-4 h-4 bg-[#00C2FF] rounded-full shadow-[0_0_15px_#00C2FF] z-10 flex items-center justify-center"
+              className="absolute -top-[9px] w-4 h-4 bg-[#FFCB0F] rounded-full shadow-[0_0_15px_#FFCB0F] z-10 flex items-center justify-center"
               animate={{
                 left: `${(activeStep / (steps.length - 1)) * 100}%`,
               }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
-              <Zap className="w-2 h-2 text-white fill-white" />
+              <Zap className="w-2 h-2 text-black fill-black" />
             </motion.div>
           </div>
 
@@ -125,7 +125,7 @@ const PricingProcess = () => {
                 <div
                   className={`relative mb-8 w-24 h-24 rounded-2xl ${step.color} flex items-center justify-center transition-all duration-500 ${
                     index === activeStep
-                      ? `${step.shadow} scale-110 rotate-3 ring-4 ring-[#00C2FF]/20`
+                      ? `${step.shadow} scale-110 rotate-3 ring-4 ring-[#FFCB0F]/20`
                       : "opacity-80 scale-100 rotate-0"
                   } group-hover:scale-110 group-hover:rotate-3 shadow-xl`}
                 >
@@ -146,7 +146,7 @@ const PricingProcess = () => {
                   <div
                     className={`absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border-2 flex items-center justify-center font-bold text-xs transition-all duration-500 shadow-sm ${
                       index === activeStep
-                        ? "border-[#00C2FF] text-[#00C2FF] scale-110"
+                        ? "border-[#FFCB0F] text-[#FFCB0F] scale-110"
                         : "border-gray-50 text-gray-400"
                     }`}
                   >
@@ -157,7 +157,7 @@ const PricingProcess = () => {
                 {/* Text Content */}
                 <h3
                   className={`text-xl font-black mb-4 uppercase tracking-tight transition-colors duration-500 ${
-                    index === activeStep ? "text-[#00C2FF]" : "text-[#1a1a1a]"
+                    index === activeStep ? "text-[#FFB800]" : "text-[#1a1a1a]"
                   }`}
                 >
                   {step.title}
@@ -188,13 +188,13 @@ const PricingProcess = () => {
           >
             <button 
               onClick={() => document.getElementById('contact-us')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative bg-[#00C2FF] hover:bg-[#00A3D9] text-white px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-xl [transform:skewX(-15deg)] rounded-sm inline-flex items-center gap-3 overflow-hidden"
+              className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm inline-flex items-center gap-3 overflow-hidden"
             >
               <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
                 Get Your Final Quote <ArrowRight className="w-4 h-4" />
               </span>
               {/* Glossy sheen effect on hover */}
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
           </motion.div>
         </div>

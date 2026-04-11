@@ -30,7 +30,7 @@ const PortfolioHero = () => {
           className="h-full w-full object-cover object-center opacity-60"
         />
         {/* Cinematic Vignette Overlay (Shadow on all 4 sides) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 shadow-[inset_0_0_150px_rgba(0,0,0,0.9)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 shadow-[inset_0_0_150px_rgba(0,0,0,0.7)]"></div>
       </motion.div>
 
       {/* Content with Parallax */}
@@ -45,7 +45,7 @@ const PortfolioHero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="inline-flex items-center bg-[#1a1a1a]/90 backdrop-blur-md border border-white/10 rounded-full p-1 mb-8 overflow-hidden"
         >
-          <span className="bg-[#00C2FF] text-white text-[10px] sm:text-xs font-black px-4 sm:px-6 py-2 rounded-full uppercase tracking-widest shrink-0">
+          <span className="bg-[#FFCB0F] text-black text-[10px] sm:text-xs font-black px-4 sm:px-6 py-2 rounded-full uppercase tracking-widest shrink-0">
             2026
           </span>
           <span className="text-white text-[10px] sm:text-xs font-bold px-4 sm:px-6 py-2 uppercase tracking-[0.2em] truncate">
@@ -58,7 +58,7 @@ const PortfolioHero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="max-w-5xl mx-auto text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black text-white leading-[1.05] mb-8 uppercase tracking-tighter"
+          className="max-w-5xl mx-auto text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-white leading-[1.05] mb-8 uppercase tracking-tighter"
         >
           Build Strong. Build Smart.
           <br />
@@ -76,7 +76,7 @@ const PortfolioHero = () => {
           on-time execution — from planning to final completion.
         </motion.p>
 
-        {/* Button - Skewed Style, SkyBlue instead of Yellow */}
+        {/* Button - Skewed Style, Yellow theme */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,19 +87,19 @@ const PortfolioHero = () => {
               const gallery = document.getElementById('portfolio');
               if (gallery) gallery.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group relative bg-[#00C2FF] hover:bg-[#00A3D9] text-white px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-[0_20px_50px_rgba(0,194,255,0.3)] [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+            className="group relative bg-[#FFCB0F] text-black px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
           >
             <span className="relative z-10 [transform:skewX(15deg)]">
               EXPLORE PROJECTS
             </span>
             {/* Glossy overlay effect on hover */}
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
           </button>
         </motion.div>
       </motion.div>
 
       {/* Decorative Structural Bottom Line */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-[#00C2FF]/40 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-[#FFCB0F]/40 to-transparent"></div>
     </section>
   );
 };
