@@ -96,10 +96,10 @@ const Services = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-[#00C2FF]/10 px-6 py-2 rounded-full border border-[#00C2FF]/20 mb-6 group cursor-default"
+            className="inline-flex items-center gap-2 bg-[#FFCB0F]/10 px-6 py-2 rounded-full border border-[#FFCB0F]/20 mb-6 group cursor-default"
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] animate-pulse"></div>
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#00C2FF]">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#FFCB0F] animate-pulse"></div>
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FFB800]">
               Our Services
             </span>
           </motion.div>
@@ -109,10 +109,10 @@ const Services = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="text-3xl md:text-6xl font-[Montserrat] font-black text-gray-900 leading-tight tracking-[-0.04em]"
+            className="text-2xl md:text-5xl font-[Montserrat] font-black text-gray-900 leading-tight tracking-[-0.04em]"
           >
             Crafted For The <br className="md:hidden" />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#73C7E7]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFB800] to-[#FFCB0F]">
               Modern Vision
             </span>
           </motion.h2>
@@ -141,7 +141,7 @@ const Services = () => {
 
               {/* Top Badges */}
               <div className="absolute top-5 left-5 flex gap-2">
-                <span className="bg-[#00C2FF] text-white text-[9px] font-black px-3 py-1 rounded-md shadow-lg italic">
+                <span className="bg-[#FFB800] text-black text-[9px] font-black px-3 py-1 rounded-md shadow-lg italic">
                   {service.label}
                 </span>
                 <span className="bg-white/90 backdrop-blur-md text-gray-900 text-[9px] font-black px-3 py-1 rounded-md shadow-lg">
@@ -150,13 +150,13 @@ const Services = () => {
               </div>
 
               {/* Wishlist Heart */}
-              <button className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-[#00C2FF] transition-colors">
+              <button className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-[#FFB800] transition-colors">
                 <Heart className="w-4 h-4" />
               </button>
 
               {/* Expertise Badge - Moved Up */}
               <div className="absolute top-[40%] left-5 -translate-y-1/2">
-                <div className="bg-[#004d66]/80 backdrop-blur-md border-l-4 border-[#00C2FF] px-5 py-2.5 rounded-r-lg shadow-xl">
+                <div className="bg-[#2d2400]/80 backdrop-blur-md border-l-4 border-[#FFB800] px-5 py-2.5 rounded-r-lg shadow-xl">
                   <span className="text-white text-xs font-black tracking-widest uppercase">
                     Expertise Guaranteed
                   </span>
@@ -170,7 +170,7 @@ const Services = () => {
                     {service.title}
                   </h3>
                   <div className="flex items-center gap-2 text-white text-[10px] font-black uppercase tracking-widest opacity-90">
-                    <CheckCircle2 className="w-3 h-3 text-[#00C2FF]" />
+                    <CheckCircle2 className="w-3 h-3 text-[#FFB800]" />
                     {service.subtitle}
                   </div>
                 </div>
@@ -178,13 +178,13 @@ const Services = () => {
                 {/* Stats Row - Bolder & More Visible on Hover */}
                 <div className="flex justify-between items-center pt-5 mt-5 border-t border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="flex flex-col items-center">
-                    <Users className="w-4 h-4 text-[#00C2FF] mb-1" />
+                    <Users className="w-4 h-4 text-[#FFB800] mb-1" />
                     <span className="text-[9px] text-white font-black tracking-widest uppercase">
                       {service.team}
                     </span>
                   </div>
                   <div className="flex flex-col items-center border-x border-white/20 px-4">
-                    <Building2 className="w-4 h-4 text-[#00C2FF] mb-1" />
+                    <Building2 className="w-4 h-4 text-[#FFB800] mb-1" />
                     <span className="text-[9px] text-white font-black tracking-widest uppercase">
                       {service.timeline}
                     </span>
@@ -203,11 +203,14 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Hover Button - Floating & Transparent Background */}
               <div className="absolute inset-x-0 bottom-8 flex justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                <button className="flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-[0.3em] bg-linear-to-r from-[#00C2FF] to-[#73C7E7] px-8 py-3 rounded-xl shadow-2xl">
-                  ENQUIRY NOW
-                  <ArrowRight className="w-4 h-4" />
+                <button className="group relative bg-[#ffcb0f] text-black px-8 py-3 font-black uppercase tracking-[0.2em] text-[10px] transition-all hover:scale-110 active:scale-95 flex items-center gap-3 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+                  <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-3">
+                    ENQUIRY NOW
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                  {/* Glossy sheen effect on hover */}
+                  <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
                 </button>
               </div>
             </motion.div>

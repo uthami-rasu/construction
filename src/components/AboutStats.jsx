@@ -123,13 +123,14 @@ const AboutStats = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden py-28 md:py-16 bg-[#006699]"
+      className="relative w-full overflow-hidden py-28 md:py-16"
+      style={{ background: 'linear-gradient(135deg, #080229 0%, #120b4a 100%)' }}
     >
       {/* Blueprint Grid Pattern */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1.5px, transparent 1.5px)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.06) 1.5px, transparent 1.5px)`,
           backgroundSize: "28px 28px",
         }}
       />

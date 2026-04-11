@@ -230,9 +230,9 @@ const AboutGallery = () => {
             <div className="mb-8">
               <h4 className="text-sm font-bold tracking-[0.3em] uppercase mb-4">
                 CONSTRUCT YOUR{" "}
-                <span className="text-[#00C2FF] font-black">DREAM HOME</span>
+                <span className="text-[#FFCB0F] font-black">DREAM HOME</span>
               </h4>
-              <h2 className="text-5xl md:text-6xl font-black text-[#1a1a1a] mb-8 tracking-tighter uppercase">
+              <h2 className="text-3xl md:text-5xl font-black text-[#1a1a1a] mb-8 tracking-tighter uppercase">
                 ABOUT US
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
@@ -252,11 +252,12 @@ const AboutGallery = () => {
               </div>
             </div>
 
-            <button className="group relative bg-[#00C2FF] text-white px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 hover:shadow-[0_20px_40px_rgba(0,194,255,0.3)] [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+            <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
               <span className="relative z-10 [transform:skewX(15deg)] block">
                 CONTACT US
               </span>
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
+              {/* Glossy sheen effect on hover */}
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
           </motion.div>
         </div>

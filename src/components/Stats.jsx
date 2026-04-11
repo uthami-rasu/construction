@@ -88,13 +88,13 @@ const Stats = () => {
               </div>
 
               {/* Minimal Divider */}
-              <div className="w-px h-8 sm:h-10 bg-[#00C2FF]/30 relative">
+              <div className="w-px h-8 sm:h-10 bg-[#FFCB0F]/30 relative">
                 <motion.div
                   initial={{ scaleY: 0 }}
                   whileInView={{ scaleY: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="absolute inset-0 bg-[#00C2FF] origin-top"
+                  className="absolute inset-0 bg-[#FFCB0F] origin-top"
                 />
               </div>
 

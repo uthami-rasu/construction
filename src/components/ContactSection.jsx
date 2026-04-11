@@ -58,21 +58,25 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact-us" className="relative overflow-hidden font-poppins">
-      {/* Main bg gradient */}
-      <div className="relative bg-linear-to-br from-[#0096c7] via-[#00b4d8] to-[#48cae4] py-28 px-6 min-h-[80vh] flex flex-col items-center justify-center">
+    <section
+      id="contact-us"
+      className="relative w-full overflow-hidden py-28 md:py-16"
+      style={{ background: 'linear-gradient(135deg, #080229 0%, #120b4a 100%)' }}
+    >
+      {/* Main bg: Dark Charcoal with Yellow/Gold Accents */}
+      <div className="p-10 md:p-14 lg:p-20 flex flex-col items-center text-center relative overflow-hidden">
         {/* White grid overlay — matches reference */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(255,184,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,184,0,0.05) 1px, transparent 1px)`,
             backgroundSize: "48px 48px",
           }}
         />
 
-        {/* Glow blobs */}
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#023e8a]/20 rounded-full blur-[100px] pointer-events-none" />
+        {/* Glow blobs - Yellow/Gold theme */}
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#FFB800]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#FFCB0F]/10 rounded-full blur-[100px] pointer-events-none" />
 
         {/* Heading */}
         <motion.div
@@ -85,7 +89,7 @@ const ContactSection = () => {
           <span className="text-white/60 text-[10px] font-black uppercase tracking-[0.5em]">
             Get In Touch
           </span>
-          <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-montserrat font-black text-white uppercase leading-tight mt-3">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-black text-white uppercase leading-tight mt-3">
             Do You Have Any <span className="text-white/80">Questions?</span>
           </h2>
           <p className="text-white/50 text-sm mt-3 tracking-widest uppercase">
@@ -110,14 +114,14 @@ const ContactSection = () => {
               name="user_name"
               placeholder="Name"
               required
-              className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-white/40 transition-all"
+              className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-[#FFB800]/40 transition-all"
             />
             <input
               type="email"
               name="user_email"
               placeholder="Email"
               required
-              className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-white/40 transition-all"
+              className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-[#FFB800]/40 transition-all"
             />
           </div>
 
@@ -128,22 +132,20 @@ const ContactSection = () => {
               placeholder="Message"
               required
               rows={3}
-              className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-white/40 transition-all resize-none"
+              className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-[#FFB800]/40 transition-all resize-none"
             />
-            <motion.button
+            <button
               type="submit"
               disabled={status === "sending"}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              className="sm:self-stretch px-10 py-5 rounded-2xl bg-gray-900 text-white font-black uppercase tracking-widest text-xs shadow-2xl flex items-center justify-center gap-3 disabled:opacity-60 transition-all min-w-[140px]"
+              className="group relative w-full sm:w-auto bg-[#ffcb0f] text-black px-10 py-5 font-black uppercase tracking-widest text-xs transition-all hover:scale-105 active:scale-95 flex items-center gap-3 justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden disabled:opacity-50"
             >
-              {status === "sending" ? (
-                <span className="animate-spin w-5 h-5 border-2 border-white/30 border-t-white rounded-full inline-block" />
-              ) : (
+              <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
+                {status === "sending" ? "Sending..." : "Send Message"}
                 <Send className="w-5 h-5" />
-              )}
-              Submit
-            </motion.button>
+              </span>
+              {/* Glossy sheen effect on hover */}
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
+            </button>
           </div>
 
           {/* Feedback messages */}

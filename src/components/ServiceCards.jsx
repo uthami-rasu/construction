@@ -65,7 +65,7 @@ const ServiceCards = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-[#00C2FF] font-bold text-sm uppercase tracking-[0.4em] mb-4"
+              className="text-[#FFB800] font-bold text-sm uppercase tracking-[0.4em] mb-4"
             >
               Professional Services
             </motion.h4>
@@ -74,7 +74,7 @@ const ServiceCards = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-5xl md:text-6xl font-black text-[#1a1a1a] tracking-tighter uppercase"
+              className="text-3xl md:text-5xl font-black text-[#1a1a1a] tracking-tighter uppercase"
             >
               What We Do
             </motion.h2>
@@ -119,7 +119,7 @@ const ServiceCards = () => {
               {/* Content Container */}
               <div className="absolute inset-0 p-10 flex flex-col justify-center z-10 text-center">
                 <div className="mb-4">
-                  <h3 className="text-white text-3xl font-black mb-4 leading-tight uppercase tracking-tight group-hover:text-[#00C2FF] transition-colors">
+                  <h3 className="text-white text-3xl font-black mb-4 leading-tight uppercase tracking-tight group-hover:text-[#FFB800] transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-white/80 text-sm md:text-base leading-relaxed font-medium">
@@ -130,11 +130,11 @@ const ServiceCards = () => {
 
               {/* Bottom Elements */}
               <div className="absolute bottom-0 left-0 w-full p-10 flex items-center justify-between z-20">
-                {/* Skyblue Line Anchor */}
-                <div className="h-1 w-20 bg-[#00C2FF] rounded-full group-hover:w-full transition-all duration-700 origin-left"></div>
+                {/* Yellow Line Anchor */}
+                <div className="h-1 w-20 bg-[#FFB800] rounded-full group-hover:w-full transition-all duration-700 origin-left"></div>
                 
                 {/* Action Button */}
-                <div className="ml-6 flex-shrink-0 w-14 h-14 bg-[#00C2FF] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 cursor-pointer">
+                <div className="ml-6 flex-shrink-0 w-14 h-14 bg-[#FFB800] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 cursor-pointer">
                   <ArrowRight className="w-6 h-6 text-white -rotate-45" />
                 </div>
               </div>

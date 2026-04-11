@@ -32,14 +32,14 @@ const AboutSection = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Subtle Mesh Gradient */}
-        <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-linear-to-br from-[#00C2FF]/10 to-transparent rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-linear-to-tl from-[#ffcb0f]/10 to-transparent rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-linear-to-br from-[#FFCB0F]/10 to-transparent rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-linear-to-tl from-[#FFB800]/10 to-transparent rounded-full blur-[120px] animate-pulse"></div>
 
         {/* Grid Pattern */}
         <div
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300C2FF' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFCB0F' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         ></div>
 
@@ -63,8 +63,8 @@ const AboutSection = () => {
                 x2="100%"
                 y2="0%"
               >
-                <stop offset="0%" stopColor="#00C2FF" />
-                <stop offset="100%" stopColor="#3498db" />
+                <stop offset="0%" stopColor="#FFB800" />
+                <stop offset="100%" stopColor="#FFCB0F" />
               </linearGradient>
             </defs>
           </svg>
@@ -74,7 +74,7 @@ const AboutSection = () => {
         {floatingShapes.map((shape, index) => (
           <motion.div
             key={index}
-            className="absolute rounded-full bg-linear-to-br from-[#00C2FF]/10 to-[#ffcb0f]/10 backdrop-blur-[2px] border border-white/20"
+            className="absolute rounded-full bg-linear-to-br from-[#FFCB0F]/10 to-[#FFB800]/10 backdrop-blur-[2px] border border-white/20"
             style={{
               width: shape.size,
               height: shape.size,
@@ -121,7 +121,7 @@ const AboutSection = () => {
             }}
             className="inline-block mb-4 sm:mb-6"
           >
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.5em] text-[#00C2FF] bg-[#00C2FF]/5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full border border-[#00C2FF]/20 shadow-sm">
+            <span className="text-[10px] sm:text-[10px] font-black uppercase tracking-[0.5em] text-[#FFB800] bg-[#FFCB0F]/5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full border border-[#FFCB0F]/20 shadow-sm">
               Welcome to Our Company
             </span>
           </motion.div>
@@ -131,10 +131,10 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[clamp(2.2rem,5vw,4rem)] font-montserrat font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-6 sm:mb-8"
+            className="text-3xl md:text-5xl font-montserrat font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-6 sm:mb-8"
           >
             Building the Future <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#005a77]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFB800] to-[#E69D00]">
               with Excellence
             </span>
           </motion.h2>
@@ -147,10 +147,10 @@ const AboutSection = () => {
             className="space-y-4 sm:space-y-8"
           >
             <div className="relative">
-              <div className="absolute -left-6 top-0 bottom-0 w-1.5 bg-linear-to-b from-[#00C2FF] to-[#ffcb0f] rounded-full"></div>
-              <p className="text-gray-600 text-sm sm:text-lg lg:text-xl leading-relaxed font-medium pl-2">
+              <div className="absolute -left-6 top-0 bottom-0 w-1.5 bg-linear-to-b from-[#FFCB0F] to-[#FFB800] rounded-full"></div>
+              <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed font-medium pl-2">
                 Founded on a commitment to quality and innovation,{" "}
-                <span className="text-[#00C2FF] font-black italic">
+                <span className="text-[#FFB800] font-black italic">
                   Krrish Construction
                 </span>{" "}
                 has been shaping spaces for years. From residential homes to
@@ -159,26 +159,21 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <p className="text-gray-500 text-xs sm:text-base lg:text-lg leading-relaxed font-medium opacity-90">
+            <p className="text-gray-500 text-xs sm:text-sm lg:text-base leading-relaxed font-medium opacity-90">
               Our mission is to build structures that blend functionality,
               durability, and aesthetic excellence. We envision a future where
               innovation and sustainability drive every project we undertake.
             </p>
 
             <div className="pt-6 flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 items-center">
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px -10px rgba(0,194,255,0.4)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto bg-linear-to-r from-[#00C2FF] to-[#73C7E7] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-black text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] shadow-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
-              >
-                KNOW MORE
-                <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-white/20 flex items-center justify-center">
+              <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+                <span className="relative z-10 [transform:skewX(15deg)]">KNOW MORE</span>
+                <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-black/10 flex items-center justify-center relative z-10 [transform:skewX(15deg)]">
                   <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4" />
                 </div>
-              </motion.button>
+                {/* Glossy sheen effect on hover */}
+                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
+              </button>
 
               <div className="w-full sm:w-auto flex -space-x-3 sm:-space-x-4 items-center pl-0 sm:pl-4">
                 {[1, 2, 3, 4].map((i) => (
@@ -194,7 +189,7 @@ const AboutSection = () => {
                 ))}
                 <div className="pl-3 sm:pl-6">
                   <div className="text-xs sm:text-sm font-black text-gray-900 flex items-center gap-1">
-                    <Users className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#00C2FF]" />
+                    <Users className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#FFB800]" />
                     500+
                   </div>
                   <div className="text-[7px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-widest leading-none">
@@ -265,17 +260,17 @@ const AboutSection = () => {
                 ease: "easeInOut",
                 delay: 1,
               }}
-              className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-xl p-7 rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(0,194,255,0.25)] border border-white z-20 hidden md:block min-w-[200px]"
+              className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-xl p-7 rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(255,184,0,0.25)] border border-white z-20 hidden md:block min-w-[200px]"
             >
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#00C2FF] to-[#73C7E7] flex items-center justify-center mb-4 shadow-lg rotate-3 group-hover:rotate-0 transition-transform">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#FFB800] to-[#FFCB0F] flex items-center justify-center mb-4 shadow-lg rotate-3 group-hover:rotate-0 transition-transform">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-black text-gray-900 mb-0.5 tracking-tighter">
                     15+
                   </div>
-                  <div className="text-[9px] font-black uppercase tracking-[0.2em] text-[#00C2FF]">
+                  <div className="text-[9px] font-black uppercase tracking-[0.2em] text-[#FFB800]">
                     Years of
                   </div>
                   <div className="text-[11px] font-black uppercase tracking-[0.15em] text-gray-900 mt-0.5">
@@ -290,7 +285,7 @@ const AboutSection = () => {
           </div>
 
           {/* Background Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#00C2FF]/10 blur-[100px] -z-10 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#FFCB0F]/10 blur-[100px] -z-10 rounded-full"></div>
         </motion.div>
       </div>
     </section>

@@ -38,7 +38,7 @@ const AboutHero = () => {
           }}
           className="h-full w-full object-cover opacity-75"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40"></div>
       </motion.div>
 
       {/* Content with Parallax */}
@@ -53,7 +53,7 @@ const AboutHero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="inline-flex items-center bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/10 rounded-full p-1 mb-6 sm:mb-8 max-w-[90vw]"
         >
-          <span className="bg-[#00C2FF] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
+          <span className="bg-[#FFCB0F] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
             2026
           </span>
           <span className="text-white text-[9px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 uppercase tracking-[0.1em] sm:tracking-[0.2em] truncate">
@@ -66,7 +66,7 @@ const AboutHero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="max-w-5xl mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 sm:mb-8 uppercase tracking-tighter"
+          className="max-w-5xl mx-auto text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-black text-white leading-[1.1] mb-6 sm:mb-8 uppercase tracking-tighter"
         >
           Complete Construction Solutions <br />
           for Every Need
@@ -89,12 +89,12 @@ const AboutHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-          <button className="group relative bg-[#00C2FF] hover:bg-[#00B4FF] text-white px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+          <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
             <span className="relative z-10 [transform:skewX(15deg)]">
               CONTACT US
             </span>
             {/* Glossy sheen effect on hover */}
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
           </button>
         </motion.div>
       </motion.div>

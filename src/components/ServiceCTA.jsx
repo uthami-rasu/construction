@@ -4,10 +4,13 @@ import { ArrowRight } from "lucide-react";
 
 const ServiceCTA = () => {
   return (
-    <section className="py-20 bg-[#006699] font-poppins relative overflow-hidden w-full">
+    <section 
+      className="py-20 font-poppins relative overflow-hidden w-full"
+      style={{ background: 'linear-gradient(135deg, #080229 0%, #120b4a 100%)' }}
+    >
       {/* Decorative Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
-      <div className="absolute top-0 right-0 w-[600px] h-full bg-[#00C2FF]/5 blur-[120px] rounded-full translate-x-1/2"></div>
+      <div className="absolute top-0 right-0 w-[600px] h-full bg-[#FFCB0F]/5 blur-[120px] rounded-full translate-x-1/2"></div>
 
       <div className="relative z-10 px-6 text-center max-w-5xl mx-auto">
         <motion.h2
@@ -15,7 +18,7 @@ const ServiceCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-8 tracking-tighter uppercase leading-tight"
+          className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter uppercase leading-tight"
         >
           Let's Build Something <br className="hidden md:block" />
           Amazing Together
@@ -39,12 +42,12 @@ const ServiceCTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="group relative bg-white hover:bg-gray-50 text-[#006699] px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm flex items-center gap-3 mx-auto overflow-hidden">
+          <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-4 md:py-5 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm flex items-center gap-3 mx-auto overflow-hidden">
             <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
               View Our Portfolio <ArrowRight className="w-4 h-4" />
             </span>
             {/* Glossy sheen effect on hover */}
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+            <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
           </button>
         </motion.div>
       </div>

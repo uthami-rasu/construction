@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // Import Swiper styles
@@ -75,28 +75,28 @@ const Hero = () => {
                 alt={slide.title}
                 className="absolute top-[-5%] left-0 h-[110%] w-full object-cover animate-[kenburns_10s_linear_infinite]"
               />
-              <div className="absolute inset-0 bg-black/60 z-10"></div>
+              <div className="absolute inset-0 bg-black/40 z-10"></div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Content Overlay */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 sm:px-6 text-center pointer-events-none pb-16 sm:pb-20 mt-8 sm:mt-10 hero-content-container">
+      {/* Content Overlay - Adjusted padding to avoid header overlap */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 sm:px-6 text-center pointer-events-none pb-16 sm:pb-20 pt-24 md:pt-32 hero-content-container">
         <div className="w-full max-w-6xl pointer-events-auto">
           {/* Subheading */}
-          <p className="text-[#ffcb0f] text-lg sm:text-base md:text-lg font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-4 sm:mb-6 mt-40 sm:mt-0 animate-[fadeInDown_1s_ease-out] hero-subheading">
+          <p className="text-[#ffcb0f] text-xs sm:text-xs md:text-base font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-4 sm:mb-6 mt-40 sm:mt-0 animate-[fadeInDown_1s_ease-out] hero-subheading">
             Turning Ideas into Landmarks
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-black text-white mb-10 sm:mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out] hero-heading">
-            CONSTRUCTION <br />
-            <span className="text-[#00C2FF]">SERVICES</span>
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black mb-10 sm:mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out] hero-heading drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <span className="text-white">CONSTRUCTION</span> <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFB800] via-[#FFCB0F] to-[#FFB800] drop-shadow-[0_2px_10px_rgba(255,184,0,0.3)]">SERVICES</span>
           </h1>
 
           {/* Bold Description */}
-          <p className="text-lg sm:text-lg md:text-xl text-white mb-6 sm:mb-14 max-w-4xl mx-auto leading-relaxed font-bold opacity-95 animate-[fadeIn_1.5s_ease-out] drop-shadow-xl px-2 sm:px-4 hero-description">
+          <p className="text-xs sm:text-base md:text-lg text-white mb-6 sm:mb-14 max-w-4xl mx-auto leading-relaxed font-bold opacity-95 animate-[fadeIn_1.5s_ease-out] drop-shadow-xl px-2 sm:px-4 hero-description">
             We don't just build structures—we create spaces that inspire,
             endure, and bring your vision to life. Whether you need a new home,
             a commercial space, or a large-scale project, we ensure top-tier
@@ -105,17 +105,17 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mt-36 sm:mt-0 animate-[fadeInUp_1.8s_ease-out] hero-buttons-container">
-            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center overflow-hidden">
-              <span className="relative z-10">KNOW MORE</span>
-              <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px] relative z-10" />
+            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+              <span className="relative z-10 [transform:skewX(15deg)]">KNOW MORE</span>
+              <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px] relative z-10 [transform:skewX(15deg)]" />
               {/* Glossy sheen effect on hover */}
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
-            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black hover:bg-[#ffdb4d] hover:scale-105 transition-all uppercase tracking-widest text-sm sm:text-xs flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center overflow-hidden">
-              <span className="relative z-10">VIEW PROJECT</span>
-              <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px] relative z-10" />
+            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+              <span className="relative z-10 [transform:skewX(15deg)]">VIEW PROJECT</span>
+              <Play className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 stroke-[3px] relative z-10 [transform:skewX(15deg)]" />
               {/* Glossy sheen effect on hover */}
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
           </div>
         </div>

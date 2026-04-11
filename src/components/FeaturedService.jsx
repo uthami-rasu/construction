@@ -22,10 +22,13 @@ const features = [
 
 const FeaturedService = () => {
   return (
-    <section className="py-24 md:py-32 bg-[#006699] font-poppins relative overflow-hidden">
+    <section 
+      className="py-24 md:py-32 font-poppins relative overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #080229 0%, #120b4a 100%)' }}
+    >
       {/* Decorative Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00C2FF]/5 blur-[120px] rounded-full translate-x-1/4 -translate-y-1/4"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00C2FF]/10 blur-[150px] rounded-full -translate-x-1/4 translate-y-1/4"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFCB0F]/5 blur-[120px] rounded-full translate-x-1/4 -translate-y-1/4"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#FFCB0F]/5 blur-[150px] rounded-full -translate-x-1/4 translate-y-1/4"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
@@ -39,7 +42,7 @@ const FeaturedService = () => {
             >
               <h4 className="text-white font-bold text-xs md:text-sm tracking-[0.4em] uppercase">
                 Building Construction{" "}
-                <span className="text-[#00C2FF]">Excellence</span>
+                <span className="text-[#FFCB0F]">Excellence</span>
               </h4>
             </motion.div>
 
@@ -48,7 +51,7 @@ const FeaturedService = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 tracking-tighter uppercase leading-tight"
+              className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter uppercase leading-tight"
             >
               Featured <br />
               <span className="text-white">Service</span>
@@ -77,11 +80,11 @@ const FeaturedService = () => {
                   transition={{ delay: 0.3 + index * 0.1 }}
                   className="flex items-start gap-4 group"
                 >
-                  <div className="mt-1 p-2 bg-[#1a2a41] rounded-lg group-hover:bg-[#00C2FF] transition-colors duration-300">
-                    <CheckSquare className="w-5 h-5 text-[#00C2FF] group-hover:text-white transition-colors duration-300" />
+                  <div className="mt-1 p-2 bg-white/5 rounded-lg group-hover:bg-[#FFCB0F] transition-colors duration-300 border border-white/10">
+                    <CheckSquare className="w-5 h-5 text-[#FFCB0F] group-hover:text-black transition-colors duration-300" />
                   </div>
                   <div>
-                    <h5 className="text-[#00C2FF] font-black text-lg mb-1 uppercase tracking-tight">
+                    <h5 className="text-[#FFCB0F] font-black text-lg mb-1 uppercase tracking-tight">
                       {feature.title}
                     </h5>
                     <p className="text-white/90 text-sm font-medium">
@@ -98,12 +101,12 @@ const FeaturedService = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <button className="group relative bg-white hover:bg-gray-50 text-[#006699] px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 [transform:skewX(-15deg)] rounded-sm overflow-hidden shadow-2xl flex items-center gap-3">
+              <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 [transform:skewX(-15deg)] rounded-sm overflow-hidden shadow-2xl flex items-center gap-3">
                 <span className="relative z-10 [transform:skewX(15deg)]">
                   Get Started Today
                 </span>
                 {/* Glossy sheen effect on hover */}
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[45deg]"></div>
+                <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
               </button>
             </motion.div>
           </div>
@@ -160,7 +163,7 @@ const FeaturedService = () => {
               <motion.div
                 animate={{ scale: [1, 1.2, 1], rotate: 360 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="absolute -right-8 -bottom-8 w-24 h-24 border-[12px] border-[#00C2FF]/20 rounded-full z-0"
+                className="absolute -right-8 -bottom-8 w-24 h-24 border-[12px] border-[#FFCB0F]/20 rounded-full z-0"
               />
             </div>
           </div>

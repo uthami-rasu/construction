@@ -40,14 +40,14 @@ const WhyChooseUsRefined = () => {
               viewport={{ once: true }}
               className="text-[14px] font-black tracking-[0.2em] text-gray-400 mb-4 uppercase"
             >
-              WE ARE PROFESSIONAL & <span className="text-[#00C2FF]">CERTIFIED BUILDERS</span>
+              WE ARE PROFESSIONAL & <span className="text-[#FFCB0F]">CERTIFIED BUILDERS</span>
             </motion.h4>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-7xl font-black text-[#1a1a1a] tracking-tighter leading-[0.8] uppercase"
+              className="text-4xl md:text-5xl font-black text-[#1a1a1a] tracking-tighter leading-[1.0] uppercase"
             >
               WHY<br />CHOOSE US
             </motion.h2>

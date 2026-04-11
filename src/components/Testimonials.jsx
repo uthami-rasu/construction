@@ -28,7 +28,7 @@ const reviews = [
 
 const Testimonials = () => {
   return (
-    <section className="py-28 bg-linear-to-b from-white via-[#f0fafe] to-white relative overflow-hidden font-poppins">
+    <section className="py-28 bg-linear-to-b from-white via-[#fffbeb] to-white relative overflow-hidden font-poppins">
       {/* Subtle blueprint background */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -50,7 +50,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-6"
           >
-            <div className="w-8 h-px bg-[#00C2FF]" />
+            <div className="w-8 h-px bg-[#FFB800]" />
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">
               Testimonials
             </span>
@@ -61,11 +61,11 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[clamp(2rem,5vw,3.5rem)] font-[montserrat] font-black text-gray-900 uppercase tracking-tight leading-none"
+            className="text-3xl md:text-5xl font-[montserrat] font-black text-gray-900 uppercase tracking-tight leading-none"
           >
             Customer{" "}
             <span className="relative inline-block">
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00C2FF] to-[#73C7E7]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFB800] to-[#FFCB0F]">
                 Reviews
               </span>
               <motion.span
@@ -73,7 +73,7 @@ const Testimonials = () => {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="absolute -bottom-1 left-0 right-0 h-1.5 bg-linear-to-r from-[#00C2FF] to-[#73C7E7] origin-left rounded-full"
+                className="absolute -bottom-1 left-0 right-0 h-1.5 bg-linear-to-r from-[#FFB800] to-[#FFCB0F] origin-left rounded-full"
               />
             </span>
           </motion.h2>
@@ -104,20 +104,20 @@ const Testimonials = () => {
                 className={`relative w-full p-8 mb-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl
                   ${
                     review.isFeatured
-                      ? "bg-linear-to-br from-[#00C2FF] to-[#73C7E7] shadow-xl shadow-[#00C2FF]/20"
+                      ? "bg-linear-to-br from-[#FFCB0F] to-[#FFB800] shadow-xl shadow-[#FFCB0F]/20 text-black"
                       : "bg-white shadow-md border border-gray-100"
                   }`}
               >
                 {/* Big quote mark */}
                 <span
                   className={`block font-serif text-7xl leading-none mb-3 select-none
-                    ${review.isFeatured ? "text-white/30" : "text-gray-200"}`}
+                    ${review.isFeatured ? "text-black/30" : "text-gray-200"}`}
                 >
                   "
                 </span>
                 <p
                   className={`text-base leading-relaxed font-medium italic -mt-6
-                    ${review.isFeatured ? "text-white" : "text-gray-500"}`}
+                    ${review.isFeatured ? "text-black" : "text-gray-500"}`}
                 >
                   {review.text}
                 </p>
@@ -125,7 +125,7 @@ const Testimonials = () => {
                 {/* Bubble tail */}
                 <div
                   className={`absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rotate-45
-                    ${review.isFeatured ? "bg-[#73C7E7]" : "bg-white border-r border-b border-gray-100"}`}
+                    ${review.isFeatured ? "bg-[#FFB800]" : "bg-white border-r border-b border-gray-100"}`}
                 />
               </div>
 
