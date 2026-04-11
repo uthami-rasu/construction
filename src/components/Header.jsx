@@ -132,11 +132,11 @@ const Header = () => {
                   key={item.label}
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center gap-5 text-lg font-black uppercase tracking-widest ${
+                  className={`flex items-center gap-5 text-lg font-black uppercase tracking-widest transition-colors ${
                     location.pathname === item.path ? "text-[#FFCB0F]" : "text-white hover:text-[#FFCB0F]"
                   }`}
                 >
-                  <item.icon className="w-6 h-6 text-[#FFCB0F]" />
+                  <item.icon className={`w-6 h-6 transition-colors ${location.pathname === item.path ? "text-[#FFCB0F]" : "text-white group-hover:text-[#FFCB0F]"}`} />
                   {item.label}
                 </Link>
               ) : (
@@ -144,9 +144,9 @@ const Header = () => {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item)}
-                  className="flex items-center gap-5 text-lg font-black text-white hover:text-[#FFCB0F] transition-colors uppercase tracking-widest"
+                  className="group flex items-center gap-5 text-lg font-black text-white hover:text-[#FFCB0F] transition-colors uppercase tracking-widest"
                 >
-                  <item.icon className="w-6 h-6 text-[#FFCB0F]" />
+                  <item.icon className="w-6 h-6 text-white group-hover:text-[#FFCB0F] transition-colors" />
                   {item.label}
                 </a>
               )

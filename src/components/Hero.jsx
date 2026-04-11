@@ -92,7 +92,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black mb-10 sm:mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out] hero-heading drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             <span className="text-white">CONSTRUCTION</span> <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFB800] via-[#FFCB0F] to-[#FFB800] drop-shadow-[0_2px_10px_rgba(255,184,0,0.3)]">SERVICES</span>
+            <span className="text-white">SERVICES</span>
           </h1>
 
           {/* Bold Description */}
@@ -111,11 +111,14 @@ const Hero = () => {
               {/* Glossy sheen effect on hover */}
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
-            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+            <button 
+              onClick={() => navigate('/portfolio')}
+              className="group relative bg-transparent border-2 border-white text-white px-6 sm:px-10 py-[10px] md:py-[14px] font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:bg-white hover:text-black hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+            >
               <span className="relative z-10 [transform:skewX(15deg)]">VIEW PROJECT</span>
               <Play className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 stroke-[3px] relative z-10 [transform:skewX(15deg)]" />
               {/* Glossy sheen effect on hover */}
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
+              <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
           </div>
         </div>

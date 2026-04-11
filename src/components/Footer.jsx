@@ -23,7 +23,8 @@ const Footer = () => {
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(209,213,219,0.15)_1px,transparent_1px),linear-gradient(rgba(209,213,219,0.15)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
       {/* Animated Top Border */}
-      <div className="relative h-1 bg-gradient-to-r from-transparent via-[#FFCB0F] to-transparent shadow-[0_0_20px_rgba(255,184,0,0.4)]" />
+      {/* Animated Top Border */}
+      <div className="relative h-1 bg-gradient-to-r from-transparent via-[#FFCB0F]/40 to-transparent shadow-[0_0_20px_rgba(255,184,0,0.2)]" />
 
       {/* Main Footer Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 pt-8 pb-4">
@@ -220,7 +221,8 @@ const Footer = () => {
       </div>
 
       {/* Divider */}
-      <div className="relative z-10 mx-4 md:mx-6 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
+      {/* Divider */}
+      <div className="relative z-10 mx-4 md:mx-6 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
 
       {/* Footer Bottom Row */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 py-6 transition-all duration-300">
@@ -234,7 +236,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-[#FFCB0F] text-black shadow-[0_10px_30px_rgba(255,203,15,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 z-50 [transform:skewX(-15deg)] rounded-sm border border-black/5"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-[#080229] border-2 border-[#FFCB0F]/50 text-[#FFCB0F] shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center justify-center hover:bg-[#FFCB0F] hover:text-black hover:scale-110 active:scale-95 transition-all duration-300 z-50 [transform:skewX(-15deg)] rounded-sm"
         aria-label="Scroll to top"
       >
         <div className="[transform:skewX(15deg)]">

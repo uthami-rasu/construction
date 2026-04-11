@@ -46,9 +46,9 @@ const WhyChooseUs = () => {
 
         {/* Subtle Grid dots */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
-            backgroundImage: `radial-gradient(#FFCB0F 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(#080229 1px, transparent 1px)`,
             backgroundSize: "40px 40px",
           }}
         ></div>
@@ -88,12 +88,12 @@ const WhyChooseUs = () => {
               transition={{ delay: 0.2 }}
               className="text-base md:text-lg font-medium text-gray-500 italic font-playfair leading-relaxed relative"
             >
-              <span className="text-[#FFB800] text-6xl absolute -left-10 -top-6 opacity-20 font-serif">
+              <span className="text-gray-200 text-6xl absolute -left-10 -top-6 font-serif">
                 “
               </span>
               We don't just build structures—we build trust, innovation, and
               lasting impressions.
-              <span className="text-[#FFB800] text-6xl absolute -right-10 -bottom-10 opacity-20 font-serif">
+              <span className="text-gray-200 text-6xl absolute -right-10 -bottom-10 font-serif">
                 ”
               </span>
             </motion.p>
@@ -122,9 +122,9 @@ const WhyChooseUs = () => {
               {/* Icon Container with Concentric Glass Layers */}
               <div className="relative mb-10 flex items-center justify-center">
                 {/* Outer concentric shell */}
-                <div className="w-32 h-32 rounded-[2.5rem] bg-[#FFCB0F]/5 flex items-center justify-center transition-all duration-500 group-hover:rotate-15">
+                <div className="w-32 h-32 rounded-[2.5rem] bg-gray-50 flex items-center justify-center transition-all duration-500 group-hover:rotate-15">
                   {/* Middle concentric shell */}
-                  <div className="w-24 h-24 rounded-3xl bg-[#FFCB0F]/10 backdrop-blur-sm border border-[#FFCB0F]/10 flex items-center justify-center rotate-[-5deg] group-hover:rotate-0 transition-all duration-500">
+                  <div className="w-24 h-24 rounded-3xl bg-white/80 backdrop-blur-sm border border-gray-100 flex items-center justify-center rotate-[-5deg] group-hover:rotate-0 transition-all duration-500">
                     {/* Inner Icon Container */}
                     <div
                       className={`w-16 h-16 rounded-2xl bg-linear-to-br ${reason.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 rotate-10 group-hover:rotate-0`}
