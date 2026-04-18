@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
             className="text-2xl md:text-5xl font-[montserrat] font-black text-gray-900 leading-none capitalize tracking-[-0.02em] mb-10"
           >
             Why Choose <br className="hidden md:block" />
-            <span className="text-[#FFB800]">Krish Construction</span>
+            <span className="text-[#FFB800]">Krrish Construction</span>
           </motion.h2>
 
           <div className="max-w-4xl mx-auto">

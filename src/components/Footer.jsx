@@ -34,9 +34,7 @@ const Footer = () => {
           {/* Column 1 - Brand & Hours - Wide Span for Horizontal Layout */}
           <div className="group lg:col-span-5">
             <div className="mb-4 flex items-center justify-center lg:justify-start">
-              <div className="relative p-4 md:p-6 rounded-2xl bg-gradient-to-br from-amber-100 via-amber-50 to-yellow-50 border border-amber-200 shadow-[0_10px_30px_rgba(255,184,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,184,0,0.4)] transition-all duration-300 overflow-hidden inline-block">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.6)_0%,transparent_60%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,184,0,0.1)_0%,transparent_70%)]" />
+              <div className="relative p-4 md:p-6 rounded-2xl bg-white border border-amber-200 shadow-[0_10px_30px_rgba(255,184,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,184,0,0.4)] transition-all duration-300 overflow-hidden inline-block">
                 <div className="absolute inset-2 rounded-xl border border-amber-100/50" />
                 <div className="relative z-10">
                   <img

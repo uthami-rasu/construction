@@ -91,8 +91,8 @@ const Hero = () => {
 
           {/* Main Heading */}
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black mb-10 sm:mb-10 uppercase leading-[1.1] tracking-tighter animate-[fadeInScale_1.2s_ease-out] hero-heading drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <span className="text-white">CONSTRUCTION</span> <br />
-            <span className="text-white">SERVICES</span>
+            <span className="text-[#ffcb0f]">KRRISH</span> <br />
+            <span className="text-white">CONSTRUCTION SERVICES</span>
           </h1>
 
           {/* Bold Description */}

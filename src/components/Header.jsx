@@ -69,7 +69,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="Krrish Construction" 
-            className={`transition-all duration-500 origin-left drop-shadow-[0_2px_10px_rgba(255,203,15,0.2)] group-hover:drop-shadow-[0_2px_15px_rgba(255,203,15,0.4)] relative z-20 w-auto ${
+            className={`transition-all bg-white/95  px-2 rounded-sm py-1 duration-500 origin-left drop-shadow-[0_2px_10px_rgba(255,203,15,0.2)] group-hover:drop-shadow-[0_2px_15px_rgba(255,203,15,0.4)] relative z-20 min-w-15 ${
               isScrolled 
                 ? "h-10 md:h-12 scale-[1.4] translate-y-0.5 ml-4" 
                 : "h-10 md:h-12 ml-0 md:ml-4 scale-[1.8] md:scale-[2]"
