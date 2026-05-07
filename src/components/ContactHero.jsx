@@ -46,10 +46,10 @@ const ContactHero = () => {
           className="inline-flex items-center bg-[#1a1a1a]/90 backdrop-blur-md border border-white/10 rounded-full p-1 mb-8 overflow-hidden"
         >
           <span className="bg-[#FFCB0F] text-black text-[10px] sm:text-xs font-black px-4 sm:px-6 py-2 rounded-full uppercase tracking-widest shrink-0">
-            2026
+            KRRISH
           </span>
           <span className="text-white text-[10px] sm:text-xs font-bold px-4 sm:px-6 py-2 uppercase tracking-[0.2em] truncate">
-            KRRISH CONSTRUCTION
+            CONSTRUCTION
           </span>
         </motion.div>
 

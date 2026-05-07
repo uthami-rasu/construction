@@ -1,8 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 
 const ProjectGallery = () => {
+  const navigate = useNavigate();
+
   const images = [
     {
       url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
@@ -80,7 +84,10 @@ const ProjectGallery = () => {
                 </p>
               </div>
 
-              <button className="group relative bg-[#ffcb0f] text-black px-5 py-3 font-black uppercase tracking-widest text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+              <button 
+                onClick={() => navigate("/gallery")}
+                className="group relative bg-[#ffcb0f] text-black px-5 py-3 font-black uppercase tracking-widest text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+              >
                 <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-3">
                   View Full Gallery{" "}
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
@@ -88,6 +95,7 @@ const ProjectGallery = () => {
                 {/* Glossy sheen effect on hover */}
                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
               </button>
+
             </motion.div>
           </div>
 

@@ -60,16 +60,17 @@ const services = [
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   },
   {
-    title: "Sustainable Building",
-    subtitle: "Eco-Friendly Design",
-    label: "ECO",
-    rating: "4.7",
-    team: "Green Team",
-    timeline: "Eco-Safe",
-    icon: Leaf,
+    title: "Interiors",
+    subtitle: "Interior & Space Design",
+    label: "PREMIUM",
+    rating: "4.9",
+    team: "Designers",
+    timeline: "Creative",
+    icon: PaintBucket,
     image:
-      "https://i.pinimg.com/1200x/e0/b5/85/e0b5856cae8a2c7dc584f2860667aa8a.jpg",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   },
+
   {
     title: "Renovations",
     subtitle: "Modern Remodeline",

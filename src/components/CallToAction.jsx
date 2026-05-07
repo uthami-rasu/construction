@@ -1,7 +1,11 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 
 const CallToAction = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="font-poppins">
       <div 
@@ -26,7 +30,10 @@ const CallToAction = () => {
             free consultation and let's build something exceptional together.
           </p>
 
-          <button className="group relative bg-[#FFCB0F] text-black font-black text-xs md:text-sm uppercase tracking-widest py-4 md:py-5 px-8 md:px-12 transition-all duration-300 shadow-2xl hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+          <button 
+            onClick={() => navigate("/contact")}
+            className="group relative bg-[#FFCB0F] text-black font-black text-xs md:text-sm uppercase tracking-widest py-4 md:py-5 px-8 md:px-12 transition-all duration-300 shadow-2xl hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+          >
             <div className="flex items-center gap-2 [transform:skewX(15deg)]">
               <span className="relative z-10">Get Started Now</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -34,6 +41,7 @@ const CallToAction = () => {
             {/* Glossy sheen effect on hover */}
             <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
           </button>
+
         </div>
       </div>
     </section>

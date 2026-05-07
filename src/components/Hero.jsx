@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 import { ArrowRight, Play } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -35,7 +37,9 @@ const slides = [
 ];
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [showNavigation, setShowNavigation] = useState(window.innerWidth > 640);
+
   const containerRef = useRef(null);
 
   const { scrollY } = useScroll();
@@ -105,14 +109,18 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mt-36 sm:mt-0 animate-[fadeInUp_1.8s_ease-out] hero-buttons-container">
-            <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+            <button 
+              onClick={() => navigate("/about")}
+              className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+            >
               <span className="relative z-10 [transform:skewX(15deg)]">KNOW MORE</span>
               <ArrowRight className="hidden sm:inline-flex w-3 sm:w-5 h-3 sm:h-5 group-hover:translate-x-1 transition-transform stroke-[3px] relative z-10 [transform:skewX(15deg)]" />
               {/* Glossy sheen effect on hover */}
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
+
             <button 
-              onClick={() => navigate('/portfolio')}
+              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
               className="group relative bg-transparent border-2 border-white text-white px-6 sm:px-10 py-[10px] md:py-[14px] font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:bg-white hover:text-black hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
             >
               <span className="relative z-10 [transform:skewX(15deg)]">VIEW PROJECT</span>
@@ -120,6 +128,7 @@ const Hero = () => {
               {/* Glossy sheen effect on hover */}
               <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
+
           </div>
         </div>
       </div>

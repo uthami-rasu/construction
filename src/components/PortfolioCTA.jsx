@@ -13,7 +13,7 @@ const PortfolioCTA = () => {
     {
       id: 2,
       icon: Users,
-      value: "500+",
+      value: "100+",
       label: "HAPPY CLIENTS",
     },
     {

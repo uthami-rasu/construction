@@ -78,15 +78,15 @@ const FloatingIcon = ({ Icon, x, y, duration = 12, delay = 0, size = 120 }) => (
 
 const stats = [
   {
-    value: 187,
-    label: "Projects Delivered",
+    value: 100,
+    label: "Projects Completed",
     icon: Building2,
     iconColor: "#FFCB0F",
     accent: "#FFCB0F",
     description: "Residential & Commercial",
   },
   {
-    value: 14,
+    value: 5,
     label: "Years Excellence",
     icon: Award,
     iconColor: "#FFCB0F",
@@ -94,16 +94,16 @@ const stats = [
     description: "Industry Leaders",
   },
   {
-    value: 124,
-    label: "Happy Partners",
+    value: 100,
+    label: "Happy Clients",
     icon: Heart,
     iconColor: "#FFCB0F",
     accent: "#FFCB0F",
     description: "Long-term clients",
   },
   {
-    value: 68,
-    label: "Expert Crew",
+    value: 150,
+    label: "Team Members",
     icon: Users,
     iconColor: "#FFCB0F",
     accent: "#FFCB0F",

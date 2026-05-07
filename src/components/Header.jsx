@@ -10,7 +10,7 @@ import {
   Briefcase,
   Mail,
 } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../assets/images/kc.jpeg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,7 +51,7 @@ const Header = () => {
     { label: "Home", icon: Home, href: "#home", path: "/" },
     { label: "About Us", icon: Info, href: "#about-us", path: "/about" },
     { label: "Services", icon: Hammer, href: "#services", path: "/services" },
-    { label: "Portfolio", icon: Briefcase, href: "#portfolio", path: "/portfolio" },
+    { label: "Gallery", icon: Briefcase, href: "#portfolio", path: "/gallery" },
     { label: "Pricing", icon: Hammer, href: "#pricing", path: "/pricing" },
     { label: "Contact Us", icon: Mail, href: "#contact-us", path: "/contact" },
   ];
@@ -69,12 +69,13 @@ const Header = () => {
           <img 
             src={logo} 
             alt="Krrish Construction" 
-            className={`transition-all bg-white/95  px-2 rounded-sm py-1 duration-500 origin-left drop-shadow-[0_2px_10px_rgba(255,203,15,0.2)] group-hover:drop-shadow-[0_2px_15px_rgba(255,203,15,0.4)] relative z-20 min-w-15 ${
+            className={`transition-all duration-500 origin-left drop-shadow-[0_2px_10px_rgba(255,203,15,0.2)] group-hover:drop-shadow-[0_2px_15px_rgba(255,203,15,0.4)] relative z-20 min-w-15 ${
               isScrolled 
                 ? "h-10 md:h-12 scale-[1.4] translate-y-0.5 ml-4" 
-                : "h-10 md:h-12 ml-0 md:ml-4 scale-[1.8] md:scale-[2]"
+                : "h-10 md:h-12 ml-0 md:ml-4 scale-[1.8] md:scale-[2.1]"
             }`} 
           />
+
         </Link>
 
         {/* Navigation */}
@@ -104,9 +105,9 @@ const Header = () => {
             )
           ))}
           <div className="h-6 w-px bg-white/20 mx-2 xl:mx-4"></div>
-          <button className="text-white hover:text-[#FFCB0F] transition-all p-2 hover:bg-white/10 rounded-full">
+          {/* <button className="text-white hover:text-[#FFCB0F] transition-all p-2 hover:bg-white/10 rounded-full">
             <Search className="w-6 h-6" />
-          </button>
+          </button> */}
         </nav>
 
         {/* Mobile Menu Button */}

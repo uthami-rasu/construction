@@ -144,8 +144,8 @@ const WhyChooseUsRefined = () => {
           <div className="order-3 lg:order-3 lg:pl-4 relative z-10 flex flex-col items-center lg:items-start">
             <div className="w-full max-w-[320px]">
               <FeatureItem 
-                title="Budget Friendly"
-                description="Transparent pricing with no hidden costs, ensuring value for your investment."
+                title="Luxury Within Reach"
+                description="Premium construction solutions designed to deliver elegance, comfort, and value within your budget."
               />
               <FeatureItem 
                 title="Safety First"

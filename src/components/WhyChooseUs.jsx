@@ -196,12 +196,15 @@ const WhyChooseUs = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.open("https://wa.me/918610813419", "_blank")}
+
                 className="bg-white text-[#2d2400] px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl hover:bg-[#FFB800] hover:text-white transition-all duration-300"
               >
                 Get in Touch
               </motion.button>
+
               <div className="text-white/20 text-[9px] font-black uppercase tracking-widest">
-                500+ Projects Delivered
+                100+ Projects Delivered
               </div>
             </div>
           </div>

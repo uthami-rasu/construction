@@ -56,10 +56,10 @@ const ServicesHero = () => {
           className="inline-flex items-center bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/10 rounded-full p-1 mb-6 sm:mb-8 max-w-[90vw]"
         >
           <span className="bg-[#FFCB0F] text-black text-[9px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest shrink-0">
-            2026
+            KRRISH
           </span>
           <span className="text-white text-[9px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 uppercase tracking-[0.1em] sm:tracking-[0.2em] truncate">
-            KRRISH CONSTRUCTION
+             CONSTRUCTION
           </span>
         </motion.div>
 
@@ -92,10 +92,22 @@ const ServicesHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
         >
-          <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+          <button 
+            onClick={() => {
+              const el = document.getElementById('services-list');
+              if (el) {
+                const yOffset = -100;
+                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+              }
+            }}
+            className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+          >
+
             <span className="relative z-10 [transform:skewX(15deg)]">
               OUR SERVICES
             </span>
+
             {/* Glossy sheen effect on hover */}
             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
           </button>

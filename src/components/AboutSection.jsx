@@ -2,11 +2,15 @@ import React, { useEffect, useRef } from "react";
 import aboutImg from "../assets/images/about.jpeg";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Award, Star, Users, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const AboutSection = () => {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isInView) {
@@ -166,7 +170,7 @@ const AboutSection = () => {
             </p>
 
             <div className="pt-6 flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 items-center">
-              <button className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+              <button onClick={() => navigate("/about")} className="group relative bg-[#ffcb0f] text-black px-6 sm:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
                 <span className="relative z-10 [transform:skewX(15deg)]">KNOW MORE</span>
                 <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-black/10 flex items-center justify-center relative z-10 [transform:skewX(15deg)]">
                   <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4" />
@@ -174,6 +178,7 @@ const AboutSection = () => {
                 {/* Glossy sheen effect on hover */}
                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
               </button>
+
 
               <div className="w-full sm:w-auto flex -space-x-3 sm:-space-x-4 items-center pl-0 sm:pl-4">
                 {[1, 2, 3, 4].map((i) => (
@@ -190,10 +195,10 @@ const AboutSection = () => {
                 <div className="pl-3 sm:pl-6">
                   <div className="text-xs sm:text-sm font-black text-gray-900 flex items-center gap-1">
                     <Users className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#FFB800]" />
-                    500+
+                    100+
                   </div>
                   <div className="text-[7px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-widest leading-none">
-                    Global Clients
+                    Clients
                   </div>
                 </div>
               </div>
@@ -268,7 +273,7 @@ const AboutSection = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-black text-gray-900 mb-0.5 tracking-tighter">
-                    15+
+                    5+
                   </div>
                   <div className="text-[9px] font-black uppercase tracking-[0.2em] text-[#FFB800]">
                     Years of

@@ -28,21 +28,22 @@ const StatCounter = ({ value }) => {
 
 const stats = [
   {
-    number: "8K+",
+    number: "100+",
     label: "PROJECT",
     sublabel: "COMPLETED",
   },
   {
-    number: "17.8K+",
+    number: "100%",
     label: "CUSTOMER",
     sublabel: "SATISFIED",
   },
   {
-    number: "450+",
+    number: "150+",
     label: "TEAM",
     sublabel: "MEMBERS",
   },
 ];
+
 
 const Stats = () => {
   return (

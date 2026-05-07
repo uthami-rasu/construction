@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Clock, ArrowUp } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../assets/images/kc.jpeg";
 
 const Footer = () => {
   const quickLinks = [
     { label: "Our Services", href: "/services" },
     { label: "About Us", href: "/about" },
     { label: "Home", href: "/" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Gallery", href: "/gallery" },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -34,17 +34,15 @@ const Footer = () => {
           {/* Column 1 - Brand & Hours - Wide Span for Horizontal Layout */}
           <div className="group lg:col-span-5">
             <div className="mb-4 flex items-center justify-center lg:justify-start">
-              <div className="relative p-4 md:p-6 rounded-2xl bg-white border border-amber-200 shadow-[0_10px_30px_rgba(255,184,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,184,0,0.4)] transition-all duration-300 overflow-hidden inline-block">
-                <div className="absolute inset-2 rounded-xl border border-amber-100/50" />
-                <div className="relative z-10">
-                  <img
-                    src={logo}
-                    alt="Krrish Construction"
-                    className="h-28 md:h-36 lg:h-44 w-auto object-contain drop-shadow-md hover:drop-shadow-lg transition-all duration-300"
-                  />
-                </div>
+              <div className="relative transition-all duration-300 inline-block">
+                <img
+                  src={logo}
+                  alt="Krrish Construction"
+                  className="h-28 md:h-36 lg:h-44 w-auto object-contain drop-shadow-2xl transition-all duration-300"
+                />
               </div>
             </div>
+
             <p className="text-gray-700 text-sm leading-relaxed mb-4 text-justify lg:text-left font-medium max-w-lg">
               We build with expertise and innovation, creating spaces that
               reflect quality, reliability and lasting value.
@@ -66,7 +64,8 @@ const Footer = () => {
               <div className="flex gap-2 items-center flex-nowrap">
                 {/* Facebook */}
                 <a
-                  href="https://www.facebook.com/KrrishConstruction?mibextid=ZbWKwL"
+                  href="https://www.facebook.com/KrrishConstruction/"
+
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-lg border border-amber-300 bg-white flex items-center justify-center text-amber-600 hover:bg-amber-50 hover:border-amber-600 hover:scale-110 shadow-sm transition-all duration-300"
@@ -78,7 +77,8 @@ const Footer = () => {
 
                 {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/krrish_construction/?igsh=MXZ4M2R1YWh5ajlmMg%3D%3D"
+                  href="https://www.instagram.com/krrish_construction/"
+
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-lg border border-amber-300 bg-white flex items-center justify-center text-amber-600 hover:bg-amber-50 hover:border-amber-600 hover:scale-110 shadow-sm transition-all duration-300"
@@ -110,7 +110,8 @@ const Footer = () => {
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/message/CMNBNRISY55ZK1"
+                  href="https://wa.me/918610813419"
+
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-lg border border-amber-300 bg-white flex items-center justify-center text-amber-600 hover:bg-amber-50 hover:border-amber-600 hover:scale-110 shadow-sm transition-all duration-300"

@@ -9,6 +9,8 @@ import Preloader from "./Preloader";
 const Layout = () => {
   const location = useLocation();
 
+  const lenisRef = React.useRef(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -21,6 +23,8 @@ const Layout = () => {
       infinite: false,
     });
 
+    lenisRef.current = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -30,13 +34,20 @@ const Layout = () => {
 
     return () => {
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
-  // Scroll to top on route change
+  // Force scroll to top on route change, specifically for Lenis
   useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+
+
 
   return (
     <div className="min-h-screen bg-white font-poppins text-gray-900 selection:bg-[#FFCB0F]/30">

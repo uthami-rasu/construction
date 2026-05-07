@@ -2,25 +2,54 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
+/*
+
+princy anand
+
+My personal experience for my home was very good and satisfied.
+My wishes sir grow more and more in this field
+
+
+Vadivelmurugan N
+
+I took the Construction Services from Krrish Construction recently and was amazed by their quality craftsmanship. They finished the work within the given timeframe without compromising quality.They provide reliable construction services at competitive prices. Definitely, I will recommend others as well...
+
+
+Vandhana Raj
+
+We build our home through Krrish Construction at Rajapalayam, The planning and pricing was very reasonable and the work was completed on time. I Highly recommend Krrish Construction. The engineer is very polite and listens to all the concerns
+
+
+*/
+
+const getInitials = (name) => {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+};
+
 const reviews = [
+
   {
-    name: "Mrs. Princy Anand",
+    name: "Princy Anand",
     role: "Homeowner",
     text: "My personal experience for my home was very good and satisfied. My wishes sir, grow more and more in this field.",
     image: "https://i.pravatar.cc/150?img=32",
     isFeatured: false,
   },
   {
-    name: "Mr. Jothimani",
+    name: "Vadivelmurugan N",
     role: "Business Owner",
-    text: "A job well done and best wishes for continued growth. Truly a world-class team.",
+    text: "I took the Construction Services from Krrish Construction recently and was amazed by their quality craftsmanship. They finished the work within the given timeframe without compromising quality.They provide reliable construction services at competitive prices. Definitely, I will recommend others as well...",
     image: "https://i.pravatar.cc/150?img=12",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
-    name: "Mrs. Anita Mani",
+    name: "Vandhana Raj",
     role: "Client",
-    text: "Nice and worthful work. Good quality too. All the Best Krrish Construction!",
+    text: "We build our home through Krrish Construction at Rajapalayam, The planning and pricing was very reasonable and the work was completed on time. I Highly recommend Krrish Construction. The engineer is very polite and listens to all the concerns",
     image: "https://i.pravatar.cc/150?img=44",
     isFeatured: false,
   },
@@ -89,7 +118,8 @@ const Testimonials = () => {
         </div>
 
         {/* Review Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-end">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+
           {reviews.map((review, index) => (
             <motion.div
               key={index}
@@ -97,17 +127,20 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
-              className="flex flex-col items-center"
+              className="flex flex-col"
             >
+
               {/* Speech Bubble */}
               <div
-                className={`relative w-full p-8 mb-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl
+                className={`relative flex-1 p-8 mb-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between
                   ${
                     review.isFeatured
                       ? "bg-linear-to-br from-[#FFCB0F] to-[#FFB800] shadow-xl shadow-[#FFCB0F]/20 text-black"
                       : "bg-white shadow-md border border-gray-100"
                   }`}
               >
+                <div>
+
                 {/* Big quote mark */}
                 <span
                   className={`block font-serif text-7xl leading-none mb-3 select-none
@@ -121,6 +154,8 @@ const Testimonials = () => {
                 >
                   {review.text}
                 </p>
+                </div>
+
 
                 {/* Bubble tail */}
                 <div
@@ -129,15 +164,14 @@ const Testimonials = () => {
                 />
               </div>
 
-              {/* Avatar */}
-              <div className="text-center mt-2">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg mx-auto mb-3">
-                  <img
-                    src={review.image}
-                    alt={review.name}
-                    className="w-full h-full object-cover"
-                  />
+              {/* Avatar Section */}
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-linear-to-br from-[#FFB800] to-[#FFCB0F] flex items-center justify-center border-4 border-white shadow-lg mx-auto mb-3">
+                  <span className="text-xl font-black text-white tracking-tighter">
+                    {getInitials(review.name)}
+                  </span>
                 </div>
+
                 <h4 className="text-xs font-black text-gray-900 tracking-widest uppercase">
                   {review.name}
                 </h4>

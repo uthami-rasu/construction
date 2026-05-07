@@ -113,22 +113,7 @@ const AboutFeatures = () => {
           })}
         </div>
 
-        {/* CTA Button */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <button className="group relative bg-[#FFCB0F] text-black px-10 py-4.5 font-black uppercase tracking-widest text-xs transition-all hover:scale-110 active:scale-95 shadow-[0_15px_30px_rgba(255,203,15,0.3)] flex items-center gap-3 mx-auto [transform:skewX(-15deg)] rounded-sm overflow-hidden">
-            <div className="flex items-center gap-3 [transform:skewX(15deg)]">
-              <span>GET A QUOTE</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </div>
-            {/* Glossy sheen effect on hover */}
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
-          </button>
-        </motion.div>
+
       </div>
     </section>
   );

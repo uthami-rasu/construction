@@ -4,11 +4,12 @@ import { CheckSquare } from "lucide-react";
 import imgMain from "../assets/images/service.jpeg";
 import imgTop from "../assets/images/abt-gallery1.jpeg";
 import imgBottom from "../assets/images/about.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const features = [
   {
-    title: "Licensed & Insured",
-    description: "Fully certified with comprehensive insurance coverage",
+    title: "On-Time Project Delivery",
+    description: "Committed to completing every project within the promised timeline",
   },
   {
     title: "Quality Materials",
@@ -21,6 +22,8 @@ const features = [
 ];
 
 const FeaturedService = () => {
+
+  const navigate = useNavigate();
   return (
     <section 
       className="py-24 md:py-32 font-poppins relative overflow-hidden"
@@ -101,7 +104,7 @@ const FeaturedService = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 [transform:skewX(-15deg)] rounded-sm overflow-hidden shadow-2xl flex items-center gap-3">
+              <button onClick={() => navigate("/contact")} className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 [transform:skewX(-15deg)] rounded-sm overflow-hidden shadow-2xl flex items-center gap-3">
                 <span className="relative z-10 [transform:skewX(15deg)]">
                   Get Started Today
                 </span>

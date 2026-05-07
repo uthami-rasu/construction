@@ -3,8 +3,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { TrendingUp, Users } from "lucide-react";
 import gallery1 from "../assets/images/abt-gallery1.jpeg";
 import gallery2 from "../assets/images/abt-gallery-2.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const AboutGallery = () => {
+
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -237,10 +240,7 @@ const AboutGallery = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  We are a leading construction company dedicated to turning
-                  your vision into reality. With over a decade of experience in
-                  the industry, we specialize in residential and commercial
-                  construction projects that exceed expectations.
+                We deliver end-to-end construction solutions tailored to transform ideas into exceptional spaces. From strategic planning and design coordination to execution and final handover, every project is managed with uncompromising quality, precision, transparency, and on-time delivery.
                 </p>
                 <p>
                   Our team of skilled professionals combines innovative
@@ -252,7 +252,7 @@ const AboutGallery = () => {
               </div>
             </div>
 
-            <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+            <button onClick={()=>navigate("/contact")} className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
               <span className="relative z-10 [transform:skewX(15deg)] block">
                 CONTACT US
               </span>

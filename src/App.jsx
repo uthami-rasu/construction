@@ -8,18 +8,23 @@ import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<AboutUs />} />
-        <Route path="services" element={<Services />} />
-        <Route path="portfolio" element={<Portfolio />} />
-        <Route path="pricing" element={<Pricing />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<AboutUs />} />
+          <Route path="services" element={<Services />} />
+        <Route path="gallery" element={<Portfolio />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

@@ -25,8 +25,11 @@ const services = [
     image: service3,
   },
   {
-    title: "Project Management",
-    description: "Expert oversight from start to finish. Our project management services ensure seamless coordination and successful project delivery.",
+    title: "<span class='block whitespace-nowrap'>Project Management</span> <span class='block whitespace-nowrap'>& Consultation</span>",
+
+
+
+    description: "Expert project coordination with professional guidance at every stage. We ensure smooth execution, smart planning, cost control, and successful project delivery from start to finish.",
     image: service4,
   },
   {
@@ -35,15 +38,16 @@ const services = [
     image: service5,
   },
   {
-    title: "Consultation Services",
-    description: "Expert advice for your construction needs. We provide professional consultation to help you make informed decisions about your project.",
+    title: "Interior Design Solutions",
+    description: "Modern and functional interior designs crafted to enhance comfort, style, and space efficiency with premium finishes and creative concepts.",
     image: service6,
   },
 ];
 
 const ServiceCards = () => {
   return (
-    <section className="py-32 bg-[#fcfcfc] font-poppins relative overflow-hidden">
+    <section id="services-list" className="py-32 bg-[#fcfcfc] font-poppins relative overflow-hidden">
+
       {/* Subtle Background Decorative Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -119,9 +123,11 @@ const ServiceCards = () => {
               {/* Content Container */}
               <div className="absolute inset-0 p-10 flex flex-col justify-center z-10 text-center">
                 <div className="mb-4">
-                  <h3 className="text-white text-3xl font-black mb-4 leading-tight uppercase tracking-tight group-hover:text-[#FFB800] transition-colors">
-                    {service.title}
-                  </h3>
+                  <h3 
+                    className="text-white text-3xl font-black mb-4 leading-tight uppercase tracking-tight group-hover:text-[#FFB800] transition-colors"
+                    dangerouslySetInnerHTML={{ __html: service.title }}
+                  />
+
                   <p className="text-white/80 text-sm md:text-base leading-relaxed font-medium">
                     {service.description}
                   </p>

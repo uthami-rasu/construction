@@ -11,10 +11,9 @@ const plans = [
     icon: Home,
     features: [
       "Basic materials",
-      "Standard design",
+      "Branded Materials",
       "Limited customization",
-      "3-month timeline",
-      "Basic warranty",
+      "on time delivery",
     ],
     highlight: false,
   },
@@ -28,8 +27,7 @@ const plans = [
       "Better materials",
       "Custom design options",
       "Project management",
-      "4-5 month timeline",
-      "Extended warranty",
+      "on time delivery",
     ],
     highlight: true,
   },
@@ -40,15 +38,15 @@ const plans = [
     unit: "per sq.ft",
     icon: Crown,
     features: [
-      "Luxury materials",
+      "Handchosen materials",
       "Full customization",
       "Dedicated project manager",
-      "6+ month timeline",
-      "Lifetime warranty",
+      "on time delivery",
     ],
     highlight: false,
   },
 ];
+
 
 const PricingPlans = () => {
   return (

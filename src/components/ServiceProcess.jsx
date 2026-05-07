@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   Search,
   Shapes,
@@ -46,6 +47,8 @@ const steps = [
 
 const ServiceProcess = () => {
   const [activeStep, setActiveStep] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -185,7 +188,7 @@ const ServiceProcess = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <button className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-xl [transform:skewX(-15deg)] rounded-sm inline-flex items-center gap-3 overflow-hidden">
+            <button onClick={()=> navigate('/contact')} className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-3 md:py-4 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-xl [transform:skewX(-15deg)] rounded-sm inline-flex items-center gap-3 overflow-hidden">
               <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
                 Schedule a Consultation <ArrowRight className="w-4 h-4" />
               </span>
