@@ -171,7 +171,7 @@ const PricingProcess = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-24 md:mt-32 text-center">
+        <div className="mt-24 md:mt-32 text-center hidden">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -193,7 +193,7 @@ const PricingProcess = () => {
               <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
                 Get Your Final Quote <ArrowRight className="w-4 h-4" />
               </span>
-              {/* Glossy sheen effect on hover */}
+              
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
           </motion.div>

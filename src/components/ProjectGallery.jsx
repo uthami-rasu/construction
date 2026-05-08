@@ -85,7 +85,7 @@ const ProjectGallery = () => {
               </div>
 
               <button 
-                onClick={() => navigate("/gallery")}
+                onClick={() => navigate("/contact#gallery")}
                 className="group relative bg-[#ffcb0f] text-black px-5 py-3 font-black uppercase tracking-widest text-sm transition-all hover:scale-110 active:scale-95 flex items-center gap-3 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
               >
                 <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-3">

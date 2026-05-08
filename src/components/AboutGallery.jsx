@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TrendingUp, Users } from "lucide-react";
-import gallery1 from "../assets/images/abt-gallery1.jpeg";
-import gallery2 from "../assets/images/abt-gallery-2.jpeg";
+import gallery1 from "../assets/images/abt-gallery-11.png";
+import gallery2 from "../assets/images/abt-gallery-12.png";
 import { useNavigate } from "react-router-dom";
 
 const AboutGallery = () => {
@@ -121,14 +121,14 @@ const AboutGallery = () => {
               >
                 <div className="flex justify-between items-start mb-6">
                   <h3 className="text-5xl font-black text-[#1a1a1a] tracking-tighter">
-                    30,000+
+                    100+
                   </h3>
                   <div className="p-3 bg-green-50 rounded-2xl group-hover:bg-green-100 transition-colors">
                     <TrendingUp className="w-8 h-8 text-green-500" />
                   </div>
                 </div>
                 <p className="text-[14px] text-gray-400 font-medium leading-relaxed mb-8">
-                  Sales in July 2025 with 5 star ratings and happy clients.
+                  Trusted by 100+ Clients for quality work and reliable service.
                 </p>
                 <div className="w-full h-[1.5px] bg-[#ffcb0f] mb-10 opacity-40"></div>
 

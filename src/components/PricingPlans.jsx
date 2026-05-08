@@ -10,7 +10,7 @@ const plans = [
     unit: "per sq.ft",
     icon: Home,
     features: [
-      "Basic materials",
+      "Standard Materials",
       "Branded Materials",
       "Limited customization",
       "on time delivery",
@@ -24,7 +24,7 @@ const plans = [
     unit: "per sq.ft",
     icon: Building2,
     features: [
-      "Better materials",
+      "Branded Materials",
       "Custom design options",
       "Project management",
       "on time delivery",
@@ -38,7 +38,7 @@ const plans = [
     unit: "per sq.ft",
     icon: Crown,
     features: [
-      "Handchosen materials",
+      "Client chosen materials",
       "Full customization",
       "Dedicated project manager",
       "on time delivery",

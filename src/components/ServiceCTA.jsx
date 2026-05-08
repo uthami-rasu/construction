@@ -45,7 +45,7 @@ const ServiceCTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button onClick={()=> navigate('/gallery')} className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-4 md:py-5 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm flex items-center gap-3 mx-auto overflow-hidden">
+          <button onClick={()=> navigate('/contact#gallery')} className="group relative bg-[#FFCB0F] text-black px-6 md:px-10 py-4 md:py-5 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-110 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm flex items-center gap-3 mx-auto overflow-hidden">
             <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
               View Our Gallery <ArrowRight className="w-4 h-4" />
             </span>

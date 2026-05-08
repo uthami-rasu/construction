@@ -13,6 +13,7 @@ import {
   Star,
   CheckCircle2,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -85,6 +86,14 @@ const services = [
 ];
 
 const Services = () => {
+
+
+  const navigate = useNavigate();
+
+  const handleEnquiry = () => {
+    navigate("/contact");
+  };
+
   return (
     <section
       id="services"
@@ -205,7 +214,7 @@ const Services = () => {
               </div>
 
               <div className="absolute inset-x-0 bottom-8 flex justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                <button className="group relative bg-[#ffcb0f] text-black px-8 py-3 font-black uppercase tracking-[0.2em] text-[10px] transition-all hover:scale-110 active:scale-95 flex items-center gap-3 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
+                <button onClick={()=> navigate("/contact")} className="group relative bg-[#ffcb0f] text-black px-8 py-3 font-black uppercase tracking-[0.2em] text-[10px] transition-all hover:scale-110 active:scale-95 flex items-center gap-3 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden">
                   <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-3">
                     ENQUIRY NOW
                     <ArrowRight className="w-4 h-4" />

@@ -67,7 +67,7 @@ const FeaturedService = () => {
               transition={{ delay: 0.2 }}
               className="text-white/95 text-base md:text-lg mb-12 leading-relaxed font-medium"
             >
-              With over 20 years of experience in the construction industry, we
+              With over 5+ years of experience in the construction industry, we
               have established ourselves as leaders in building construction.
               Our commitment to quality, safety, and innovation sets us apart
               from the competition.

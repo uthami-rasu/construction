@@ -77,22 +77,7 @@ const ContactHero = () => {
         </motion.p>
 
         {/* Button - Skewed Style */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-        >
-          <button 
-            onClick={() => document.getElementById('contact-us')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative bg-[#FFCB0F] text-black px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-widest text-xs md:text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
-          >
-            <span className="relative z-10 [transform:skewX(15deg)]">
-              CONTACT US
-            </span>
-            {/* Glossy overlay effect on hover */}
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
-          </button>
-        </motion.div>
+        
       </motion.div>
 
       {/* Decorative Structural Bottom Line */}

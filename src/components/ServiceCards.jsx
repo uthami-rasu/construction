@@ -7,6 +7,8 @@ import service3 from "../assets/images/hero-1.jpeg";
 import service4 from "../assets/images/hero-2.jpeg";
 import service5 from "../assets/images/service.jpeg";
 import service6 from "../assets/images/abt-rename.jpeg";
+// High-quality online image for interior
+const interiorOnlineImg = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop";
 
 const services = [
   {
@@ -40,7 +42,7 @@ const services = [
   {
     title: "Interior Design Solutions",
     description: "Modern and functional interior designs crafted to enhance comfort, style, and space efficiency with premium finishes and creative concepts.",
-    image: service6,
+    image: interiorOnlineImg,
   },
 ];
 
@@ -138,11 +140,6 @@ const ServiceCards = () => {
               <div className="absolute bottom-0 left-0 w-full p-10 flex items-center justify-between z-20">
                 {/* Yellow Line Anchor */}
                 <div className="h-1 w-20 bg-[#FFB800] rounded-full group-hover:w-full transition-all duration-700 origin-left"></div>
-                
-                {/* Action Button */}
-                <div className="ml-6 flex-shrink-0 w-14 h-14 bg-[#FFB800] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-45 transition-all duration-500 cursor-pointer">
-                  <ArrowRight className="w-6 h-6 text-white -rotate-45" />
-                </div>
               </div>
 
               {/* Top Reveal Glassy Overlay (Premium Touch) */}

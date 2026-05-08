@@ -51,7 +51,6 @@ const Header = () => {
     { label: "Home", icon: Home, href: "#home", path: "/" },
     { label: "About Us", icon: Info, href: "#about-us", path: "/about" },
     { label: "Services", icon: Hammer, href: "#services", path: "/services" },
-    { label: "Gallery", icon: Briefcase, href: "#portfolio", path: "/gallery" },
     { label: "Pricing", icon: Hammer, href: "#pricing", path: "/pricing" },
     { label: "Contact Us", icon: Mail, href: "#contact-us", path: "/contact" },
   ];
