@@ -1,21 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import image8 from "../assets/images/gallery/image 8.png";
-import image9 from "../assets/images/gallery/image 9.png";
-import image10 from "../assets/images/gallery/image 10.png";
-import image11 from "../assets/images/gallery/image 11.png";
-import image12 from "../assets/images/gallery/image 12.png";
-import image13 from "../assets/images/gallery/image 13.png";
-import image14 from "../assets/images/gallery/image 14.png";
+import imageCopy from "../assets/images/gallery/image copy.png";
+import imageCopy2 from "../assets/images/gallery/image copy 2.png";
+import imageCopy3 from "../assets/images/gallery/image copy 3.png";
+import imageCopy4 from "../assets/images/gallery/image copy 4.png";
+import imageCopy5 from "../assets/images/gallery/image copy 5.png";
+import imageMain from "../assets/images/gallery/image.png";
 
 const ContactGallery = () => {
   const images = [
-    { src: image13, title: "Project 1" },
-    { src: image12, title: "Project 2" },
-    { src: image11, title: "Project 3" },
-    { src: image10, title: "Project 4" },
-    { src: image9, title: "Project 5" },
-    { src: image8, title: "Project 6" },
+    { src: imageMain, title: "Project 1" },
+    { src: imageCopy, title: "Project 2" },
+    { src: imageCopy2, title: "Project 3" },
+    { src: imageCopy3, title: "Project 4" },
+    { src: imageCopy4, title: "Project 5" },
+    { src: imageCopy5, title: "Project 6" },
   ];
 
   return (
@@ -65,18 +64,16 @@ const ContactGallery = () => {
           </motion.div>
         </div>
 
-        {/* Gallery Grid - 2fr 1fr 1fr / 1fr 1fr 2fr Layout */}
-        <div className="grid grid-cols-4 gap-4 auto-rows-[300px] md:auto-rows-[400px]">
+        {/* Gallery Grid - Restored original layout */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px] md:auto-rows-[400px]">
           {/* Row 1: 2fr 1fr 1fr */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="col-span-2 relative rounded-3xl overflow-hidden shadow-2xl bg-white"
+            className="md:col-span-2 relative rounded-3xl overflow-hidden shadow-2xl bg-white group"
           >
-            {/* Profile Badge */}
-
-            <img src={images[0].src} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+            <img src={images[0].src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={images[0].title} />
           </motion.div>
 
           <motion.div
@@ -84,9 +81,9 @@ const ContactGallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white"
+            className="md:col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white group"
           >
-            <img src={images[1].src} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+            <img src={images[1].src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={images[1].title} />
           </motion.div>
 
           <motion.div
@@ -94,9 +91,9 @@ const ContactGallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white"
+            className="md:col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white group"
           >
-            <img src={images[2].src} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+            <img src={images[2].src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={images[2].title} />
           </motion.div>
 
           {/* Row 2: 1fr 1fr 2fr */}
@@ -105,9 +102,9 @@ const ContactGallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white"
+            className="md:col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white group"
           >
-            <img src={images[3].src} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+            <img src={images[3].src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={images[3].title} />
           </motion.div>
 
           <motion.div
@@ -115,9 +112,9 @@ const ContactGallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white"
+            className="md:col-span-1 relative rounded-3xl overflow-hidden shadow-2xl bg-white group"
           >
-            <img src={images[4].src} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+            <img src={images[4].src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={images[4].title} />
           </motion.div>
 
           <motion.div
@@ -125,9 +122,9 @@ const ContactGallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="col-span-2 relative rounded-3xl overflow-hidden shadow-2xl bg-white"
+            className="md:col-span-2 relative rounded-3xl overflow-hidden shadow-2xl bg-white group"
           >
-            <img src={images[5].src} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="" />
+            <img src={images[5].src} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={images[5].title} />
           </motion.div>
         </div>
       </div>

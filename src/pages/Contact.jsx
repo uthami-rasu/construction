@@ -36,7 +36,7 @@ const Contact = () => {
         <ContactInfo />
         <ContactMap />
       </main>
-      <Footer />
+     
     </div>
   );
 };

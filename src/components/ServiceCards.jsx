@@ -8,7 +8,8 @@ import service4 from "../assets/images/hero-2.jpeg";
 import service5 from "../assets/images/service.jpeg";
 import service6 from "../assets/images/abt-rename.jpeg";
 // High-quality online image for interior
-const interiorOnlineImg = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop";
+import interiorOnlineImg from "../assets/images/interior/image.png"; 
+
 
 const services = [
   {
