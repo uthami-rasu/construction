@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+import interiorImg from "../assets/images/interior/image.png";
+
 const services = [
   {
     title: "Residential Construction",
@@ -68,8 +70,7 @@ const services = [
     team: "Designers",
     timeline: "Creative",
     icon: PaintBucket,
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    image: interiorImg,
   },
 
   {
