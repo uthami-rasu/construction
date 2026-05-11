@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Clock, ArrowUp } from "lucide-react";
-import logo from "../assets/images/kc.jpeg";
+import logo from "../assets/images/9ccbf068cce84359afed02ab28de9ddb.png";
+
 
 const Footer = () => {
   const quickLinks = [
