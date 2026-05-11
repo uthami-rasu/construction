@@ -10,7 +10,8 @@ import {
   Briefcase,
   Mail,
 } from "lucide-react";
-import logo from "../assets/images/kc.jpeg";
+import logo from "../assets/images/ChatGPT Image May 11, 2026, 01_43_05 PM.png";
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
