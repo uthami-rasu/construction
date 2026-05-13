@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Clock, ArrowUp } from "lucide-react";
-import logo from "../assets/images/9ccbf068cce84359afed02ab28de9ddb.png";
+import logo from "../assets/images/svg/kc-black.svg";
 
 
 const Footer = () => {
@@ -31,14 +31,14 @@ const Footer = () => {
         {/* Grid Layout - 12 Columns for precise control */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-6">
           
-          {/* Column 1 - Brand & Hours - Wide Span for Horizontal Layout */}
+          {/* Column 1 - Brand & Hours */}
           <div className="group lg:col-span-5">
             <div className="mb-4 flex items-center justify-center lg:justify-start">
               <div className="relative transition-all duration-300 inline-block">
                 <img
                   src={logo}
                   alt="Krrish Construction"
-                  className="h-28 md:h-36 lg:h-44 w-auto object-contain drop-shadow-2xl transition-all duration-300"
+                  className="h-40 md:h-52 lg:h-64 w-auto max-w-full object-contain drop-shadow-2xl transition-all duration-300"
                 />
               </div>
             </div>
@@ -47,7 +47,7 @@ const Footer = () => {
               We build with expertise and innovation, creating spaces that
               reflect quality, reliability and lasting value.
             </p>
-            
+
             {/* Timings and Social Icons - FORCED SIDE-BY-SIDE */}
             <div className="flex flex-wrap items-center gap-4 lg:flex-nowrap">
               {/* Timings Box */}

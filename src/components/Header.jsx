@@ -10,7 +10,7 @@ import {
   Briefcase,
   Mail,
 } from "lucide-react";
-import logo from "../assets/images/ChatGPT Image May 11, 2026, 01_43_05 PM.png";
+import logo from "../assets/images/svg/kc-white.svg";
 
 
 const Header = () => {
@@ -58,38 +58,72 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 overflow-visible ${isScrolled ? "bg-[#1a1a1a]/95 backdrop-blur-md py-3 shadow-xl border-b border-white/10" : "bg-transparent py-6"}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 overflow-visible ${
+        isScrolled
+          ? "border-b border-white/[0.06] bg-[#0a0a0a]/70 py-3.5 shadow-[0_12px_40px_-16px_rgba(0,0,0,0.55)] backdrop-blur-2xl backdrop-saturate-150"
+          : "bg-transparent py-5 sm:py-6 lg:py-6"
+      }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between overflow-visible">
-        <Link 
-          to="/" 
-          className="flex flex-col items-start pt-2 group"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <img 
-            src={logo} 
-            alt="Krrish Construction" 
-            className={`transition-all duration-500 origin-left drop-shadow-[0_2px_10px_rgba(255,203,15,0.2)] group-hover:drop-shadow-[0_2px_15px_rgba(255,203,15,0.4)] relative z-20 min-w-15 ${
-              isScrolled 
-                ? "h-10 md:h-12 scale-[1.4] translate-y-0.5 ml-4" 
-                : "h-10 md:h-12 ml-0 md:ml-4 scale-[1.8] md:scale-[2.1]"
-            }`} 
+      <div
+        className={`container mx-auto px-6 relative flex w-full gap-3 sm:gap-4 overflow-visible ${
+          isScrolled
+            ? "items-center min-h-0"
+            : "items-center lg:items-end lg:min-h-[3.25rem]"
+        }`}
+      >
+        {/* Reserves space on lg so links stay clear of the overlapping logo (hero / top of page only) */}
+        {!isScrolled && (
+          <div
+            className="hidden lg:block shrink-0 w-[12.5rem] xl:w-[15.5rem] 2xl:w-[17rem] pointer-events-none"
+            aria-hidden
           />
+        )}
 
+        <Link
+          to="/"
+          className={`flex flex-col items-start shrink-0 group outline-none focus-visible:ring-2 focus-visible:ring-[#3EB1A4]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm ${
+            isScrolled
+              ? "relative z-20"
+              : "relative z-30 max-lg:relative max-lg:self-start max-lg:-translate-y-2 lg:absolute lg:left-6 lg:-top-2 xl:-top-3"
+          }`}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <img
+            src={logo}
+            alt="Krrish Construction"
+            className={`transition-all duration-500 origin-left relative w-auto max-w-[min(92vw,420px)] object-contain object-left shrink-0 drop-shadow-[0_2px_12px_rgba(62,177,164,0.35)] group-hover:drop-shadow-[0_4px_20px_rgba(62,177,164,0.45)] ${
+              isScrolled
+                ? "h-[5rem] sm:h-[6.75rem] md:h-28 lg:h-32"
+                : "h-[5.25rem] sm:h-28 md:h-32 lg:h-36"
+            }`}
+          />
         </Link>
 
+        <div className="flex flex-1 min-w-0 justify-end items-center gap-2 lg:pb-0.5">
         {/* Navigation */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-10">
+        <nav
+          className={`hidden lg:flex items-center ${
+            isScrolled ? "gap-4 xl:gap-10" : "gap-5 xl:gap-9 2xl:gap-10"
+          }`}
+        >
           {navItems.map((item) => (
             item.path ? (
               <Link
                 key={item.label}
                 to={item.path}
-                className={`group flex items-center gap-1 xl:gap-3 text-xs xl:text-sm font-bold transition-all uppercase tracking-[0.15em] whitespace-nowrap ${
+                className={`group flex items-center font-bold transition-all uppercase tracking-[0.12em] whitespace-nowrap ${
+                  isScrolled
+                    ? "gap-1 xl:gap-3 text-xs xl:text-sm"
+                    : "gap-2 xl:gap-2.5 text-sm xl:text-[0.9375rem]"
+                } ${
                   location.pathname === item.path ? "text-[#FFCB0F]" : "text-white hover:text-[#FFCB0F]"
                 }`}
               >
-                <item.icon className="w-4 xl:w-5 h-4 xl:h-5 transition-transform group-hover:scale-110 shadow-sm flex-shrink-0" />
+                <item.icon
+                  className={`transition-transform group-hover:scale-110 shadow-sm flex-shrink-0 ${
+                    isScrolled ? "w-4 xl:w-5 h-4 xl:h-5" : "w-5 h-5 xl:w-[1.35rem] xl:h-[1.35rem]"
+                  }`}
+                />
                 {item.label}
               </Link>
             ) : (
@@ -97,9 +131,17 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
-                className="group flex items-center gap-1 xl:gap-3 text-xs xl:text-sm font-bold text-white hover:text-[#FFCB0F] transition-all uppercase tracking-[0.15em] whitespace-nowrap"
+                className={`group flex items-center font-bold text-white hover:text-[#FFCB0F] transition-all uppercase tracking-[0.12em] whitespace-nowrap ${
+                  isScrolled
+                    ? "gap-1 xl:gap-3 text-xs xl:text-sm"
+                    : "gap-2 xl:gap-2.5 text-sm xl:text-[0.9375rem]"
+                }`}
               >
-                <item.icon className="w-4 xl:w-5 h-4 xl:h-5 transition-transform group-hover:scale-110 shadow-sm flex-shrink-0" />
+                <item.icon
+                  className={`transition-transform group-hover:scale-110 shadow-sm flex-shrink-0 ${
+                    isScrolled ? "w-4 xl:w-5 h-4 xl:h-5" : "w-5 h-5 xl:w-[1.35rem] xl:h-[1.35rem]"
+                  }`}
+                />
                 {item.label}
               </a>
             )
@@ -112,7 +154,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-all"
+          className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-all shrink-0"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
@@ -121,6 +163,7 @@ const Header = () => {
             <Menu className="w-8 h-8" />
           )}
         </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
