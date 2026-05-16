@@ -1,67 +1,35 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-import { 
-  Send, 
-  CheckCircle2, 
-  AlertCircle, 
-  ArrowRight
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-// =============================================
-// EMAILJS CONFIGURATION - From Environment Variables
-// =============================================
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-// =============================================
+/** Digits only, country code included (same default as Footer / social links). */
+const WHATSAPP_PHONE =
+  import.meta.env.VITE_WHATSAPP_PHONE?.replace(/\D/g, "") || "918610813419";
+
+/** Strip WhatsApp formatting chars from user text so *bold* in a name does not break the template. */
+const plain = (s) => s.replace(/[*_~`]/g, "");
 
 const ContactFormRefined = () => {
   const form = useRef();
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
-
-  // Initialize EmailJS on component mount
-  useEffect(() => {
-    if (EMAILJS_PUBLIC_KEY) {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
-    }
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("sending");
-
     const formData = new FormData(form.current);
-    const userEmail = formData.get("user_email");
-    const userName = formData.get("user_name");
-    const userPhone = formData.get("user_phone");
-    const userMessage = formData.get("message");
+    const name = plain(String(formData.get("user_name") ?? "").trim());
+    const email = plain(String(formData.get("user_email") ?? "").trim());
+    const phone = plain(String(formData.get("user_phone") ?? "").trim());
+    const query = plain(String(formData.get("message") ?? "").trim());
 
-    // Email template params - MUST match your EmailJS template variables
-    const templateParams = {
-      user_name: userName,
-      user_email: userEmail,
-      user_phone: userPhone,
-      message: userMessage,
-    };
+    // WhatsApp: *Label* = bold; ASCII only (no emoji) so nothing breaks in transit
+    const text = [
+      `*Name:* ${name}`,
+      `*Email:* ${email}`,
+      `*Contact:* ${phone || "-"}`,
+      `*Query:* ${query}`,
+    ].join("\n");
 
-    emailjs
-      .send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY,
-      )
-      .then(() => {
-        setStatus("success");
-        form.current.reset();
-        setTimeout(() => setStatus("idle"), 5000);
-      })
-      .catch((error) => {
-        console.error("EmailJS error:", error);
-        setStatus("error");
-        setTimeout(() => setStatus("idle"), 5000);
-      });
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -214,31 +182,16 @@ const ContactFormRefined = () => {
           >
             <button
               type="submit"
-              disabled={status === "sending"}
               className="group relative bg-[#FFCB0F] text-black px-10 py-5 font-black uppercase tracking-widest text-xs flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
             >
               <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
-                {status === "sending" ? "Processing..." : "Leave us a Message"}
+                Leave us a Message
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
-              
+
               {/* Glossy sheen effect on hover */}
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
-
-            {/* Response Messages */}
-            <div className="mt-4 h-6">
-              {status === "success" && (
-                <div className="flex items-center gap-2 text-green-600 font-bold text-sm">
-                  <CheckCircle2 size={18} /> Message sent successfully!
-                </div>
-              )}
-              {status === "error" && (
-                <div className="flex items-center gap-2 text-red-500 font-bold text-sm">
-                  <AlertCircle size={18} /> Something went wrong. Please try again.
-                </div>
-              )}
-            </div>
           </motion.div>
         </motion.form>
       </div>
