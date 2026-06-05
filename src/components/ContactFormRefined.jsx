@@ -1,35 +1,56 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
-/** Digits only, country code included (same default as Footer / social links). */
-const WHATSAPP_PHONE =
-  import.meta.env.VITE_WHATSAPP_PHONE?.replace(/\D/g, "") || "918610813419";
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_CC_EMAIL = import.meta.env.VITE_EMAILJS_CC_EMAIL;
 
-/** Strip WhatsApp formatting chars from user text so *bold* in a name does not break the template. */
+/** Strip formatting chars so nothing breaks in transit */
 const plain = (s) => s.replace(/[*_~`]/g, "");
 
 const ContactFormRefined = () => {
   const form = useRef();
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus("sending");
+
     const formData = new FormData(form.current);
     const name = plain(String(formData.get("user_name") ?? "").trim());
     const email = plain(String(formData.get("user_email") ?? "").trim());
     const phone = plain(String(formData.get("user_phone") ?? "").trim());
     const query = plain(String(formData.get("message") ?? "").trim());
 
-    // WhatsApp: *Label* = bold; ASCII only (no emoji) so nothing breaks in transit
-    const text = [
-      `*Name:* ${name}`,
-      `*Email:* ${email}`,
-      `*Contact:* ${phone || "-"}`,
-      `*Query:* ${query}`,
-    ].join("\n");
+    const templateParams = {
+      name: name,
+      email: email,
+      phone: phone || "-",
+      message: query,
+      time: new Date().toLocaleString(),
+      cc_email: EMAILJS_CC_EMAIL || "",
+    };
 
-    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus("success");
+        form.current.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      });
   };
 
   return (
@@ -182,16 +203,37 @@ const ContactFormRefined = () => {
           >
             <button
               type="submit"
-              className="group relative bg-[#FFCB0F] text-black px-10 py-5 font-black uppercase tracking-widest text-xs flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden"
+              disabled={status === "sending"}
+              className="group relative bg-[#FFCB0F] text-black px-10 py-5 font-black uppercase tracking-widest text-xs flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-2xl [transform:skewX(-15deg)] rounded-sm overflow-hidden disabled:opacity-50"
             >
               <span className="relative z-10 [transform:skewX(15deg)] flex items-center gap-2">
-                Leave us a Message
+                {status === "sending" ? "Sending..." : "Leave us a Message"}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
 
               {/* Glossy sheen effect on hover */}
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-[15deg]"></div>
             </button>
+
+            {/* Feedback messages */}
+            {status === "success" && (
+              <motion.div
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-2 text-green-600 font-semibold text-sm mt-4"
+              >
+                <CheckCircle2 className="w-5 h-5" /> Message sent! We'll get back to you soon.
+              </motion.div>
+            )}
+            {status === "error" && (
+              <motion.div
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-2 text-red-600 font-semibold text-sm mt-4"
+              >
+                <AlertCircle className="w-5 h-5" /> Something went wrong. Please try again.
+              </motion.div>
+            )}
           </motion.div>
         </motion.form>
       </div>

@@ -10,6 +10,7 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL;
+const EMAILJS_CC_EMAIL = import.meta.env.VITE_EMAILJS_CC_EMAIL;
 // =============================================
 
 const ContactSection = () => {
@@ -28,13 +29,17 @@ const ContactSection = () => {
     const formData = new FormData(form.current);
     const userEmail = formData.get("user_email");
     const userName = formData.get("user_name");
+    const userPhone = formData.get("user_phone");
     const userMessage = formData.get("message");
 
     // Email template params - MUST match your EmailJS template variables
     const templateParams = {
-      user_name: userName,
-      user_email: userEmail,
+      name: userName,
+      email: userEmail,
+      phone: userPhone || "-",
       message: userMessage,
+      time: new Date().toLocaleString(),
+      cc_email: EMAILJS_CC_EMAIL || "",
     };
 
     // Send email to user
@@ -107,7 +112,7 @@ const ContactSection = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="w-full max-w-3xl relative z-10 space-y-4"
         >
-          {/* Row 1: Name + Email */}
+          {/* Row 1: Name + Email + Phone */}
           <div className="flex flex-col sm:flex-row gap-4">
             <input
               type="text"
@@ -121,6 +126,12 @@ const ContactSection = () => {
               name="user_email"
               placeholder="Email"
               required
+              className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-[#FFB800]/40 transition-all"
+            />
+            <input
+              type="tel"
+              name="user_phone"
+              placeholder="Phone (optional)"
               className="flex-1 px-7 py-5 rounded-2xl bg-white/20 backdrop-blur-md text-white placeholder-white/50 text-base font-medium outline-none focus:bg-white/30 focus:ring-2 focus:ring-[#FFB800]/40 transition-all"
             />
           </div>
